@@ -1,0 +1,31 @@
+vid: vp2_0534
+prompt_index: 534
+action: tossing coin
+category: Sports and Physical Activities
+is_hard: 0
+
+[scoring caption / official VideoPhy2 prompt]
+A coin is flung into the air and caught in a metal cup.
+
+[generation caption (upsampled, fed to Wan2.1 / PhysRAG / VideoREPA / DreamWorld / ours)]
+“In a mesmerizing display of precision and artistry, a sleek, metallic coin glints under the soft, golden-hour glow, its surface reflecting the warm hues of the setting sun. The coin, a masterpiece of craftsmanship, is expertly tossed into the air, its trajectory a graceful arc against a backdrop of lush greenery. As it ascends, the camera captures its every movement in a series of crisp, high-definition close-ups, showcasing the intricate details of its design. The coin reaches its zenith, then begins a slow descent, perfectly aligned with a gleaming metal cup poised below. With a satisfying clink, the coin lands securely within the cup, the camera lingering on this triumphant moment, encapsulating the beauty of skill and the art of coin tossing.”
+
+[physics rules (18), rule -> laws]
+- Different images are visible on the coin's surface as it rotates.  ->  Reflection
+- The coin cannot occupy the same space as the solid lid of the container  ->  Pauli's Exclusion Principle
+- The coin changes orientation over time.  ->  Conservation of Momentum
+- The coin changes position from the bowl's edge to inside the bowl.  ->  Gravity
+- The coin changes position from the hand to the air to the cup.  ->  Gravity
+- The coin falls downwards.  ->  Gravity
+- The coin maintains its shape and image throughout the video.  ->  Conservation of Mass
+- The coin moves downward after wobbling.  ->  Gravity
+- The coin must be actively propelled or influenced to move through the air  ->  Conservation of Momentum
+- The coin must be initially held by a hand before being flung  ->  Conservation of Momentum
+- The coin must land in the cup after being thrown  ->  Gravity
+- The coin's center of mass is initially above its base of support.  ->  Gravity
+- The coin's image remains visible throughout its fall and resting in the container.  ->  Reflection
+- The coin's position changes within the receptacle.  ->  Gravity
+- The coin's speed decreases as it rises and increases as it falls.  ->  Gravity
+- The coin's trajectory is parabolic.  ->  Gravity
+- The coins land in the cup, and the cup remains in its original position.  ->  Conservation of Momentum
+- The coins rotate as they move through the air.  ->  Conservation of Angular Momentum

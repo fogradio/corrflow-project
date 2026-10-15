@@ -1,0 +1,28 @@
+vid: vp2_0273
+prompt_index: 273
+action: canoeing or kayaking
+category: Sports and Physical Activities
+is_hard: 0
+
+[scoring caption / official VideoPhy2 prompt]
+A canoeist uses a single-bladed paddle to propel their canoe across a lake, the paddle's movement visible against the still water.
+
+[generation caption (upsampled, fed to Wan2.1 / PhysRAG / VideoREPA / DreamWorld / ours)]
+“A serene canoeing adventure unfolds on a tranquil lake, where a skilled paddler glides effortlessly through the glassy water. The camera captures a close-up of the canoeist’s upper body, clad in a vibrant blue life jacket, as they deftly maneuver a single-bladed paddle, its rhythmic motion slicing through the surface with precision. The paddle, a sleek black with a yellow blade, contrasts beautifully against the shimmering blue water, reflecting the soft, golden-hour light that bathes the scene in a warm glow. The surrounding landscape is a lush tapestry of verdant trees and rolling hills, while the stillness of the lake mirrors the calmness of the moment. This cinematic portrayal immerses viewers in the peaceful solitude of nature, highlighting the artistry of paddling and the harmony between the canoeist and their tranquil surroundings.”
+
+[physics rules (15), rule -> laws]
+- Ripples form on the water's surface after the paddle is lifted.  ->  Friction
+- The canoe floats on the water.  ->  Buoyancy
+- The canoe moves across the water's surface.  ->  Friction
+- The canoe moves across the water.  ->  Friction
+- The canoe moves forward as the paddle pushes the water backward  ->  Newton's Third Law of Motion
+- The canoe moves in the direction of the paddle stroke.  ->  Conservation of Momentum
+- The canoe's reflection is visible on the surface of the water.  ->  Reflection
+- The canoeist must apply consistent paddle strokes to maintain forward motion  ->  Newton's First Law
+- The kayak floats on the water.  ->  Buoyancy
+- The kayak moves across the water's surface.  ->  Conservation of Momentum
+- The life vest floats on the water.  ->  Buoyancy
+- The paddle moves through the water.  ->  Friction
+- The paddle resumes its original shape after being flexed during the stroke  ->  Elasticity
+- The reflection of the trees is visible on the lake's surface.  ->  Reflection
+- The water disturbed by the paddle returns to a relatively still state after the paddle passes.  ->  Friction

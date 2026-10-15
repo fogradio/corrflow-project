@@ -1,0 +1,1270 @@
+[
+  {
+    "id": "finephyeval-p016",
+    "task": "t2v",
+    "benchmark": "finephyeval",
+    "title": "A domino dropped into liquid",
+    "prompt": "A grabber tool holding a white domino drops the domino into a dark-colored liquid in a blue mug that is on a wooden surface. Static shot with no camera movement.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/finephyeval/07_ours/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p016-07.jpg"
+      },
+      {
+        "label": "Wan2.1",
+        "ours": false,
+        "src": "media/video/finephyeval/02_base_wan21_t2v_1p3b/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p016-02.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/finephyeval/03_baseline_physrag/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p016-03.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/finephyeval/04_baseline_videorepa_5b/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p016-04.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/finephyeval/05_baseline_dreamworld/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p016-05.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/finephyeval/06_baseline_vpt/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p016-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "finephyeval-p019",
+    "task": "t2v",
+    "benchmark": "finephyeval",
+    "title": "Dominoes and a rubber duck",
+    "prompt": "A yellow rubber duck is positioned in the middle of a line of black and white dominoes on a wooden table. A stick attached to a black rotating platform rotates clockwise and knocks the first domino block. Static shot with no camera movement.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/finephyeval/07_ours/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p019-07.jpg"
+      },
+      {
+        "label": "Wan2.1",
+        "ours": false,
+        "src": "media/video/finephyeval/02_base_wan21_t2v_1p3b/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p019-02.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/finephyeval/03_baseline_physrag/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p019-03.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/finephyeval/04_baseline_videorepa_5b/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p019-04.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/finephyeval/05_baseline_dreamworld/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p019-05.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/finephyeval/06_baseline_vpt/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4",
+        "poster": "media/video/assets/posters/finephyeval/p019-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "videophy2-vp2_0019",
+    "task": "t2v",
+    "benchmark": "videophy2",
+    "title": "Hair in a stream of air",
+    "prompt": "A person uses a low heat setting on the hairdryer to gently dry their fine hair.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/videophy2/06_ours/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0019-06.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/videophy2/02_baseline_physrag/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0019-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/videophy2/03_baseline_videorepa_5b/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0019-03.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/videophy2/04_baseline_dreamworld/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0019-04.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/videophy2/05_baseline_vpt/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0019-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "videophy2-vp2_0256",
+    "task": "t2v",
+    "benchmark": "videophy2",
+    "title": "A somersault on a bouncy castle",
+    "prompt": "A child somersaults on a large bouncy castle, their body rotating fully in the air.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/videophy2/06_ours/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0256-06.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/videophy2/02_baseline_physrag/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0256-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/videophy2/03_baseline_videorepa_5b/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0256-03.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/videophy2/04_baseline_dreamworld/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0256-04.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/videophy2/05_baseline_vpt/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0256-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "videophy2-vp2_0273",
+    "task": "t2v",
+    "benchmark": "videophy2",
+    "title": "Paddling across still water",
+    "prompt": "A canoeist uses a single-bladed paddle to propel their canoe across a lake, the paddle's movement visible against the still water.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/videophy2/06_ours/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0273-06.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/videophy2/02_baseline_physrag/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0273-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/videophy2/03_baseline_videorepa_5b/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0273-03.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/videophy2/04_baseline_dreamworld/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0273-04.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/videophy2/05_baseline_vpt/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0273-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "videophy2-vp2_0362",
+    "task": "t2v",
+    "benchmark": "videophy2",
+    "title": "Jet skis and colliding wakes",
+    "prompt": "Two jetskis race side-by-side, their wakes colliding in a visible spray of water.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/videophy2/06_ours/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0362-06.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/videophy2/02_baseline_physrag/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0362-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/videophy2/03_baseline_videorepa_5b/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0362-03.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/videophy2/04_baseline_dreamworld/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0362-04.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/videophy2/05_baseline_vpt/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0362-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "videophy2-vp2_0390",
+    "task": "t2v",
+    "benchmark": "videophy2",
+    "title": "Parasailing over the ocean",
+    "prompt": "A parasailer, harnessed to a bright orange parachute, is pulled along a calm ocean surface by a speedboat.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/videophy2/06_ours/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0390-06.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/videophy2/02_baseline_physrag/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0390-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/videophy2/03_baseline_videorepa_5b/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0390-03.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/videophy2/04_baseline_dreamworld/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0390-04.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/videophy2/05_baseline_vpt/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0390-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "videophy2-vp2_0534",
+    "task": "t2v",
+    "benchmark": "videophy2",
+    "title": "A coin tossed into a cup",
+    "prompt": "A coin is flung into the air and caught in a metal cup.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/videophy2/06_ours/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0534-06.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/videophy2/02_baseline_physrag/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0534-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/videophy2/03_baseline_videorepa_5b/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0534-03.jpg"
+      },
+      {
+        "label": "DreamWorld",
+        "ours": false,
+        "src": "media/video/videophy2/04_baseline_dreamworld/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0534-04.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/videophy2/05_baseline_vpt/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4",
+        "poster": "media/video/assets/posters/videophy2/vp2_0534-05.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-01",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A person is bending metal",
+    "prompt": "A person is bending metal",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/human-action_a-person-is-bending-metal.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-01-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/human-action_a-person-is-bending-metal.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-01-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/human-action_a-person-is-bending-metal.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-01-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/human-action_a-person-is-bending-metal.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-01-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-02",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A person is ironing",
+    "prompt": "A person is ironing",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/human-action_a-person-is-ironing.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-02-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/human-action_a-person-is-ironing.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-02-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/human-action_a-person-is-ironing.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-02-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/human-action_a-person-is-ironing.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-02-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-03",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A chair and a couch",
+    "prompt": "a chair and a couch",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/multiple-objects_a-chair-and-a-couch.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-03-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/multiple-objects_a-chair-and-a-couch.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-03-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/multiple-objects_a-chair-and-a-couch.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-03-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-chair-and-a-couch.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-03-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-04",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A knife and a tv",
+    "prompt": "a knife and a tv",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/multiple-objects_a-knife-and-a-tv.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-04-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/multiple-objects_a-knife-and-a-tv.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-04-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/multiple-objects_a-knife-and-a-tv.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-04-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-knife-and-a-tv.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-04-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-05",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A skateboard and a surfboard",
+    "prompt": "a skateboard and a surfboard",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/multiple-objects_a-skateboard-and-a-surfboard.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-05-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/multiple-objects_a-skateboard-and-a-surfboard.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-05-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/multiple-objects_a-skateboard-and-a-surfboard.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-05-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-skateboard-and-a-surfboard.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-05-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-06",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A backpack",
+    "prompt": "a backpack",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/object-class_a-backpack.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-06-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/object-class_a-backpack.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-06-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/object-class_a-backpack.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-06-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/object-class_a-backpack.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-06-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-07",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A handbag",
+    "prompt": "a handbag",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/object-class_a-handbag.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-07-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/object-class_a-handbag.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-07-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/object-class_a-handbag.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-07-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/object-class_a-handbag.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-07-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-08",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh",
+    "prompt": "A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-08-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-08-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-08-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-08-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-09",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "Overall consistency",
+    "prompt": "A boat sailing leisurely along the Seine River with the Eiffel Tower in background by Vincent van Gogh",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-09-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-09-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-09-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-09-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-10",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A panda standing on a surfboard in the ocean in sunset",
+    "prompt": "A panda standing on a surfboard in the ocean in sunset.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-10-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-10-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-10-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-10-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-11",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "Overall consistency",
+    "prompt": "Snow rocky mountains peaks canyon. snow blanketed rocky mountains surround and shadow deep canyons. the canyons twist and bend through the high elevated mountain peaks.",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-11-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-11-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-11-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-11-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-12",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "Amusement park",
+    "prompt": "amusement park",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/scene_amusement-park.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-12-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/scene_amusement-park.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-12-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/scene_amusement-park.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-12-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/scene_amusement-park.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-12-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-13",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "A sports ball on the right of a baseball bat, front view",
+    "prompt": "a sports ball on the right of a baseball bat, front view",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-13-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-13-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-13-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-13-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "vbench-vb-14",
+    "task": "t2v",
+    "benchmark": "vbench",
+    "title": "An orange on the top of a carrot, front view",
+    "prompt": "an orange on the top of a carrot, front view",
+    "input": null,
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/vbench/05_ours/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-14-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/vbench/02_baseline_physrag/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-14-02.jpg"
+      },
+      {
+        "label": "VideoREPA",
+        "ours": false,
+        "src": "media/video/vbench/03_baseline_videorepa_5b/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-14-03.jpg"
+      },
+      {
+        "label": "VPT",
+        "ours": false,
+        "src": "media/video/vbench/04_baseline_vpt_wan21_1p3b/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4",
+        "poster": "media/video/assets/posters/vbench/vb-14-04.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0019",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Ball ramp",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. A simple ramp made of cardboard, propped up by a blue block on a light-colored wooden table. There's a black pipe to the left of the frame that directly points towards it. The yellow tennis ball rolls straight out of the black pipe onto the ramp.",
+    "input": "media/video/physics-iq-veried/01_input/p0019_ball-ramp_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0019_ball-ramp.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0019-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0019_ball-ramp.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0019-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0019_ball-ramp.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0019-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0019_ball-ramp.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0019-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0019_ball-ramp.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0019-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0019_ball-ramp.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0019-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0027",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Ball rolls on glass",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. A piece of clear glass resting on the edge of a light-colored wooden table against a plain white wall. The blue tennis ball rolls from the wooden table over the glass.",
+    "input": "media/video/physics-iq-veried/01_input/p0027_ball-rolls-on-glass_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0027_ball-rolls-on-glass.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0027-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0027_ball-rolls-on-glass.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0027-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0027_ball-rolls-on-glass.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0027-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0027_ball-rolls-on-glass.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0027-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0027_ball-rolls-on-glass.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0027-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0027_ball-rolls-on-glass.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0027-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0040",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Cut orange",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. One half of a tangerine has been placed on a glass cutting board. The knife slices through the tangerine.",
+    "input": "media/video/physics-iq-veried/01_input/p0040_cut-orange_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0040_cut-orange.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0040-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0040_cut-orange.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0040-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0040_cut-orange.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0040-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0040_cut-orange.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0040-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0040_cut-orange.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0040-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0040_cut-orange.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0040-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0046",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Domino in juice",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The mug is sitting on a wooden surface. The blue-black grabber tool drops the white ceramic domino into the mug that is filled with a dark-colored liquid.",
+    "input": "media/video/physics-iq-veried/01_input/p0046_domino-in-juice_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0046_domino-in-juice.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0046-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0046_domino-in-juice.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0046-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0046_domino-in-juice.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0046-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0046_domino-in-juice.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0046-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0046_domino-in-juice.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0046-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0046_domino-in-juice.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0046-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0084",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Light on statue",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The small porcelain statue sits on the black, clockwise-rotating platform, and the spotlight points toward the porcelain statue. The small porcelain statue rotates clockwise on the black platform while the spotlight casts a large shadow on the wall behind it.",
+    "input": "media/video/physics-iq-veried/01_input/p0084_light-on-statue_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0084_light-on-statue.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0084-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0084_light-on-statue.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0084-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0084_light-on-statue.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0084-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0084_light-on-statue.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0084-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0084_light-on-statue.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0084-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0084_light-on-statue.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0084-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0110",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Match",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The lit match is being lowered into the glass of water.",
+    "input": "media/video/physics-iq-veried/01_input/p0110_match_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0110_match.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0110-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0110_match.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0110-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0110_match.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0110-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0110_match.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0110-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0110_match.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0110-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0110_match.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0110-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0115",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Mirror ball fall",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The tennis ball attached to a magnet that hangs from an orange cord was hovering in the air in front of the mirror. The mirror creates the illusion of two tennis balls. The tennis ball hanging in front of the mirror is slowly lowered.",
+    "input": "media/video/physics-iq-veried/01_input/p0115_mirror-ball-fall_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0115_mirror-ball-fall.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0115-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0115_mirror-ball-fall.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0115-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0115_mirror-ball-fall.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0115-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0115_mirror-ball-fall.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0115-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0115_mirror-ball-fall.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0115-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0115_mirror-ball-fall.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0115-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0133",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Paper fall water",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The orange-black grabber tool is suspended over the bowl of water on a wooden table. The orange-black grabber tool releases the crumpled piece of paper over the bowl of water.",
+    "input": "media/video/physics-iq-veried/01_input/p0133_paper-fall-water_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0133_paper-fall-water.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0133-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0133_paper-fall-water.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0133-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0133_paper-fall-water.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0133-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0133_paper-fall-water.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0133-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0133_paper-fall-water.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0133-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0133_paper-fall-water.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0133-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0140",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Paper smoke",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The piece of folded paper sits on a glass cutting board. The piece of folded paper is burning while white smoke is emitting from it.",
+    "input": "media/video/physics-iq-veried/01_input/p0140_paper-smoke_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0140_paper-smoke.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0140-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0140_paper-smoke.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0140-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0140_paper-smoke.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0140-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0140_paper-smoke.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0140-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0140_paper-smoke.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0140-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0140_paper-smoke.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0140-06.jpg"
+      }
+    ]
+  },
+  {
+    "id": "physics-iq-veried-p0155",
+    "task": "i2v",
+    "benchmark": "physics-iq-veried",
+    "title": "Rolling reflection",
+    "prompt": "Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The 30lb kettlebell sits next to a mirror that reflects the kettlebell on a wooden table. The tennis ball rolls slowly towards the 30lb kettlebell next to a mirror and hits the kettlebell.",
+    "input": "media/video/physics-iq-veried/01_input/p0155_rolling-reflection_switch-frame.jpg",
+    "methods": [
+      {
+        "label": "Ours",
+        "ours": true,
+        "src": "media/video/physics-iq-veried/07_ours/p0155_rolling-reflection.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0155-07.jpg"
+      },
+      {
+        "label": "Ground truth",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/02_gt/p0155_rolling-reflection.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0155-02.jpg"
+      },
+      {
+        "label": "Wan2.2",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/03_base_wan22_ti2v_5b/p0155_rolling-reflection.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0155-03.jpg"
+      },
+      {
+        "label": "VLiPP",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0155_rolling-reflection.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0155-04.jpg"
+      },
+      {
+        "label": "WMReward",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0155_rolling-reflection.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0155-05.jpg"
+      },
+      {
+        "label": "PhysRAG",
+        "ours": false,
+        "src": "media/video/physics-iq-veried/06_baseline_physrag/p0155_rolling-reflection.mp4",
+        "poster": "media/video/assets/posters/physics-iq-veried/p0155-06.jpg"
+      }
+    ]
+  }
+]

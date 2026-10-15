@@ -1,0 +1,26 @@
+vid: vp2_0390
+prompt_index: 390
+action: parasailing
+category: Sports and Physical Activities
+is_hard: 0
+
+[scoring caption / official VideoPhy2 prompt]
+A parasailer, harnessed to a bright orange parachute, is pulled along a calm ocean surface by a speedboat.
+
+[generation caption (upsampled, fed to Wan2.1 / PhysRAG / VideoREPA / DreamWorld / ours)]
+In a breathtaking aerial shot, a vibrant orange parasail glides gracefully across the tranquil surface of a vast ocean, its vivid hue contrasting beautifully against the deep blue waters. The camera captures the serene expanse, where the horizon meets the sky in a soft, hazy line, enhancing the sense of freedom and adventure. A parasailer, securely harnessed to the parachute, is pulled by a speedboat in the distance, their figure a small silhouette against the expansive backdrop. The boat, a sleek white vessel, leaves a gentle wake that ripples across the water, creating a dynamic interplay of light and shadow. The scene is bathed in the warm glow of the sun, casting a golden-hour light that dances on the waves, while the camera remains steady, allowing the viewer to fully immerse in the tranquil yet exhilarating experience of parasailing.
+
+[physics rules (13), rule -> laws]
+- The boat moves across the water.  ->  Conservation of Momentum
+- The hydrofoil creates a spray of water when moving across the water surface.  ->  Friction
+- The hydrofoil maintains a consistent shape and does not deform or morph during motion  ->  Elasticity
+- The hydrofoil remains above the water's surface.  ->  Buoyancy
+- The motorboat creates waves on the water's surface.  ->  Friction
+- The parachute remains inflated and relatively stable in shape.  ->  Buoyancy
+- The parasail moves through the air.  ->  Gravity
+- The parasail remains mostly in one location relative to the boat.  ->  Gravity
+- The parasailer moves horizontally across the water's surface.  ->  Conservation of Momentum
+- The speedboat's movement and the parasailer's movement are correlated.  ->  Conservation of Momentum
+- The sun's light reflects off the water.  ->  Reflection
+- The wing appears to pull the hydrofoil across the water.  ->  Conservation of Momentum
+- White water trails behind the boat.  ->  Friction

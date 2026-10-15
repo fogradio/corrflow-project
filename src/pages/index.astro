@@ -1,68 +1,597 @@
 ---
-import { Font } from "astro:assets";
-
-import Table from "../components/Table.astro";
-
-import "../styles/global.css";
-import "katex/dist/katex-swap.css";
-
-import { Content, frontmatter } from "../paper.mdx";
-
-interface Frontmatter {
-  title: string;
-  description?: string;
-  favicon: string;
-  thumbnail?: string;
-  theme?: "device" | "light" | "dark";
-}
-
-const {
-  title,
-  description,
-  favicon,
-  thumbnail,
-  theme = "device",
-} = frontmatter as Frontmatter;
-
-const baseUrl = import.meta.env.BASE_URL;
-const prefix = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+import images from "../data/images.json";
+import videos from "../data/videos.json";
+import "../styles/corrflow.css";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "") + "/";
+const asset = (path: string) => base + path;
+const benchmarks = [
+  {
+    id: "vbench",
+    name: "VBench",
+    task: "Text to video",
+    description: "Appearance, composition, and motion.",
+  },
+  {
+    id: "videophy2",
+    name: "VideoPhy2",
+    task: "Text to video",
+    description: "Everyday actions and physical interactions.",
+  },
+  {
+    id: "finephyeval",
+    name: "FinePhyEval",
+    task: "Text to video",
+    description: "Object interactions and physical events.",
+  },
+  {
+    id: "physics-iq-veried",
+    name: "Physics-IQ",
+    task: "Image to video",
+    description: "Image-conditioned physical events.",
+  },
+];
+const title = "CorrFlow: Self-Correcting Flow Matching";
+const description =
+  "CorrFlow revisits its own predictions with a lightweight refiner, correcting the velocity inside the sampling loop for image and video generation.";
+const citation = `@misc{zhang2026corrflow,
+  title  = {CorrFlow: Self-Correcting Flow Matching},
+  author = {Zhang, Hangwei and Rouillé, Nathan and Zheng, Chuanxia},
+  year   = {2026},
+  url    = {https://fogradio.github.io/corrflow-project/}
+}`;
 ---
 
 <!doctype html>
-<html class="bg-white dark:bg-zinc-900" lang="en" data-theme={theme}>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    {description && <meta name="description" content={description} />}
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-
-    <link rel="icon" type="image/svg+xml" href={prefix + favicon} />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
     <meta property="og:title" content={title} />
-    {description && <meta property="og:description" content={description} />}
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    {thumbnail && <meta property="og:image" content={prefix + thumbnail} />}
-
-    <Font
-      cssVariable="--font-noto-sans"
-      preload={[{ subset: "latin", style: "normal" }]}
+    <meta
+      property="og:url"
+      content="https://fogradio.github.io/corrflow-project/"
     />
-
+    <meta
+      property="og:image"
+      content="https://fogradio.github.io/corrflow-project/media/images/social-preview.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://fogradio.github.io/corrflow-project/" />
+    <link rel="icon" href={asset("corrflow.svg")} type="image/svg+xml" />
+    <link rel="stylesheet" href={asset("fonts/fonts.css")} />
     <title>{title}</title>
   </head>
-  <body
-    class="prose prose-lg prose-zinc dark:prose-invert prose-a:text-blue-600 prose-a:hover:text-blue-900 prose-a:dark:text-blue-200 prose-a:dark:hover:text-blue-100 prose-a:underline prose-a:decoration-dashed prose-a:underline-offset-4 prose-a:hover:decoration-solid prose-a:font-normal prose-code:bg-zinc-200 prose-code:dark:bg-zinc-800 prose-code:text-zinc-800 prose-code:dark:text-zinc-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none max-w-none pt-16 pb-6 font-(family-name:--font-noto-sans)"
-  >
-    <main>
-      <Content components={{ table: Table }} />
-    </main>
-    <footer class="mx-auto max-w-[50rem] px-6 text-center">
-      <p class="prose-sm text-center">
-        Built with <a
-          href="https://research-template.roman.technology"
-          rel="nofollow">Roman Hauksson-Neill's project page template</a
+  <body>
+    <a class="skip-link" href="#abstract">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="wordmark" href="#top" aria-label="CorrFlow home"
+          ><svg viewBox="0 0 32 32" aria-hidden="true"
+            ><path d="M26 10C20 0 5 4 5 15s14 17 22 5M20 20h7v7"></path></svg
+          >CorrFlow<span class="wordmark-dot">.</span></a
         >
-      </p>
+        <div class="nav-links">
+          <a href="#method">Method</a><a href="#images">Images</a><a
+            href="#videos">Videos</a
+          ><a href="#citation">Citation</a>
+        </div>
+        <a
+          class="nav-paper"
+          href={asset("paper/corrflow.pdf")}
+          target="_blank"
+          rel="noopener">Read paper <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero container" aria-labelledby="paper-title">
+        <p class="eyebrow hero-eyebrow">
+          <span></span> IMAGE & VIDEO GENERATION
+        </p>
+        <h1 id="paper-title">
+          <span class="title-name">CorrFlow</span><span
+            class="title-description">Self-Correcting Flow Matching</span
+          >
+        </h1>
+        <p class="hero-summary">
+          Generate. Reflect. Refine.<br class="mobile-break" /> A second look at every
+          sampling step.
+        </p>
+        <p class="authors">
+          <span>Hangwei Zhang<sup>1</sup></span><span
+            >Nathan Rouillé<sup>1,2</sup></span
+          ><span>Chuanxia Zheng<sup>1</sup></span>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup> PVG, Nanyang Technological University</span><span
+            ><sup>2</sup> Université Paris Dauphine – PSL</span
+          >
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href={asset("paper/corrflow.pdf")}
+            target="_blank"
+            rel="noopener"
+            ><svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"></path></svg
+            >Paper <span aria-hidden="true">↗</span></a
+          ><a class="button" href="#images"
+            >Explore results <span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <section
+        id="method"
+        class="teaser-section container"
+        aria-labelledby="teaser-title"
+      >
+        <h2 id="teaser-title" class="sr-only">CorrFlow in motion</h2>
+        <figure class="teaser-figure">
+          <video
+            id="method-teaser"
+            controls
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster={asset("media/teaser/poster.jpg")}
+            width="1920"
+            height="1080"
+            aria-label="Animated overview of the CorrFlow method, without audio"
+            aria-describedby="teaser-description"
+          >
+            <source
+              src={asset("media/teaser/corrflow-teaser.mp4")}
+              type='video/mp4; codecs="avc1.640028"'
+            />
+            <source
+              src={asset("media/teaser/corrflow-teaser.webm")}
+              type="video/webm"
+            />
+            <a href={asset("media/teaser/corrflow-teaser.mp4")}
+              >Watch the method animation.</a
+            >
+          </video>
+          <figcaption>
+            <span>Predict. Reflect. Refine.</span>
+            <a href={asset("media/teaser/corrflow-teaser.mp4")} download
+              >Download teaser <span aria-hidden="true">↓</span></a
+            >
+          </figcaption>
+        </figure>
+        <p id="teaser-description" class="sr-only">
+          The animation first shows a base clean prediction, its discrepancy
+          from a training reference, and a learned correction. The reference is
+          used only to explain training. During generation, the refiner reuses
+          the clean prediction, hidden states, condition, and noise level from
+          the same base forward pass. Self-attention and cross-attention produce
+          a residual that is added to the base velocity before each sampler
+          update. The process repeats from the corrected state as the noise
+          level decreases.
+        </p>
+      </section>
+
+      <section
+        id="abstract"
+        class="section intro-section container"
+        aria-labelledby="abstract-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">THE IDEA</p><h2 id="abstract-title">Abstract</h2>
+        </div>
+        <div class="intro-copy">
+          <p class="lead">
+            CorrFlow learns to correct its own predictions. A lightweight
+            refiner reuses the base model’s clean prediction, hidden states, and
+            conditioning to refine the velocity before each sampling update—with
+            no additional base-model evaluations.
+          </p>
+          <details class="abstract-details">
+            <summary
+              >Read the full abstract <span aria-hidden="true">+</span></summary
+            ><p>
+              Flow-matching models generate samples through iterative velocity
+              predictions, but typically do not revisit these predictions using
+              the intermediate representations that produced them. We introduce
+              CorrFlow, a self-correcting flow-matching framework that reuses
+              this information through a lightweight refiner. Under
+              rectified-flow interpolation, the error of the one-step clean
+              prediction equals the realized velocity residual scaled by the
+              noise level. Motivated by this identity, the refiner learns to
+              predict residual corrections from the base model’s clean
+              prediction, conditioning, noise level and hidden states from the
+              same forward pass. The correction is added to the base velocity
+              before each sampling update, so subsequent predictions are made
+              from the corrected state. This requires no additional base-model
+              evaluations and only one lightweight refiner evaluation per step.
+              Our theory gives conditions under which feature reuse outperforms
+              raw-input affine predictors, refiner training outperforms
+              continued base-model training at matched compute, and deployed
+              correction lowers velocity error under its own sampler law.
+              Experiments on class-conditional image generation, text-to-video
+              generation and image-to-video generation show consistent
+              improvements over the corresponding base models, including gains
+              in visual quality and physical consistency.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section
+        id="images"
+        class="section image-section"
+        aria-labelledby="images-title"
+      >
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <p class="eyebrow">01 / IMAGE GENERATION</p><h2 id="images-title">
+                A closer look.
+              </h2>
+            </div><p class="section-description">
+              Selected class-conditional samples.<br />Small details, varied
+              subjects, rich textures.
+            </p>
+          </div>
+          <div class="gallery-toolbar">
+            <div
+              class="filter-pills"
+              role="group"
+              aria-label="Filter image samples"
+            >
+              <button class="active" data-image-filter="all" aria-pressed="true"
+                >All samples</button
+              ><button data-image-filter="animals" aria-pressed="false"
+                >Animals</button
+              ><button data-image-filter="nature" aria-pressed="false"
+                >Nature & food</button
+              ><button data-image-filter="objects" aria-pressed="false"
+                >Objects & places</button
+              >
+            </div><span class="gallery-hint"
+              >Click to take a closer look <span aria-hidden="true">↗</span
+              ></span
+            >
+          </div>
+          <div class="image-grid">
+            {
+              images.map((im, i) => (
+                <button
+                  class="sample"
+                  data-image-index={i}
+                  data-image-group={im.group}
+                  aria-label={`Enlarge ${im.label}`}
+                >
+                  <>
+                    <img
+                      src={asset(im.src)}
+                      alt={`CorrFlow generated image of ${im.label.toLowerCase()}`}
+                      loading="lazy"
+                      decoding="async"
+                      width="256"
+                      height="256"
+                    />
+                    <span class="sample-label">
+                      {im.label}
+                      <span aria-hidden="true">↗</span>
+                    </span>
+                  </>
+                </button>
+              ))
+            }
+          </div>
+          <div class="gallery-footer">
+            <p>
+              ImageNet 256 × 256 · RAEv2 + CorrFlow · final 80-epoch fine-tuning
+              · guidance 1.78
+            </p><button
+              id="expand-gallery"
+              class="text-button"
+              aria-expanded="false"
+              >View all {images.length} samples <span aria-hidden="true">↓</span
+              ></button
+            >
+          </div>
+          <p class="sample-count sr-only" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section
+        id="videos"
+        class="section video-section"
+        aria-labelledby="videos-title"
+      >
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <p class="eyebrow">02 / VIDEO GENERATION</p><h2 id="videos-title">
+                See the difference in motion.
+              </h2>
+            </div><p class="section-description">
+              From written prompts to physical events.<br />Explore
+              text-to-video and image-to-video results.
+            </p>
+          </div>
+          <div
+            class="benchmark-tabs"
+            role="tablist"
+            aria-label="Video benchmarks"
+          >
+            {
+              benchmarks.map((b, i) => (
+                <button
+                  id={`tab-${b.id}`}
+                  role="tab"
+                  data-benchmark={b.id}
+                  aria-controls={`panel-${b.id}`}
+                  aria-selected={i === 0 ? "true" : "false"}
+                  tabindex={i === 0 ? 0 : -1}
+                >
+                  <span>{b.task}</span>
+                  {b.name}
+                </button>
+              ))
+            }
+          </div>
+          {
+            benchmarks.map((b) => {
+              const cases = videos.filter((v) => v.benchmark === b.id);
+              return (
+                <div
+                  class="benchmark-panel"
+                  id={`panel-${b.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${b.id}`}
+                  data-panel={b.id}
+                >
+                  <div class="case-selector">
+                    <>
+                      <div>
+                        <>
+                          <span class="eyebrow">{b.task}</span>
+                          <p>{b.description}</p>
+                        </>
+                      </div>
+                      <div class="case-navigation">
+                        <>
+                          <button
+                            class="icon-button"
+                            data-case-direction="-1"
+                            aria-label={`Previous ${b.name} example`}
+                          >
+                            ←
+                          </button>
+                          <label class="sr-only" for={`select-${b.id}`}>
+                            Select {b.name} example
+                          </label>
+                          <select id={`select-${b.id}`} data-case-select={b.id}>
+                            {cases.map((c, i) => (
+                              <option value={c.id}>
+                                {String(i + 1).padStart(2, "0")} /{" "}
+                                {String(cases.length).padStart(2, "0")} —{" "}
+                                {c.title === "Overall consistency"
+                                  ? c.prompt
+                                  : c.title}
+                              </option>
+                            ))}
+                          </select>
+                          <button
+                            class="icon-button"
+                            data-case-direction="1"
+                            aria-label={`Next ${b.name} example`}
+                          >
+                            →
+                          </button>
+                        </>
+                      </div>
+                    </>
+                  </div>
+                  {cases.map((c) => (
+                    <article class="video-case" data-case={c.id}>
+                      <div
+                        class:list={["prompt-block", { "with-input": c.input }]}
+                      >
+                        <div>
+                          <h3>
+                            {c.title === "Overall consistency"
+                              ? "Scene consistency"
+                              : c.title}
+                          </h3>
+                          <p>
+                            <span>Prompt</span>
+                            {c.prompt}
+                          </p>
+                        </div>
+                        {c.input && (
+                          <figure class="input-image">
+                            <a
+                              href={asset(c.input)}
+                              target="_blank"
+                              rel="noopener"
+                            >
+                              <img
+                                src={asset(c.input)}
+                                alt={`Conditioning frame for ${c.title}`}
+                                loading="lazy"
+                                width="480"
+                                height="270"
+                              />
+                            </a>
+                            <figcaption>Input image</figcaption>
+                          </figure>
+                        )}
+                      </div>
+                      <div
+                        class:list={[
+                          "video-grid",
+                          { "four-up": c.methods.length === 4 },
+                        ]}
+                      >
+                        {c.methods.map((m) => (
+                          <figure class:list={["video-card", { ours: m.ours }]}>
+                            <figcaption>
+                              <span>{m.ours ? "CorrFlow" : m.label}</span>
+                              {m.ours && <span class="ours-tag">Ours</span>}
+                            </figcaption>
+                            <video
+                              controls
+                              muted
+                              playsinline
+                              loop
+                              preload="none"
+                              poster={asset(m.poster)}
+                              aria-label={`${m.ours ? "CorrFlow" : m.label}: ${c.title}`}
+                            >
+                              <source src={asset(m.src)} type="video/mp4" />
+                              Your browser does not support video.
+                            </video>
+                            <a
+                              href={asset(m.src)}
+                              target="_blank"
+                              rel="noopener"
+                              class="video-open"
+                              aria-label={`Open ${m.ours ? "CorrFlow" : m.label} video: ${c.title}`}
+                            >
+                              Open video <span aria-hidden="true">↗</span>
+                            </a>
+                          </figure>
+                        ))}
+                      </div>
+                      <div class="playback-toolbar">
+                        <div class="playback-buttons">
+                          <button
+                            class="button button-primary"
+                            data-video-action="play"
+                          >
+                            <span aria-hidden="true">▶</span> Play together
+                          </button>
+                          <button class="button" data-video-action="pause">
+                            Pause
+                          </button>
+                          <button
+                            class="button replay-button"
+                            data-video-action="replay"
+                            aria-label="Replay comparison"
+                          >
+                            ↻ Replay
+                          </button>
+                        </div>
+                        <label class="speed-control">
+                          Speed{" "}
+                          <select
+                            data-speed
+                            aria-label="Comparison playback speed"
+                          >
+                            <option value="0.5">0.5×</option>
+                            <option value="1" selected>
+                              1×
+                            </option>
+                            <option value="1.5">1.5×</option>
+                          </select>
+                        </label>
+                        <span
+                          class="playback-status"
+                          role="status"
+                          aria-live="polite"
+                        />
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              );
+            })
+          }
+          <p class="video-footnote">
+            All videos are from the paper’s supplementary material. “Play
+            together” restarts the comparison; shorter clips hold their last
+            frame until the group finishes. Individual video controls work
+            independently.
+          </p>
+          <noscript
+            ><p class="noscript-note">
+              JavaScript is disabled. All video cases and images are shown; use
+              the individual video controls.
+            </p></noscript
+          >
+        </div>
+      </section>
+
+      <section
+        id="citation"
+        class="section citation-section container"
+        aria-labelledby="citation-title"
+      >
+        <div>
+          <p class="eyebrow">BUILD ON THIS WORK</p><h2 id="citation-title">
+            Citation
+          </h2><p>
+            If you find CorrFlow useful in your research,<br />please consider
+            citing our work.
+          </p><a
+            class="text-button"
+            href={asset("paper/corrflow.pdf")}
+            target="_blank"
+            rel="noopener">Read the paper <span aria-hidden="true">↗</span></a
+          >
+        </div><div class="citation-box">
+          <div class="citation-label">
+            <span>BibTeX</span><button id="copy-citation" class="text-button"
+              >Copy citation</button
+            >
+          </div><pre><code id="bibtex">{citation}</code></pre><span
+            id="copy-status"
+            class="sr-only"
+            role="status"
+            aria-live="polite"></span>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer container">
+      <a class="wordmark" href="#top"
+        >CorrFlow<span class="wordmark-dot">.</span></a
+      ><p>Self-Correcting Flow Matching · 2026</p><a
+        href="https://research-template.roman.technology"
+        target="_blank"
+        rel="noopener"
+        class="template-credit">Built on the Astro research template ↗</a
+      ><a class="back-top" href="#top">Back to top ↑</a>
     </footer>
+    <dialog id="image-viewer" aria-labelledby="viewer-title">
+      <div class="viewer-header">
+        <div>
+          <span class="eyebrow">CORRFLOW / IMAGENET</span><h2 id="viewer-title">
+            Image sample
+          </h2>
+        </div><button
+          id="close-viewer"
+          class="icon-button"
+          aria-label="Close image viewer">×</button
+        >
+      </div><div class="viewer-image-wrap">
+        <button
+          class="viewer-arrow previous"
+          id="previous-image"
+          aria-label="Previous image">←</button
+        ><img id="viewer-image" alt="" width="512" height="512" /><button
+          class="viewer-arrow next"
+          id="next-image"
+          aria-label="Next image">→</button
+        >
+      </div><div class="viewer-footer">
+        <span id="viewer-position" aria-live="polite"></span><span
+          >Guidance 1.78 · 80-epoch fine-tuning</span
+        ><a id="original-image" href="#" target="_blank" rel="noopener"
+          >Open image ↗</a
+        >
+      </div>
+    </dialog>
+    <script>
+      import "../scripts/corrflow";
+    </script>
   </body>
 </html>

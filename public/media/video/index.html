@@ -1,0 +1,1771 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anonymous supplementary qualitative results for text-to-video and image-to-video generation.">
+  <title>Qualitative Results on Video Generation</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#results">Skip to results</a>
+  <main id="results">
+    <header class="page-heading">
+      <h1 id="page-title">Qualitative Results on Video Generation</h1>
+    </header>
+    <div class="collection-toolbar enhanced">
+      <div class="toolbar-top"><div class="filter-tabs" role="group" aria-label="Filter by generation task"><button type="button" class="is-active" data-task-filter="all" aria-pressed="true">All results <span>32</span></button><button type="button" data-task-filter="t2v" aria-pressed="false">Text to video <span>22</span></button><button type="button" data-task-filter="i2v" aria-pressed="false">Image to video <span>10</span></button></div>
+        <div class="toolbar-actions"><label class="search-label"><span aria-hidden="true">⌕</span><span class="sr-only">Search prompts, cases, or methods</span><input id="search" type="search" placeholder="Search prompts or cases…" autocomplete="off"></label><button type="button" id="pause-all">Ⅱ Pause all</button></div></div>
+      <div class="toolbar-bottom"><label>Benchmark <select id="benchmark-filter"><option value="all">All benchmarks</option><option value="finephyeval">FinePhyEval</option><option value="videophy2">VideoPhy2</option><option value="vbench">VBench</option><option value="physics-iq-veried">Physics-IQ</option></select></label><p id="result-count" role="status" aria-live="polite">Showing 32 of 32 cases</p></div>
+    </div>
+    <noscript><p class="noscript-note">All results are shown below. Use the individual video controls to play each clip.</p></noscript>
+    <div class="empty-state" id="empty-state" hidden><h2>No matching cases</h2><p>Try another prompt or benchmark.</p><button type="button" id="reset-filters">Reset filters</button></div>
+    <section class="task-section" id="t2v" aria-labelledby="t2v-heading">
+          <header class="section-heading"><span class="section-number">01</span><div><p class="eyebrow">T2V comparisons</p><h2 id="t2v-heading">Text to video</h2><p>From a written prompt to a moving scene. Compare generated videos across three benchmarks.</p></div></header>
+          <section class="benchmark" id="finephyeval" aria-labelledby="finephyeval-heading">
+              <div class="benchmark-heading"><div><h3 id="finephyeval-heading">FinePhyEval</h3><p>Object interactions and physical events.</p></div><span class="benchmark-count">02 cases · 6 methods</span></div>
+              <article class="case" id="finephyeval-p016" data-task="t2v" data-benchmark="finephyeval">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#finephyeval-p016" class="case-id">P016</a></div>
+          <h4>A domino dropped into liquid</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A domino dropped into liquid">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A domino dropped into liquid from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A domino dropped into liquid"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A grabber tool holding a white domino drops the domino into a dark-colored liquid in a blue mug that is on a wooden surface. Static shot with no camera movement.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="FinePhyEval comparison: A domino dropped into liquid">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p016-07.jpg" aria-label="Ours — A domino dropped into liquid">
+            <source src="finephyeval/07_ours/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/07_ours/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A domino dropped into liquid">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.1</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p016-02.jpg" aria-label="Wan2.1 — A domino dropped into liquid">
+            <source src="finephyeval/02_base_wan21_t2v_1p3b/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/02_base_wan21_t2v_1p3b/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.1 video for A domino dropped into liquid">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p016-03.jpg" aria-label="PhysRAG — A domino dropped into liquid">
+            <source src="finephyeval/03_baseline_physrag/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/03_baseline_physrag/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A domino dropped into liquid">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p016-04.jpg" aria-label="VideoREPA — A domino dropped into liquid">
+            <source src="finephyeval/04_baseline_videorepa_5b/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/04_baseline_videorepa_5b/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A domino dropped into liquid">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p016-05.jpg" aria-label="DreamWorld — A domino dropped into liquid">
+            <source src="finephyeval/05_baseline_dreamworld/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/05_baseline_dreamworld/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for A domino dropped into liquid">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p016-06.jpg" aria-label="VPT — A domino dropped into liquid">
+            <source src="finephyeval/06_baseline_vpt/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/06_baseline_vpt/p016_a-grabber-tool-holding-a-white-dom--on-a-wooden-surface.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A domino dropped into liquid">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="finephyeval-p019" data-task="t2v" data-benchmark="finephyeval">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#finephyeval-p019" class="case-id">P019</a></div>
+          <h4>Dominoes and a rubber duck</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Dominoes and a rubber duck">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Dominoes and a rubber duck from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Dominoes and a rubber duck"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A yellow rubber duck is positioned in the middle of a line of black and white dominoes on a wooden table. A stick attached to a black rotating platform rotates clockwise and knocks the first domino block. Static shot with no camera movement.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="FinePhyEval comparison: Dominoes and a rubber duck">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p019-07.jpg" aria-label="Ours — Dominoes and a rubber duck">
+            <source src="finephyeval/07_ours/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/07_ours/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Dominoes and a rubber duck">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.1</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p019-02.jpg" aria-label="Wan2.1 — Dominoes and a rubber duck">
+            <source src="finephyeval/02_base_wan21_t2v_1p3b/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/02_base_wan21_t2v_1p3b/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.1 video for Dominoes and a rubber duck">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p019-03.jpg" aria-label="PhysRAG — Dominoes and a rubber duck">
+            <source src="finephyeval/03_baseline_physrag/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/03_baseline_physrag/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Dominoes and a rubber duck">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p019-04.jpg" aria-label="VideoREPA — Dominoes and a rubber duck">
+            <source src="finephyeval/04_baseline_videorepa_5b/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/04_baseline_videorepa_5b/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Dominoes and a rubber duck">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p019-05.jpg" aria-label="DreamWorld — Dominoes and a rubber duck">
+            <source src="finephyeval/05_baseline_dreamworld/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/05_baseline_dreamworld/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for Dominoes and a rubber duck">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/finephyeval/p019-06.jpg" aria-label="VPT — Dominoes and a rubber duck">
+            <source src="finephyeval/06_baseline_vpt/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="finephyeval/06_baseline_vpt/p019_a-yellow-rubber-duck-is-positioned--e-first-domino-block.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Dominoes and a rubber duck">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article></section><section class="benchmark" id="videophy2" aria-labelledby="videophy2-heading">
+              <div class="benchmark-heading"><div><h3 id="videophy2-heading">VideoPhy2</h3><p>Everyday motion, human actions, and physical interactions.</p></div><span class="benchmark-count">06 cases · 5 methods</span></div>
+              <article class="case" id="videophy2-vp2_0019" data-task="t2v" data-benchmark="videophy2">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#videophy2-vp2_0019" class="case-id">VP2 / 0019</a><span class="tag">Hard case</span></div>
+          <h4>Hair in a stream of air</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Hair in a stream of air">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Hair in a stream of air from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Hair in a stream of air"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Original benchmark prompt</span>A person uses a low heat setting on the hairdryer to gently dry their fine hair.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VideoPhy2 comparison: Hair in a stream of air">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0019-06.jpg" aria-label="Ours — Hair in a stream of air">
+            <source src="videophy2/06_ours/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/06_ours/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Hair in a stream of air">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0019-02.jpg" aria-label="PhysRAG — Hair in a stream of air">
+            <source src="videophy2/02_baseline_physrag/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/02_baseline_physrag/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Hair in a stream of air">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0019-03.jpg" aria-label="VideoREPA — Hair in a stream of air">
+            <source src="videophy2/03_baseline_videorepa_5b/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/03_baseline_videorepa_5b/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Hair in a stream of air">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0019-04.jpg" aria-label="DreamWorld — Hair in a stream of air">
+            <source src="videophy2/04_baseline_dreamworld/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/04_baseline_dreamworld/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for Hair in a stream of air">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0019-05.jpg" aria-label="VPT — Hair in a stream of air">
+            <source src="videophy2/05_baseline_vpt/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/05_baseline_vpt/vp2_0019_a-person-uses-a-low-heat-setting-on--ry-their-fine-hair.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Hair in a stream of air">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="videophy2-vp2_0256" data-task="t2v" data-benchmark="videophy2">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#videophy2-vp2_0256" class="case-id">VP2 / 0256</a></div>
+          <h4>A somersault on a bouncy castle</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A somersault on a bouncy castle">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A somersault on a bouncy castle from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A somersault on a bouncy castle"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Original benchmark prompt</span>A child somersaults on a large bouncy castle, their body rotating fully in the air.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VideoPhy2 comparison: A somersault on a bouncy castle">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0256-06.jpg" aria-label="Ours — A somersault on a bouncy castle">
+            <source src="videophy2/06_ours/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/06_ours/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A somersault on a bouncy castle">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0256-02.jpg" aria-label="PhysRAG — A somersault on a bouncy castle">
+            <source src="videophy2/02_baseline_physrag/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/02_baseline_physrag/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A somersault on a bouncy castle">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0256-03.jpg" aria-label="VideoREPA — A somersault on a bouncy castle">
+            <source src="videophy2/03_baseline_videorepa_5b/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/03_baseline_videorepa_5b/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A somersault on a bouncy castle">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0256-04.jpg" aria-label="DreamWorld — A somersault on a bouncy castle">
+            <source src="videophy2/04_baseline_dreamworld/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/04_baseline_dreamworld/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for A somersault on a bouncy castle">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0256-05.jpg" aria-label="VPT — A somersault on a bouncy castle">
+            <source src="videophy2/05_baseline_vpt/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/05_baseline_vpt/vp2_0256_a-child-somersaults-on-a-large-bounc--g-fully-in-the-air.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A somersault on a bouncy castle">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="videophy2-vp2_0273" data-task="t2v" data-benchmark="videophy2">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#videophy2-vp2_0273" class="case-id">VP2 / 0273</a></div>
+          <h4>Paddling across still water</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Paddling across still water">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Paddling across still water from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Paddling across still water"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Original benchmark prompt</span>A canoeist uses a single-bladed paddle to propel their canoe across a lake, the paddle&#x27;s movement visible against the still water.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VideoPhy2 comparison: Paddling across still water">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0273-06.jpg" aria-label="Ours — Paddling across still water">
+            <source src="videophy2/06_ours/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/06_ours/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Paddling across still water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0273-02.jpg" aria-label="PhysRAG — Paddling across still water">
+            <source src="videophy2/02_baseline_physrag/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/02_baseline_physrag/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Paddling across still water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0273-03.jpg" aria-label="VideoREPA — Paddling across still water">
+            <source src="videophy2/03_baseline_videorepa_5b/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/03_baseline_videorepa_5b/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Paddling across still water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0273-04.jpg" aria-label="DreamWorld — Paddling across still water">
+            <source src="videophy2/04_baseline_dreamworld/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/04_baseline_dreamworld/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for Paddling across still water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0273-05.jpg" aria-label="VPT — Paddling across still water">
+            <source src="videophy2/05_baseline_vpt/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/05_baseline_vpt/vp2_0273_a-canoeist-uses-a-single-bladed-padd--st-the-still-water.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Paddling across still water">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="videophy2-vp2_0362" data-task="t2v" data-benchmark="videophy2">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#videophy2-vp2_0362" class="case-id">VP2 / 0362</a></div>
+          <h4>Jet skis and colliding wakes</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Jet skis and colliding wakes">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Jet skis and colliding wakes from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Jet skis and colliding wakes"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Original benchmark prompt</span>Two jetskis race side-by-side, their wakes colliding in a visible spray of water.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VideoPhy2 comparison: Jet skis and colliding wakes">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0362-06.jpg" aria-label="Ours — Jet skis and colliding wakes">
+            <source src="videophy2/06_ours/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/06_ours/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Jet skis and colliding wakes">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0362-02.jpg" aria-label="PhysRAG — Jet skis and colliding wakes">
+            <source src="videophy2/02_baseline_physrag/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/02_baseline_physrag/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Jet skis and colliding wakes">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0362-03.jpg" aria-label="VideoREPA — Jet skis and colliding wakes">
+            <source src="videophy2/03_baseline_videorepa_5b/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/03_baseline_videorepa_5b/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Jet skis and colliding wakes">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0362-04.jpg" aria-label="DreamWorld — Jet skis and colliding wakes">
+            <source src="videophy2/04_baseline_dreamworld/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/04_baseline_dreamworld/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for Jet skis and colliding wakes">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0362-05.jpg" aria-label="VPT — Jet skis and colliding wakes">
+            <source src="videophy2/05_baseline_vpt/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/05_baseline_vpt/vp2_0362_two-jetskis-race-side-by-side-their--ble-spray-of-water.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Jet skis and colliding wakes">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="videophy2-vp2_0390" data-task="t2v" data-benchmark="videophy2">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#videophy2-vp2_0390" class="case-id">VP2 / 0390</a></div>
+          <h4>Parasailing over the ocean</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Parasailing over the ocean">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Parasailing over the ocean from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Parasailing over the ocean"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Original benchmark prompt</span>A parasailer, harnessed to a bright orange parachute, is pulled along a calm ocean surface by a speedboat.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VideoPhy2 comparison: Parasailing over the ocean">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0390-06.jpg" aria-label="Ours — Parasailing over the ocean">
+            <source src="videophy2/06_ours/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/06_ours/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Parasailing over the ocean">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0390-02.jpg" aria-label="PhysRAG — Parasailing over the ocean">
+            <source src="videophy2/02_baseline_physrag/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/02_baseline_physrag/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Parasailing over the ocean">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0390-03.jpg" aria-label="VideoREPA — Parasailing over the ocean">
+            <source src="videophy2/03_baseline_videorepa_5b/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/03_baseline_videorepa_5b/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Parasailing over the ocean">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0390-04.jpg" aria-label="DreamWorld — Parasailing over the ocean">
+            <source src="videophy2/04_baseline_dreamworld/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/04_baseline_dreamworld/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for Parasailing over the ocean">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0390-05.jpg" aria-label="VPT — Parasailing over the ocean">
+            <source src="videophy2/05_baseline_vpt/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/05_baseline_vpt/vp2_0390_a-parasailer-harnessed-to-a-bright-o--ace-by-a-speedboat.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Parasailing over the ocean">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="videophy2-vp2_0534" data-task="t2v" data-benchmark="videophy2">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#videophy2-vp2_0534" class="case-id">VP2 / 0534</a></div>
+          <h4>A coin tossed into a cup</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A coin tossed into a cup">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A coin tossed into a cup from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A coin tossed into a cup"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Original benchmark prompt</span>A coin is flung into the air and caught in a metal cup.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VideoPhy2 comparison: A coin tossed into a cup">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0534-06.jpg" aria-label="Ours — A coin tossed into a cup">
+            <source src="videophy2/06_ours/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/06_ours/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A coin tossed into a cup">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0534-02.jpg" aria-label="PhysRAG — A coin tossed into a cup">
+            <source src="videophy2/02_baseline_physrag/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/02_baseline_physrag/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A coin tossed into a cup">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0534-03.jpg" aria-label="VideoREPA — A coin tossed into a cup">
+            <source src="videophy2/03_baseline_videorepa_5b/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/03_baseline_videorepa_5b/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A coin tossed into a cup">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>DreamWorld</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0534-04.jpg" aria-label="DreamWorld — A coin tossed into a cup">
+            <source src="videophy2/04_baseline_dreamworld/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/04_baseline_dreamworld/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" target="_blank" rel="noopener" aria-label="Open DreamWorld video for A coin tossed into a cup">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/videophy2/vp2_0534-05.jpg" aria-label="VPT — A coin tossed into a cup">
+            <source src="videophy2/05_baseline_vpt/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="videophy2/05_baseline_vpt/vp2_0534_a-coin-is-flung-into-the-air-and-caught-in-a-metal-cup.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A coin tossed into a cup">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article></section><section class="benchmark" id="vbench" aria-labelledby="vbench-heading">
+              <div class="benchmark-heading"><div><h3 id="vbench-heading">VBench</h3><p>Scenes, actions, object composition, and spatial relationships.</p></div><span class="benchmark-count">14 cases · 4 methods</span></div>
+              <article class="case" id="vbench-vb-01" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-01" class="case-id">VB-01</a><span class="tag">Human action</span></div>
+          <h4>A person is bending metal</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A person is bending metal">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A person is bending metal from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A person is bending metal"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A person is bending metal</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A person is bending metal">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-01-05.jpg" aria-label="Ours — A person is bending metal">
+            <source src="vbench/05_ours/human-action_a-person-is-bending-metal.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/human-action_a-person-is-bending-metal.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A person is bending metal">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-01-02.jpg" aria-label="PhysRAG — A person is bending metal">
+            <source src="vbench/02_baseline_physrag/human-action_a-person-is-bending-metal.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/human-action_a-person-is-bending-metal.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A person is bending metal">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-01-03.jpg" aria-label="VideoREPA — A person is bending metal">
+            <source src="vbench/03_baseline_videorepa_5b/human-action_a-person-is-bending-metal.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/human-action_a-person-is-bending-metal.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A person is bending metal">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-01-04.jpg" aria-label="VPT — A person is bending metal">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/human-action_a-person-is-bending-metal.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/human-action_a-person-is-bending-metal.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A person is bending metal">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-02" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-02" class="case-id">VB-02</a><span class="tag">Human action</span></div>
+          <h4>A person is ironing</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A person is ironing">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A person is ironing from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A person is ironing"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A person is ironing</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A person is ironing">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-02-05.jpg" aria-label="Ours — A person is ironing">
+            <source src="vbench/05_ours/human-action_a-person-is-ironing.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/human-action_a-person-is-ironing.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A person is ironing">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-02-02.jpg" aria-label="PhysRAG — A person is ironing">
+            <source src="vbench/02_baseline_physrag/human-action_a-person-is-ironing.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/human-action_a-person-is-ironing.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A person is ironing">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-02-03.jpg" aria-label="VideoREPA — A person is ironing">
+            <source src="vbench/03_baseline_videorepa_5b/human-action_a-person-is-ironing.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/human-action_a-person-is-ironing.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A person is ironing">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-02-04.jpg" aria-label="VPT — A person is ironing">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/human-action_a-person-is-ironing.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/human-action_a-person-is-ironing.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A person is ironing">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-03" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-03" class="case-id">VB-03</a><span class="tag">Multiple objects</span></div>
+          <h4>A chair and a couch</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A chair and a couch">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A chair and a couch from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A chair and a couch"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>a chair and a couch</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A chair and a couch">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-03-05.jpg" aria-label="Ours — A chair and a couch">
+            <source src="vbench/05_ours/multiple-objects_a-chair-and-a-couch.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/multiple-objects_a-chair-and-a-couch.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A chair and a couch">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-03-02.jpg" aria-label="PhysRAG — A chair and a couch">
+            <source src="vbench/02_baseline_physrag/multiple-objects_a-chair-and-a-couch.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/multiple-objects_a-chair-and-a-couch.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A chair and a couch">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-03-03.jpg" aria-label="VideoREPA — A chair and a couch">
+            <source src="vbench/03_baseline_videorepa_5b/multiple-objects_a-chair-and-a-couch.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/multiple-objects_a-chair-and-a-couch.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A chair and a couch">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-03-04.jpg" aria-label="VPT — A chair and a couch">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-chair-and-a-couch.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-chair-and-a-couch.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A chair and a couch">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-04" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-04" class="case-id">VB-04</a><span class="tag">Multiple objects</span></div>
+          <h4>A knife and a tv</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A knife and a tv">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A knife and a tv from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A knife and a tv"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>a knife and a tv</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A knife and a tv">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-04-05.jpg" aria-label="Ours — A knife and a tv">
+            <source src="vbench/05_ours/multiple-objects_a-knife-and-a-tv.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/multiple-objects_a-knife-and-a-tv.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A knife and a tv">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-04-02.jpg" aria-label="PhysRAG — A knife and a tv">
+            <source src="vbench/02_baseline_physrag/multiple-objects_a-knife-and-a-tv.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/multiple-objects_a-knife-and-a-tv.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A knife and a tv">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-04-03.jpg" aria-label="VideoREPA — A knife and a tv">
+            <source src="vbench/03_baseline_videorepa_5b/multiple-objects_a-knife-and-a-tv.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/multiple-objects_a-knife-and-a-tv.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A knife and a tv">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-04-04.jpg" aria-label="VPT — A knife and a tv">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-knife-and-a-tv.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-knife-and-a-tv.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A knife and a tv">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-05" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-05" class="case-id">VB-05</a><span class="tag">Multiple objects</span></div>
+          <h4>A skateboard and a surfboard</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A skateboard and a surfboard">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A skateboard and a surfboard from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A skateboard and a surfboard"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>a skateboard and a surfboard</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A skateboard and a surfboard">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-05-05.jpg" aria-label="Ours — A skateboard and a surfboard">
+            <source src="vbench/05_ours/multiple-objects_a-skateboard-and-a-surfboard.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/multiple-objects_a-skateboard-and-a-surfboard.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A skateboard and a surfboard">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-05-02.jpg" aria-label="PhysRAG — A skateboard and a surfboard">
+            <source src="vbench/02_baseline_physrag/multiple-objects_a-skateboard-and-a-surfboard.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/multiple-objects_a-skateboard-and-a-surfboard.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A skateboard and a surfboard">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-05-03.jpg" aria-label="VideoREPA — A skateboard and a surfboard">
+            <source src="vbench/03_baseline_videorepa_5b/multiple-objects_a-skateboard-and-a-surfboard.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/multiple-objects_a-skateboard-and-a-surfboard.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A skateboard and a surfboard">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-05-04.jpg" aria-label="VPT — A skateboard and a surfboard">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-skateboard-and-a-surfboard.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/multiple-objects_a-skateboard-and-a-surfboard.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A skateboard and a surfboard">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-06" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-06" class="case-id">VB-06</a><span class="tag">Object class</span></div>
+          <h4>A backpack</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A backpack">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A backpack from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A backpack"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>a backpack</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A backpack">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-06-05.jpg" aria-label="Ours — A backpack">
+            <source src="vbench/05_ours/object-class_a-backpack.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/object-class_a-backpack.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A backpack">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-06-02.jpg" aria-label="PhysRAG — A backpack">
+            <source src="vbench/02_baseline_physrag/object-class_a-backpack.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/object-class_a-backpack.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A backpack">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-06-03.jpg" aria-label="VideoREPA — A backpack">
+            <source src="vbench/03_baseline_videorepa_5b/object-class_a-backpack.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/object-class_a-backpack.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A backpack">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-06-04.jpg" aria-label="VPT — A backpack">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/object-class_a-backpack.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/object-class_a-backpack.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A backpack">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-07" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-07" class="case-id">VB-07</a><span class="tag">Object class</span></div>
+          <h4>A handbag</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A handbag">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A handbag from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A handbag"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>a handbag</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A handbag">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-07-05.jpg" aria-label="Ours — A handbag">
+            <source src="vbench/05_ours/object-class_a-handbag.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/object-class_a-handbag.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A handbag">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-07-02.jpg" aria-label="PhysRAG — A handbag">
+            <source src="vbench/02_baseline_physrag/object-class_a-handbag.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/object-class_a-handbag.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A handbag">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-07-03.jpg" aria-label="VideoREPA — A handbag">
+            <source src="vbench/03_baseline_videorepa_5b/object-class_a-handbag.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/object-class_a-handbag.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A handbag">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-07-04.jpg" aria-label="VPT — A handbag">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/object-class_a-handbag.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/object-class_a-handbag.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A handbag">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-08" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-08" class="case-id">VB-08</a><span class="tag">Overall consistency</span></div>
+          <h4>A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-08-05.jpg" aria-label="Ours — A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">
+            <source src="vbench/05_ours/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-08-02.jpg" aria-label="PhysRAG — A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">
+            <source src="vbench/02_baseline_physrag/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-08-03.jpg" aria-label="VideoREPA — A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">
+            <source src="vbench/03_baseline_videorepa_5b/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-08-04.jpg" aria-label="VPT — A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-beautiful-coastal-beach-in-sprin--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A beautiful coastal beach in spring, waves lapping on sand by Vincent van Gogh">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-09" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-09" class="case-id">VB-09</a><span class="tag">Overall consistency</span></div>
+          <h4>Overall consistency</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Overall consistency">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Overall consistency from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Overall consistency"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A boat sailing leisurely along the Seine River with the Eiffel Tower in background by Vincent van Gogh</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: Overall consistency">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-09-05.jpg" aria-label="Ours — Overall consistency">
+            <source src="vbench/05_ours/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Overall consistency">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-09-02.jpg" aria-label="PhysRAG — Overall consistency">
+            <source src="vbench/02_baseline_physrag/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Overall consistency">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-09-03.jpg" aria-label="VideoREPA — Overall consistency">
+            <source src="vbench/03_baseline_videorepa_5b/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Overall consistency">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-09-04.jpg" aria-label="VPT — Overall consistency">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-boat-sailing-leisurely-along-the--by-vincent-van-gogh.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Overall consistency">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-10" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-10" class="case-id">VB-10</a><span class="tag">Overall consistency</span></div>
+          <h4>A panda standing on a surfboard in the ocean in sunset</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A panda standing on a surfboard in the ocean in sunset">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A panda standing on a surfboard in the ocean in sunset from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A panda standing on a surfboard in the ocean in sunset"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>A panda standing on a surfboard in the ocean in sunset.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A panda standing on a surfboard in the ocean in sunset">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-10-05.jpg" aria-label="Ours — A panda standing on a surfboard in the ocean in sunset">
+            <source src="vbench/05_ours/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A panda standing on a surfboard in the ocean in sunset">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-10-02.jpg" aria-label="PhysRAG — A panda standing on a surfboard in the ocean in sunset">
+            <source src="vbench/02_baseline_physrag/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A panda standing on a surfboard in the ocean in sunset">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-10-03.jpg" aria-label="VideoREPA — A panda standing on a surfboard in the ocean in sunset">
+            <source src="vbench/03_baseline_videorepa_5b/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A panda standing on a surfboard in the ocean in sunset">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-10-04.jpg" aria-label="VPT — A panda standing on a surfboard in the ocean in sunset">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_a-panda-standing-on-a-surfboard-in-the-ocean-in-sunset.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A panda standing on a surfboard in the ocean in sunset">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-11" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-11" class="case-id">VB-11</a><span class="tag">Overall consistency</span></div>
+          <h4>Overall consistency</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Overall consistency">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Overall consistency from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Overall consistency"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>Snow rocky mountains peaks canyon. snow blanketed rocky mountains surround and shadow deep canyons. the canyons twist and bend through the high elevated mountain peaks.</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: Overall consistency">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-11-05.jpg" aria-label="Ours — Overall consistency">
+            <source src="vbench/05_ours/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Overall consistency">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-11-02.jpg" aria-label="PhysRAG — Overall consistency">
+            <source src="vbench/02_baseline_physrag/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Overall consistency">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-11-03.jpg" aria-label="VideoREPA — Overall consistency">
+            <source src="vbench/03_baseline_videorepa_5b/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Overall consistency">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-11-04.jpg" aria-label="VPT — Overall consistency">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/overall-consistency_snow-rocky-mountains-peaks-canyon--vated-mountain-peaks.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Overall consistency">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-12" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-12" class="case-id">VB-12</a><span class="tag">Scene</span></div>
+          <h4>Amusement park</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Amusement park">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Amusement park from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Amusement park"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>amusement park</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: Amusement park">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-12-05.jpg" aria-label="Ours — Amusement park">
+            <source src="vbench/05_ours/scene_amusement-park.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/scene_amusement-park.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Amusement park">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-12-02.jpg" aria-label="PhysRAG — Amusement park">
+            <source src="vbench/02_baseline_physrag/scene_amusement-park.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/scene_amusement-park.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Amusement park">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-12-03.jpg" aria-label="VideoREPA — Amusement park">
+            <source src="vbench/03_baseline_videorepa_5b/scene_amusement-park.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/scene_amusement-park.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for Amusement park">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-12-04.jpg" aria-label="VPT — Amusement park">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/scene_amusement-park.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/scene_amusement-park.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for Amusement park">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-13" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-13" class="case-id">VB-13</a><span class="tag">Spatial relationship</span></div>
+          <h4>A sports ball on the right of a baseball bat, front view</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for A sports ball on the right of a baseball bat, front view">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay A sports ball on the right of a baseball bat, front view from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for A sports ball on the right of a baseball bat, front view"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>a sports ball on the right of a baseball bat, front view</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: A sports ball on the right of a baseball bat, front view">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-13-05.jpg" aria-label="Ours — A sports ball on the right of a baseball bat, front view">
+            <source src="vbench/05_ours/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for A sports ball on the right of a baseball bat, front view">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-13-02.jpg" aria-label="PhysRAG — A sports ball on the right of a baseball bat, front view">
+            <source src="vbench/02_baseline_physrag/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for A sports ball on the right of a baseball bat, front view">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-13-03.jpg" aria-label="VideoREPA — A sports ball on the right of a baseball bat, front view">
+            <source src="vbench/03_baseline_videorepa_5b/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for A sports ball on the right of a baseball bat, front view">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-13-04.jpg" aria-label="VPT — A sports ball on the right of a baseball bat, front view">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/spatial-relationship_a-sports-ball-on-the-right-of-a-baseball-bat-front-view.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for A sports ball on the right of a baseball bat, front view">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="vbench-vb-14" data-task="t2v" data-benchmark="vbench">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#vbench-vb-14" class="case-id">VB-14</a><span class="tag">Spatial relationship</span></div>
+          <h4>An orange on the top of a carrot, front view</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for An orange on the top of a carrot, front view">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay An orange on the top of a carrot, front view from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for An orange on the top of a carrot, front view"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <p class="prompt"><span>Prompt</span>an orange on the top of a carrot, front view</p>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="VBench comparison: An orange on the top of a carrot, front view">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-14-05.jpg" aria-label="Ours — An orange on the top of a carrot, front view">
+            <source src="vbench/05_ours/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/05_ours/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for An orange on the top of a carrot, front view">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-14-02.jpg" aria-label="PhysRAG — An orange on the top of a carrot, front view">
+            <source src="vbench/02_baseline_physrag/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/02_baseline_physrag/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for An orange on the top of a carrot, front view">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VideoREPA</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-14-03.jpg" aria-label="VideoREPA — An orange on the top of a carrot, front view">
+            <source src="vbench/03_baseline_videorepa_5b/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/03_baseline_videorepa_5b/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" target="_blank" rel="noopener" aria-label="Open VideoREPA video for An orange on the top of a carrot, front view">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VPT</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/vbench/vb-14-04.jpg" aria-label="VPT — An orange on the top of a carrot, front view">
+            <source src="vbench/04_baseline_vpt_wan21_1p3b/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="vbench/04_baseline_vpt_wan21_1p3b/spatial-relationship_an-orange-on-the-top-of-a-carrot-front-view.mp4" target="_blank" rel="noopener" aria-label="Open VPT video for An orange on the top of a carrot, front view">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article></section></section><section class="task-section" id="i2v" aria-labelledby="i2v-heading">
+          <header class="section-heading"><span class="section-number">02</span><div><p class="eyebrow">I2V comparisons</p><h2 id="i2v-heading">Image to video</h2><p>From an input image to a physical event. Compare the conditioning frame, reference, and generated videos.</p></div></header>
+          <section class="benchmark" id="physics-iq-veried" aria-labelledby="physics-iq-veried-heading">
+              <div class="benchmark-heading"><div><h3 id="physics-iq-veried-heading">Physics-IQ</h3><p>Image-conditioned physical events, with reference videos.</p></div><span class="benchmark-count">10 cases · 6 videos / case</span></div>
+              <article class="case" id="physics-iq-veried-p0019" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0019" class="case-id">P0019</a></div>
+          <h4>Ball ramp</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Ball ramp">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Ball ramp from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Ball ramp"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. A simple ramp made of cardboard, propped up by a blue block on a light-colored wooden table. There&#x27;s a black pipe to the left of the frame that directly points towards it. The yellow tennis ball rolls straight out of the black pipe onto the ramp.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0019_ball-ramp_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0019_ball-ramp_switch-frame.jpg" alt="Input image for Ball ramp" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Ball ramp">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0019-07.jpg" aria-label="Ours — Ball ramp">
+            <source src="physics-iq-veried/07_ours/p0019_ball-ramp.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0019_ball-ramp.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Ball ramp">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0019-02.jpg" aria-label="Ground truth — Ball ramp">
+            <source src="physics-iq-veried/02_gt/p0019_ball-ramp.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0019_ball-ramp.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Ball ramp">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0019-03.jpg" aria-label="Wan2.2 — Ball ramp">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0019_ball-ramp.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0019_ball-ramp.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Ball ramp">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0019-04.jpg" aria-label="VLiPP — Ball ramp">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0019_ball-ramp.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0019_ball-ramp.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Ball ramp">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0019-05.jpg" aria-label="WMReward — Ball ramp">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0019_ball-ramp.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0019_ball-ramp.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Ball ramp">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0019-06.jpg" aria-label="PhysRAG — Ball ramp">
+            <source src="physics-iq-veried/06_baseline_physrag/p0019_ball-ramp.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0019_ball-ramp.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Ball ramp">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0027" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0027" class="case-id">P0027</a></div>
+          <h4>Ball rolls on glass</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Ball rolls on glass">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Ball rolls on glass from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Ball rolls on glass"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. A piece of clear glass resting on the edge of a light-colored wooden table against a plain white wall. The blue tennis ball rolls from the wooden table over the glass.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0027_ball-rolls-on-glass_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0027_ball-rolls-on-glass_switch-frame.jpg" alt="Input image for Ball rolls on glass" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Ball rolls on glass">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0027-07.jpg" aria-label="Ours — Ball rolls on glass">
+            <source src="physics-iq-veried/07_ours/p0027_ball-rolls-on-glass.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0027_ball-rolls-on-glass.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Ball rolls on glass">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0027-02.jpg" aria-label="Ground truth — Ball rolls on glass">
+            <source src="physics-iq-veried/02_gt/p0027_ball-rolls-on-glass.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0027_ball-rolls-on-glass.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Ball rolls on glass">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0027-03.jpg" aria-label="Wan2.2 — Ball rolls on glass">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0027_ball-rolls-on-glass.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0027_ball-rolls-on-glass.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Ball rolls on glass">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0027-04.jpg" aria-label="VLiPP — Ball rolls on glass">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0027_ball-rolls-on-glass.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0027_ball-rolls-on-glass.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Ball rolls on glass">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0027-05.jpg" aria-label="WMReward — Ball rolls on glass">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0027_ball-rolls-on-glass.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0027_ball-rolls-on-glass.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Ball rolls on glass">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0027-06.jpg" aria-label="PhysRAG — Ball rolls on glass">
+            <source src="physics-iq-veried/06_baseline_physrag/p0027_ball-rolls-on-glass.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0027_ball-rolls-on-glass.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Ball rolls on glass">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0040" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0040" class="case-id">P0040</a></div>
+          <h4>Cut orange</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Cut orange">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Cut orange from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Cut orange"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. One half of a tangerine has been placed on a glass cutting board. The knife slices through the tangerine.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0040_cut-orange_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0040_cut-orange_switch-frame.jpg" alt="Input image for Cut orange" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Cut orange">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0040-07.jpg" aria-label="Ours — Cut orange">
+            <source src="physics-iq-veried/07_ours/p0040_cut-orange.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0040_cut-orange.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Cut orange">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0040-02.jpg" aria-label="Ground truth — Cut orange">
+            <source src="physics-iq-veried/02_gt/p0040_cut-orange.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0040_cut-orange.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Cut orange">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0040-03.jpg" aria-label="Wan2.2 — Cut orange">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0040_cut-orange.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0040_cut-orange.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Cut orange">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0040-04.jpg" aria-label="VLiPP — Cut orange">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0040_cut-orange.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0040_cut-orange.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Cut orange">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0040-05.jpg" aria-label="WMReward — Cut orange">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0040_cut-orange.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0040_cut-orange.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Cut orange">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0040-06.jpg" aria-label="PhysRAG — Cut orange">
+            <source src="physics-iq-veried/06_baseline_physrag/p0040_cut-orange.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0040_cut-orange.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Cut orange">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0046" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0046" class="case-id">P0046</a></div>
+          <h4>Domino in juice</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Domino in juice">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Domino in juice from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Domino in juice"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The mug is sitting on a wooden surface. The blue-black grabber tool drops the white ceramic domino into the mug that is filled with a dark-colored liquid.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0046_domino-in-juice_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0046_domino-in-juice_switch-frame.jpg" alt="Input image for Domino in juice" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Domino in juice">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0046-07.jpg" aria-label="Ours — Domino in juice">
+            <source src="physics-iq-veried/07_ours/p0046_domino-in-juice.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0046_domino-in-juice.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Domino in juice">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0046-02.jpg" aria-label="Ground truth — Domino in juice">
+            <source src="physics-iq-veried/02_gt/p0046_domino-in-juice.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0046_domino-in-juice.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Domino in juice">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0046-03.jpg" aria-label="Wan2.2 — Domino in juice">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0046_domino-in-juice.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0046_domino-in-juice.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Domino in juice">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0046-04.jpg" aria-label="VLiPP — Domino in juice">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0046_domino-in-juice.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0046_domino-in-juice.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Domino in juice">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0046-05.jpg" aria-label="WMReward — Domino in juice">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0046_domino-in-juice.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0046_domino-in-juice.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Domino in juice">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0046-06.jpg" aria-label="PhysRAG — Domino in juice">
+            <source src="physics-iq-veried/06_baseline_physrag/p0046_domino-in-juice.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0046_domino-in-juice.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Domino in juice">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0084" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0084" class="case-id">P0084</a></div>
+          <h4>Light on statue</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Light on statue">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Light on statue from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Light on statue"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The small porcelain statue sits on the black, clockwise-rotating platform, and the spotlight points toward the porcelain statue. The small porcelain statue rotates clockwise on the black platform while the spotlight casts a large shadow on the wall behind it.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0084_light-on-statue_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0084_light-on-statue_switch-frame.jpg" alt="Input image for Light on statue" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Light on statue">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0084-07.jpg" aria-label="Ours — Light on statue">
+            <source src="physics-iq-veried/07_ours/p0084_light-on-statue.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0084_light-on-statue.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Light on statue">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0084-02.jpg" aria-label="Ground truth — Light on statue">
+            <source src="physics-iq-veried/02_gt/p0084_light-on-statue.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0084_light-on-statue.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Light on statue">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0084-03.jpg" aria-label="Wan2.2 — Light on statue">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0084_light-on-statue.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0084_light-on-statue.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Light on statue">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0084-04.jpg" aria-label="VLiPP — Light on statue">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0084_light-on-statue.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0084_light-on-statue.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Light on statue">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0084-05.jpg" aria-label="WMReward — Light on statue">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0084_light-on-statue.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0084_light-on-statue.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Light on statue">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0084-06.jpg" aria-label="PhysRAG — Light on statue">
+            <source src="physics-iq-veried/06_baseline_physrag/p0084_light-on-statue.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0084_light-on-statue.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Light on statue">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0110" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0110" class="case-id">P0110</a></div>
+          <h4>Match</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Match">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Match from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Match"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The lit match is being lowered into the glass of water.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0110_match_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0110_match_switch-frame.jpg" alt="Input image for Match" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Match">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0110-07.jpg" aria-label="Ours — Match">
+            <source src="physics-iq-veried/07_ours/p0110_match.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0110_match.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Match">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0110-02.jpg" aria-label="Ground truth — Match">
+            <source src="physics-iq-veried/02_gt/p0110_match.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0110_match.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Match">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0110-03.jpg" aria-label="Wan2.2 — Match">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0110_match.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0110_match.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Match">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0110-04.jpg" aria-label="VLiPP — Match">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0110_match.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0110_match.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Match">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0110-05.jpg" aria-label="WMReward — Match">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0110_match.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0110_match.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Match">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0110-06.jpg" aria-label="PhysRAG — Match">
+            <source src="physics-iq-veried/06_baseline_physrag/p0110_match.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0110_match.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Match">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0115" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0115" class="case-id">P0115</a></div>
+          <h4>Mirror ball fall</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Mirror ball fall">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Mirror ball fall from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Mirror ball fall"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The tennis ball attached to a magnet that hangs from an orange cord was hovering in the air in front of the mirror. The mirror creates the illusion of two tennis balls. The tennis ball hanging in front of the mirror is slowly lowered.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0115_mirror-ball-fall_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0115_mirror-ball-fall_switch-frame.jpg" alt="Input image for Mirror ball fall" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Mirror ball fall">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0115-07.jpg" aria-label="Ours — Mirror ball fall">
+            <source src="physics-iq-veried/07_ours/p0115_mirror-ball-fall.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0115_mirror-ball-fall.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Mirror ball fall">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0115-02.jpg" aria-label="Ground truth — Mirror ball fall">
+            <source src="physics-iq-veried/02_gt/p0115_mirror-ball-fall.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0115_mirror-ball-fall.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Mirror ball fall">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0115-03.jpg" aria-label="Wan2.2 — Mirror ball fall">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0115_mirror-ball-fall.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0115_mirror-ball-fall.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Mirror ball fall">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0115-04.jpg" aria-label="VLiPP — Mirror ball fall">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0115_mirror-ball-fall.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0115_mirror-ball-fall.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Mirror ball fall">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0115-05.jpg" aria-label="WMReward — Mirror ball fall">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0115_mirror-ball-fall.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0115_mirror-ball-fall.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Mirror ball fall">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0115-06.jpg" aria-label="PhysRAG — Mirror ball fall">
+            <source src="physics-iq-veried/06_baseline_physrag/p0115_mirror-ball-fall.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0115_mirror-ball-fall.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Mirror ball fall">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0133" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0133" class="case-id">P0133</a></div>
+          <h4>Paper fall water</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Paper fall water">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Paper fall water from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Paper fall water"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The orange-black grabber tool is suspended over the bowl of water on a wooden table. The orange-black grabber tool releases the crumpled piece of paper over the bowl of water.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0133_paper-fall-water_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0133_paper-fall-water_switch-frame.jpg" alt="Input image for Paper fall water" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Paper fall water">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0133-07.jpg" aria-label="Ours — Paper fall water">
+            <source src="physics-iq-veried/07_ours/p0133_paper-fall-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0133_paper-fall-water.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Paper fall water">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0133-02.jpg" aria-label="Ground truth — Paper fall water">
+            <source src="physics-iq-veried/02_gt/p0133_paper-fall-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0133_paper-fall-water.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Paper fall water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0133-03.jpg" aria-label="Wan2.2 — Paper fall water">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0133_paper-fall-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0133_paper-fall-water.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Paper fall water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0133-04.jpg" aria-label="VLiPP — Paper fall water">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0133_paper-fall-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0133_paper-fall-water.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Paper fall water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0133-05.jpg" aria-label="WMReward — Paper fall water">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0133_paper-fall-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0133_paper-fall-water.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Paper fall water">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0133-06.jpg" aria-label="PhysRAG — Paper fall water">
+            <source src="physics-iq-veried/06_baseline_physrag/p0133_paper-fall-water.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0133_paper-fall-water.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Paper fall water">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0140" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0140" class="case-id">P0140</a></div>
+          <h4>Paper smoke</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Paper smoke">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Paper smoke from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Paper smoke"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The piece of folded paper sits on a glass cutting board. The piece of folded paper is burning while white smoke is emitting from it.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0140_paper-smoke_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0140_paper-smoke_switch-frame.jpg" alt="Input image for Paper smoke" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Paper smoke">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0140-07.jpg" aria-label="Ours — Paper smoke">
+            <source src="physics-iq-veried/07_ours/p0140_paper-smoke.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0140_paper-smoke.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Paper smoke">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0140-02.jpg" aria-label="Ground truth — Paper smoke">
+            <source src="physics-iq-veried/02_gt/p0140_paper-smoke.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0140_paper-smoke.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Paper smoke">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0140-03.jpg" aria-label="Wan2.2 — Paper smoke">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0140_paper-smoke.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0140_paper-smoke.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Paper smoke">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0140-04.jpg" aria-label="VLiPP — Paper smoke">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0140_paper-smoke.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0140_paper-smoke.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Paper smoke">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0140-05.jpg" aria-label="WMReward — Paper smoke">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0140_paper-smoke.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0140_paper-smoke.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Paper smoke">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0140-06.jpg" aria-label="PhysRAG — Paper smoke">
+            <source src="physics-iq-veried/06_baseline_physrag/p0140_paper-smoke.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0140_paper-smoke.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Paper smoke">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article><article class="case" id="physics-iq-veried-p0155" data-task="i2v" data-benchmark="physics-iq-veried">
+      <div class="case-heading">
+        <div><div class="case-meta"><a href="#physics-iq-veried-p0155" class="case-id">P0155</a></div>
+          <h4>Rolling reflection</h4></div>
+        <div class="case-controls enhanced" role="group" aria-label="Playback for Rolling reflection">
+          <button type="button" class="play-button" data-action="play"><span aria-hidden="true">▶</span> Play together</button>
+          <button type="button" data-action="pause">Pause</button>
+          <button type="button" data-action="replay" aria-label="Replay Rolling reflection from the beginning">↺ Replay</button>
+          <label class="speed-label"><span class="sr-only">Playback speed</span><select class="speed" aria-label="Playback speed for Rolling reflection"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+        </div>
+      </div>
+      <div class="case-context">
+        <p class="prompt"><span>Prompt</span>Static locked-off single-shot with fixed frame throughout filmed with constant framerate in real-time. The scene shows a realistic scientific demonstration. The scene only contains the described setup and actions. The 30lb kettlebell sits next to a mirror that reflects the kettlebell on a wooden table. The tennis ball rolls slowly towards the 30lb kettlebell next to a mirror and hits the kettlebell.</p>
+        <figure class="method input-frame">
+          <figcaption><strong>Input image</strong></figcaption>
+          <a href="physics-iq-veried/01_input/p0155_rolling-reflection_switch-frame.jpg" target="_blank" rel="noopener" title="Open full-size input image">
+            <img src="physics-iq-veried/01_input/p0155_rolling-reflection_switch-frame.jpg" alt="Input image for Rolling reflection" loading="lazy" decoding="async" width="480" height="270">
+          </a><span class="media-note">Image input ↗</span>
+        </figure>
+      </div>
+      
+      <div class="comparison-scroll" tabindex="0" role="region" aria-label="Physics-IQ comparison: Rolling reflection">
+        <div class="video-grid"><figure class="method ours">
+          <figcaption><strong>Ours</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0155-07.jpg" aria-label="Ours — Rolling reflection">
+            <source src="physics-iq-veried/07_ours/p0155_rolling-reflection.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/07_ours/p0155_rolling-reflection.mp4" target="_blank" rel="noopener" aria-label="Open Ours video for Rolling reflection">Open video ↗</a>
+        </figure><figure class="method reference">
+          <figcaption><strong>Ground truth</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0155-02.jpg" aria-label="Ground truth — Rolling reflection">
+            <source src="physics-iq-veried/02_gt/p0155_rolling-reflection.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/02_gt/p0155_rolling-reflection.mp4" target="_blank" rel="noopener" aria-label="Open Ground truth video for Rolling reflection">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>Wan2.2</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0155-03.jpg" aria-label="Wan2.2 — Rolling reflection">
+            <source src="physics-iq-veried/03_base_wan22_ti2v_5b/p0155_rolling-reflection.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/03_base_wan22_ti2v_5b/p0155_rolling-reflection.mp4" target="_blank" rel="noopener" aria-label="Open Wan2.2 video for Rolling reflection">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>VLiPP</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0155-04.jpg" aria-label="VLiPP — Rolling reflection">
+            <source src="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0155_rolling-reflection.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/04_baseline_vlipp_cogvideox5b_i2v/p0155_rolling-reflection.mp4" target="_blank" rel="noopener" aria-label="Open VLiPP video for Rolling reflection">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>WMReward</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0155-05.jpg" aria-label="WMReward — Rolling reflection">
+            <source src="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0155_rolling-reflection.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/05_baseline_wmreward_rho0.001_f1/p0155_rolling-reflection.mp4" target="_blank" rel="noopener" aria-label="Open WMReward video for Rolling reflection">Open video ↗</a>
+        </figure><figure class="method">
+          <figcaption><strong>PhysRAG</strong></figcaption>
+          <video controls muted loop playsinline preload="none" poster="assets/posters/physics-iq-veried/p0155-06.jpg" aria-label="PhysRAG — Rolling reflection">
+            <source src="physics-iq-veried/06_baseline_physrag/p0155_rolling-reflection.mp4" type="video/mp4">
+            Your browser does not support embedded video. Use the video link below.
+          </video>
+          <a class="media-note" href="physics-iq-veried/06_baseline_physrag/p0155_rolling-reflection.mp4" target="_blank" rel="noopener" aria-label="Open PhysRAG video for Rolling reflection">Open video ↗</a>
+        </figure></div>
+      </div>
+      <p class="playback-status enhanced" role="status" aria-live="polite"></p>
+    </article></section></section>
+  </main>
+  <footer><div><strong>Qualitative Results</strong><p>Anonymous supplementary material · 32 cases · 158 videos</p></div><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>

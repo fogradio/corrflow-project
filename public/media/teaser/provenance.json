@@ -1,0 +1,37 @@
+{
+  "title": "CorrFlow \u2014 self-correction inside the sampling loop",
+  "durationSeconds": 52,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "audioTracks": 0,
+  "sourceDirectory": "paper/6a843d2839af97b2b532565f/figs",
+  "sources": {
+    "intuition.svg": "727f99eb1f98ab9231ad7f092a8b64bce8cb260e3753a98ac5e58559fc52f519",
+    "method.svg": "411766147c845c611f8eab8f3f56865184b320cf21b452dad1641c3db88993bf"
+  },
+  "chapters": [
+    {
+      "start": 0,
+      "title": "Prediction, discrepancy, correction"
+    },
+    {
+      "start": 17.3,
+      "title": "Reuse the base forward pass"
+    },
+    {
+      "start": 25.7,
+      "title": "Inside the refiner"
+    },
+    {
+      "start": 37.7,
+      "title": "Correct the velocity, update, repeat"
+    }
+  ],
+  "notes": [
+    "The original embedded images and mathematical geometry are preserved.",
+    "Reference is shown only for training intuition, never as an inference input.",
+    "Animated pulses and the sigma rail are schematic, not recorded inference traces.",
+    "No synthesized images, score tables, audio, or qualitative-results montage."
+  ]
+}

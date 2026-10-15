@@ -1,0 +1,34 @@
+vid: vp2_0256
+prompt_index: 256
+action: bouncing on bouncy castle
+category: Sports and Physical Activities
+is_hard: 0
+
+[scoring caption / official VideoPhy2 prompt]
+A child somersaults on a large bouncy castle, their body rotating fully in the air.
+
+[generation caption (upsampled, fed to Wan2.1 / PhysRAG / VideoREPA / DreamWorld / ours)]
+  In this vibrant outdoor scene, a child clad in a striking red and white striped shirt and blue shorts joyfully leaps onto a massive, inflatable bouncy castle, its bright yellow and blue stripes contrasting beautifully with the lush green grass. The camera captures the child's exhilarating somersault, their body gracefully arching and spinning in mid-air, showcasing the thrill of youthful exuberance. The background features a serene blue sky, dotted with fluffy white clouds, enhancing the playful atmosphere. As the child lands with a soft bounce, the camera remains static, allowing the viewer to fully absorb the joy and freedom of this moment. The scene is illuminated by the warm glow of natural light, creating a cinematic quality that invites the audience to share in the child's delightful adventure.
+
+[physics rules (21), rule -> laws]
+- The body maintains contact with the inflatable surface during descent  ->  Friction
+- The bounce house remains inflated while the child interacts with it.  ->  Buoyancy
+- The bouncy castle deforms slightly upon impact with the boy's body and then returns to its original shape.  ->  Elasticity
+- The boy's body moves downwards after contacting the bounce house.  ->  Gravity
+- The boy's body moves horizontally towards the bounce house.  ->  Gravity
+- The boy's downward velocity increases as he falls.  ->  Gravity
+- The boy's position changes from high to low as he slides down.  ->  Gravity
+- The boy's position changes from low to high as he climbs the slide.  ->  Gravity
+- The boy's speed changes as he runs.  ->  Friction
+- The boy's trajectory is parabolic after leaving the bouncy castle.  ->  Gravity
+- The child experiences a force propelling them upwards during the jump  ->  Gravity
+- The child maintains a realistic and proportional body shape during the jump  ->  Elasticity
+- The child must land on the surface of the bouncy castle before gaining vertical height again.  ->  Gravity
+- The child's body deforms slightly when contacting the bounce house walls.  ->  Elasticity
+- The child's body moves up and then down repeatedly.  ->  Gravity
+- The child's position changes over time.  ->  Gravity
+- The child's position changes vertically as they climb.  ->  Gravity
+- The child's position changes within the bounce house.  ->  Gravity
+- The inflatable bounce house deforms when the child lands on it.  ->  Elasticity
+- The inflatable slide deforms under the boy's weight.  ->  Elasticity
+- The parts of the bounce house remain connected and do not change color during deformation  ->  Elasticity

@@ -1,0 +1,450 @@
+[
+  {
+    "src": "media/images/corrflow-c0001-i05881.webp",
+    "label": "Goldfish",
+    "classId": 1,
+    "sampleId": "imagenet-05881",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0949-i23647.webp",
+    "label": "Strawberry",
+    "classId": 949,
+    "sampleId": "imagenet-23647",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0483-i44363.webp",
+    "label": "Castle",
+    "classId": 483,
+    "sampleId": "imagenet-44363",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0022-i17758.webp",
+    "label": "Bald eagle",
+    "classId": 22,
+    "sampleId": "imagenet-17758",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0024-i26442.webp",
+    "label": "Great grey owl",
+    "classId": 24,
+    "sampleId": "imagenet-26442",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0950-i41932.webp",
+    "label": "Orange",
+    "classId": 950,
+    "sampleId": "imagenet-41932",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0546-i29012.webp",
+    "label": "Electric guitar",
+    "classId": 546,
+    "sampleId": "imagenet-29012",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0029-i42836.webp",
+    "label": "Axolotl",
+    "classId": 29,
+    "sampleId": "imagenet-42836",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0088-i08305.webp",
+    "label": "Macaw",
+    "classId": 88,
+    "sampleId": "imagenet-08305",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0951-i38784.webp",
+    "label": "Lemon",
+    "classId": 951,
+    "sampleId": "imagenet-38784",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0579-i43800.webp",
+    "label": "Grand piano",
+    "classId": 579,
+    "sampleId": "imagenet-43800",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0089-i44992.webp",
+    "label": "Sulphur-crested cockatoo",
+    "classId": 89,
+    "sampleId": "imagenet-44992",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0099-i18813.webp",
+    "label": "Goose",
+    "classId": 99,
+    "sampleId": "imagenet-18813",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0954-i25779.webp",
+    "label": "Banana",
+    "classId": 954,
+    "sampleId": "imagenet-25779",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0609-i36214.webp",
+    "label": "Jeep",
+    "classId": 609,
+    "sampleId": "imagenet-36214",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0107-i05800.webp",
+    "label": "Jellyfish",
+    "classId": 107,
+    "sampleId": "imagenet-05800",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0130-i26110.webp",
+    "label": "Flamingo",
+    "classId": 130,
+    "sampleId": "imagenet-26110",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0957-i16883.webp",
+    "label": "Pomegranate",
+    "classId": 957,
+    "sampleId": "imagenet-16883",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0619-i11304.webp",
+    "label": "Lampshade",
+    "classId": 619,
+    "sampleId": "imagenet-11304",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0145-i30757.webp",
+    "label": "King penguin",
+    "classId": 145,
+    "sampleId": "imagenet-30757",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0157-i36237.webp",
+    "label": "Papillon",
+    "classId": 157,
+    "sampleId": "imagenet-36237",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0958-i46754.webp",
+    "label": "Hay",
+    "classId": 958,
+    "sampleId": "imagenet-46754",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0625-i44800.webp",
+    "label": "Lifeboat",
+    "classId": 625,
+    "sampleId": "imagenet-44800",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0162-i13791.webp",
+    "label": "Beagle",
+    "classId": 162,
+    "sampleId": "imagenet-13791",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0207-i33778.webp",
+    "label": "Golden retriever",
+    "classId": 207,
+    "sampleId": "imagenet-33778",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0970-i34402.webp",
+    "label": "Alpine landscape",
+    "classId": 970,
+    "sampleId": "imagenet-34402",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0701-i23160.webp",
+    "label": "Parachute",
+    "classId": 701,
+    "sampleId": "imagenet-23160",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0245-i48607.webp",
+    "label": "French bulldog",
+    "classId": 245,
+    "sampleId": "imagenet-48607",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0266-i29037.webp",
+    "label": "Miniature poodle",
+    "classId": 266,
+    "sampleId": "imagenet-29037",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0973-i19278.webp",
+    "label": "Coral reef",
+    "classId": 973,
+    "sampleId": "imagenet-19278",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0705-i49007.webp",
+    "label": "Passenger car",
+    "classId": 705,
+    "sampleId": "imagenet-49007",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0283-i01526.webp",
+    "label": "Persian cat",
+    "classId": 283,
+    "sampleId": "imagenet-01526",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0284-i02044.webp",
+    "label": "Siamese cat",
+    "classId": 284,
+    "sampleId": "imagenet-02044",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0974-i09843.webp",
+    "label": "Geyser",
+    "classId": 974,
+    "sampleId": "imagenet-09843",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0724-i06336.webp",
+    "label": "Pirate ship",
+    "classId": 724,
+    "sampleId": "imagenet-06336",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0288-i32771.webp",
+    "label": "Leopard",
+    "classId": 288,
+    "sampleId": "imagenet-32771",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0292-i38817.webp",
+    "label": "Tiger",
+    "classId": 292,
+    "sampleId": "imagenet-38817",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0975-i47413.webp",
+    "label": "Lakeshore",
+    "classId": 975,
+    "sampleId": "imagenet-47413",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0736-i23989.webp",
+    "label": "Billiard table",
+    "classId": 736,
+    "sampleId": "imagenet-23989",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0301-i08952.webp",
+    "label": "Ladybug",
+    "classId": 301,
+    "sampleId": "imagenet-08952",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0306-i29764.webp",
+    "label": "Rhinoceros beetle",
+    "classId": 306,
+    "sampleId": "imagenet-29764",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0978-i09285.webp",
+    "label": "Seashore",
+    "classId": 978,
+    "sampleId": "imagenet-09285",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0750-i07604.webp",
+    "label": "Quilt",
+    "classId": 750,
+    "sampleId": "imagenet-07604",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0323-i35211.webp",
+    "label": "Monarch butterfly",
+    "classId": 323,
+    "sampleId": "imagenet-35211",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0331-i14050.webp",
+    "label": "Hare",
+    "classId": 331,
+    "sampleId": "imagenet-14050",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0980-i19927.webp",
+    "label": "Volcano",
+    "classId": 980,
+    "sampleId": "imagenet-19927",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0780-i45598.webp",
+    "label": "Schooner",
+    "classId": 780,
+    "sampleId": "imagenet-45598",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0340-i29516.webp",
+    "label": "Zebra",
+    "classId": 340,
+    "sampleId": "imagenet-29516",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0348-i02624.webp",
+    "label": "Ram",
+    "classId": 348,
+    "sampleId": "imagenet-02624",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0985-i02493.webp",
+    "label": "Daisy",
+    "classId": 985,
+    "sampleId": "imagenet-02493",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0789-i49989.webp",
+    "label": "Shoji screen",
+    "classId": 789,
+    "sampleId": "imagenet-49989",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0383-i31893.webp",
+    "label": "Ring-tailed lemur",
+    "classId": 383,
+    "sampleId": "imagenet-31893",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0386-i22959.webp",
+    "label": "African elephant",
+    "classId": 386,
+    "sampleId": "imagenet-22959",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0986-i14154.webp",
+    "label": "Yellow lady's slipper",
+    "classId": 986,
+    "sampleId": "imagenet-14154",
+    "group": "nature"
+  },
+  {
+    "src": "media/images/corrflow-c0812-i07121.webp",
+    "label": "Space shuttle",
+    "classId": 812,
+    "sampleId": "imagenet-07121",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0388-i12707.webp",
+    "label": "Giant panda",
+    "classId": 388,
+    "sampleId": "imagenet-12707",
+    "group": "animals"
+  },
+  {
+    "src": "media/images/corrflow-c0817-i03206.webp",
+    "label": "Sports car",
+    "classId": 817,
+    "sampleId": "imagenet-03206",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0850-i18535.webp",
+    "label": "Teddy bear",
+    "classId": 850,
+    "sampleId": "imagenet-18535",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0873-i32040.webp",
+    "label": "Triumphal arch",
+    "classId": 873,
+    "sampleId": "imagenet-32040",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0879-i49653.webp",
+    "label": "Umbrella",
+    "classId": 879,
+    "sampleId": "imagenet-49653",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0888-i33811.webp",
+    "label": "Viaduct",
+    "classId": 888,
+    "sampleId": "imagenet-33811",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0889-i23330.webp",
+    "label": "Violin",
+    "classId": 889,
+    "sampleId": "imagenet-23330",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0963-i46389.webp",
+    "label": "Pizza",
+    "classId": 963,
+    "sampleId": "imagenet-46389",
+    "group": "objects"
+  },
+  {
+    "src": "media/images/corrflow-c0968-i23706.webp",
+    "label": "Cup",
+    "classId": 968,
+    "sampleId": "imagenet-23706",
+    "group": "objects"
+  }
+]

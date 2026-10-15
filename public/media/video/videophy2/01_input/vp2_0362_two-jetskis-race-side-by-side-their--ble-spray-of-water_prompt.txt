@@ -1,0 +1,30 @@
+vid: vp2_0362
+prompt_index: 362
+action: jetskiing
+category: Sports and Physical Activities
+is_hard: 0
+
+[scoring caption / official VideoPhy2 prompt]
+Two jetskis race side-by-side, their wakes colliding in a visible spray of water.
+
+[generation caption (upsampled, fed to Wan2.1 / PhysRAG / VideoREPA / DreamWorld / ours)]
+In a breathtaking display of aquatic speed and agility, two sleek jet skis race side by side, their powerful engines roaring as they slice through the crystal-clear waters of a tranquil lake. The scene is captured from a dynamic aerial perspective, showcasing the vibrant blue and white craft, each adorned with a distinctive number—'1' and '2'—emblazoned on their sides. The riders, clad in vibrant life vests and helmets, lean forward, their bodies perfectly poised for the thrill of competition. As they accelerate, their wakes collide, creating a mesmerizing spray of water that dances in the sunlight, casting shimmering reflections across the surface. The camera glides smoothly, maintaining a steady focus on the exhilarating chase, while the surrounding landscape of lush greenery and distant mountains adds depth to this adrenaline-fueled spectacle.
+
+[physics rules (17), rule -> laws]
+- The colliding wakes produce a spray of water.  ->  Conservation of Mass
+- The colliding wakes result in a visible spray of water.  ->  Conservation of Momentum
+- The jet ski moves across the water's surface.  ->  Friction
+- The jet skis create a spray of water.  ->  Conservation of Momentum
+- The jet skis create a wake of white water.  ->  Friction
+- The jet skis create splashes of water.  ->  Conservation of Momentum
+- The jet skis maintain their speed across the lake.  ->  Conservation of Momentum
+- The jet skis move across the surface of the lake.  ->  Gravity
+- The jet skis move across the water's surface.  ->  Friction
+- The jet skis move across the water.  ->  Conservation of Momentum
+- The jetski should not move backwards at full speed without an external force acting on it  ->  Newton's Third Law of Motion
+- The jetskis move across the water's surface.  ->  Friction
+- The shape of the jetski remains consistent during motion  ->  Conservation of Mass
+- The splashes of water rise and then fall.  ->  Gravity
+- The wakes of the jetskis create waves that propagate outwards.  ->  Gravity
+- The wakes of the jetskis create waves.  ->  Gravity
+- The water spray moves upward briefly before falling down.  ->  Gravity

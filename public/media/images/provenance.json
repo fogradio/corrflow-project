@@ -1,0 +1,1080 @@
+{
+  "method": "CorrFlow",
+  "dataset": "ImageNet-256",
+  "selection": "64 visually reviewed, class-diverse examples selected from one candidate per class ranked by the existing same-class DINOv2 nearest-neighbor selection. Curated qualitative showcase; not a random evaluation sample.",
+  "sourceNpz": "code/RAEv2/results/stage2/offline_eval/gen_npz/in256-k7-ft-copilot-full-ep80_ema_copilot.npz",
+  "sourceArray": "arr_0",
+  "sourceArrayShape": [
+    50000,
+    256,
+    256,
+    3
+  ],
+  "sourceSizeBytes": 9830400360,
+  "sourceMtimeNs": 1788163451707050719,
+  "sourceArrayZipCrc32": "d15c5809",
+  "backboneCheckpoint": "code/RAEv2/ckpts/stage2/in256-k7-ft-copilot/checkpoints/ep-0000080.pt",
+  "backboneWeights": "ema",
+  "refinerCheckpoint": "code/RAEv2/ckpts/stage2/in256-k7-ft-copilot/checkpoints/ep-0000080.pt",
+  "refinerWeights": "copilot_ema",
+  "adaptationEpochs": 80,
+  "basePretrainingEpochs": 80,
+  "samplingSteps": 100,
+  "guidance": {
+    "type": "RAEv2 internal guidance",
+    "scale": 1.78,
+    "interval": [
+      0.1,
+      1.0
+    ],
+    "cfgEnabled": false
+  },
+  "refiner": {
+    "scale": 1.0,
+    "interval": [
+      0.15,
+      0.92
+    ]
+  },
+  "samplingConfig": "code/RAEv2/ckpts/stage2/in256-k7-ft-copilot/offline_eval/configs/in256-k7-ft-copilot-full-ep80-ditema-copema.yaml",
+  "selectionSource": "code/RAEv2/results/stage2/offline_eval/qualitative_ours_best_20260916/review/candidates.json",
+  "labelSource": "code/RAEv2/results/stage2/offline_eval/feats/gen_npz_labels.npy",
+  "processing": "Native 256 x 256 RGB arrays encoded as lossless WebP. No crop, resizing, enhancement, retouching, or regeneration. All decoded pixels verified equal to the source NPZ row.",
+  "verification": {
+    "imageCount": 64,
+    "distinctClassCount": 64,
+    "classLabelsVerified": true,
+    "losslessPixelsVerified": true,
+    "groupCounts": {
+      "animals": 28,
+      "nature": 14,
+      "objects": 22
+    }
+  },
+  "images": [
+    {
+      "src": "media/images/corrflow-c0001-i05881.webp",
+      "label": "Goldfish",
+      "classId": 1,
+      "sampleId": "imagenet-05881",
+      "group": "animals",
+      "originalClassLabel": "goldfish",
+      "npzIndexZeroBased": 5881,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "fb2484fb75d159ff013e6aeca8337695605984e2bfe30b0ae1ba03d98c077684",
+      "webpSha256": "284d592b0d27e936b773260348a902b643d4c12afcb302218ded2f2a88ffb12b"
+    },
+    {
+      "src": "media/images/corrflow-c0949-i23647.webp",
+      "label": "Strawberry",
+      "classId": 949,
+      "sampleId": "imagenet-23647",
+      "group": "nature",
+      "originalClassLabel": "strawberry",
+      "npzIndexZeroBased": 23647,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "3586ed32642537fa580a44d4d721400ea2f4df455f55973062435f7405f9d21c",
+      "webpSha256": "7da5ca75ff44d5f1eeda2368f403befd9c34cd8b4723994543af4014ff95aef3"
+    },
+    {
+      "src": "media/images/corrflow-c0483-i44363.webp",
+      "label": "Castle",
+      "classId": 483,
+      "sampleId": "imagenet-44363",
+      "group": "objects",
+      "originalClassLabel": "castle",
+      "npzIndexZeroBased": 44363,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "f43424d4ff422bde88b2685f2f0b0b6c6936996a3d639a7c779a0b688edf7b38",
+      "webpSha256": "bda2ca68368fc3fe69c1cb3207b1fabae71e7a4af1a1c50071fde6a098e12788"
+    },
+    {
+      "src": "media/images/corrflow-c0022-i17758.webp",
+      "label": "Bald eagle",
+      "classId": 22,
+      "sampleId": "imagenet-17758",
+      "group": "animals",
+      "originalClassLabel": "bald eagle",
+      "npzIndexZeroBased": 17758,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "85ea983869314b49be18b652702490f026bd8f8452971f383183a4f02e9774d2",
+      "webpSha256": "49eeba6392c1317a9c20c08bbd43dc3d6312ea5f58ea254bef529016cd22f785"
+    },
+    {
+      "src": "media/images/corrflow-c0024-i26442.webp",
+      "label": "Great grey owl",
+      "classId": 24,
+      "sampleId": "imagenet-26442",
+      "group": "animals",
+      "originalClassLabel": "great grey owl",
+      "npzIndexZeroBased": 26442,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "85323e17a5f6cb00a7e8173e5134d838b661778182594bde62751a12100dc6a0",
+      "webpSha256": "3808285ca1103a41ea424fa95faadf2fb0e233094b16b43ca331e398370762c1"
+    },
+    {
+      "src": "media/images/corrflow-c0950-i41932.webp",
+      "label": "Orange",
+      "classId": 950,
+      "sampleId": "imagenet-41932",
+      "group": "nature",
+      "originalClassLabel": "orange",
+      "npzIndexZeroBased": 41932,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "bdbdbc1757d7f978349de8f367acee2c23abd7a1de8b71ab83e851339e565339",
+      "webpSha256": "617647b476007ff534ff49df428ba98ec7d6fda10d2944e4b94c73b5d35dbd20"
+    },
+    {
+      "src": "media/images/corrflow-c0546-i29012.webp",
+      "label": "Electric guitar",
+      "classId": 546,
+      "sampleId": "imagenet-29012",
+      "group": "objects",
+      "originalClassLabel": "electric guitar",
+      "npzIndexZeroBased": 29012,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "c1593369ead266a3aa96c9040250e60bf09420f1810b25b012be7ef97eaf4f43",
+      "webpSha256": "389ea5556d3be7299c80ee3285a6e14c9a00e0bcc6693946b3ad3bb92a471b7a"
+    },
+    {
+      "src": "media/images/corrflow-c0029-i42836.webp",
+      "label": "Axolotl",
+      "classId": 29,
+      "sampleId": "imagenet-42836",
+      "group": "animals",
+      "originalClassLabel": "axolotl",
+      "npzIndexZeroBased": 42836,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "29be9b8d22f4eab397f2951105538f23d84759dd9ea25682d553f8414e81110c",
+      "webpSha256": "20874f37afd7b5e9a8865a1685607efb16c58d4d1bc356f3158c9bb679af683b"
+    },
+    {
+      "src": "media/images/corrflow-c0088-i08305.webp",
+      "label": "Macaw",
+      "classId": 88,
+      "sampleId": "imagenet-08305",
+      "group": "animals",
+      "originalClassLabel": "macaw",
+      "npzIndexZeroBased": 8305,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "d1e1ed748727e35db794500fcc46287a93f2765f03f4cc66e52077d97a8fc7bd",
+      "webpSha256": "9cf790a7dfe06e451c273c4aec0bfaac1bdd84c504fef8c970f224a2fc09f2bd"
+    },
+    {
+      "src": "media/images/corrflow-c0951-i38784.webp",
+      "label": "Lemon",
+      "classId": 951,
+      "sampleId": "imagenet-38784",
+      "group": "nature",
+      "originalClassLabel": "lemon",
+      "npzIndexZeroBased": 38784,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "c3e3c7d402c30993dd2a31ae564d21673195ec13e5a105e0246c005a69e51615",
+      "webpSha256": "8d29273a7052b8b770df538021a339c779b5b36fbc034beca2046bbf22a5c1f6"
+    },
+    {
+      "src": "media/images/corrflow-c0579-i43800.webp",
+      "label": "Grand piano",
+      "classId": 579,
+      "sampleId": "imagenet-43800",
+      "group": "objects",
+      "originalClassLabel": "grand piano",
+      "npzIndexZeroBased": 43800,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "490c7570e0c31a719197eb80b72681246ca72f90a52cb05cfee1fc93a3d3c183",
+      "webpSha256": "52c184e9ede1887ab76ac816976356a8da217972595305bc9542c3ecd0b91c41"
+    },
+    {
+      "src": "media/images/corrflow-c0089-i44992.webp",
+      "label": "Sulphur-crested cockatoo",
+      "classId": 89,
+      "sampleId": "imagenet-44992",
+      "group": "animals",
+      "originalClassLabel": "sulphur-crested cockatoo",
+      "npzIndexZeroBased": 44992,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "941e8a98e152be2e305f1054c0703004ff2ebc1a53391ff64d0b8e92eec3d639",
+      "webpSha256": "03f44b1b21c78c96800936d1892b372e3c20e2ae43992978cc78c20dadc3afad"
+    },
+    {
+      "src": "media/images/corrflow-c0099-i18813.webp",
+      "label": "Goose",
+      "classId": 99,
+      "sampleId": "imagenet-18813",
+      "group": "animals",
+      "originalClassLabel": "goose",
+      "npzIndexZeroBased": 18813,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "fb746d647c8c15d2d36937a77e0cce08992b1cbdca26607b04eebbec6b5da0f6",
+      "webpSha256": "1173a6279f2f01f4e93bbfa135199894ad37920f7b52a86af4fd28916bc0764d"
+    },
+    {
+      "src": "media/images/corrflow-c0954-i25779.webp",
+      "label": "Banana",
+      "classId": 954,
+      "sampleId": "imagenet-25779",
+      "group": "nature",
+      "originalClassLabel": "banana",
+      "npzIndexZeroBased": 25779,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "c1858b5e0e80fe0cce74ba56d7828f21288d95e9b446344f3f4669be9bdbb51e",
+      "webpSha256": "fd4918c3f696831a0ef311ee9660838e6c81b3ef58d95a5aca659d5d680886bb"
+    },
+    {
+      "src": "media/images/corrflow-c0609-i36214.webp",
+      "label": "Jeep",
+      "classId": 609,
+      "sampleId": "imagenet-36214",
+      "group": "objects",
+      "originalClassLabel": "jeep",
+      "npzIndexZeroBased": 36214,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "e58e864c759f75d573764c94aee313f41a5ddb8bef86db478edf6f4daaa90603",
+      "webpSha256": "9cd2a87499bb0130aecdf8d49b801edbcfdc6864950881b5a79ebf08922dba48"
+    },
+    {
+      "src": "media/images/corrflow-c0107-i05800.webp",
+      "label": "Jellyfish",
+      "classId": 107,
+      "sampleId": "imagenet-05800",
+      "group": "animals",
+      "originalClassLabel": "jellyfish",
+      "npzIndexZeroBased": 5800,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "0e4708b48f201db8369923ca817eb016ab7fab97d852324cc80c2ecd4088c4de",
+      "webpSha256": "65e0fc7cd3e3c4fbbb5ab828daf1167537e7c26e998d28de4e1fd11b042eb78c"
+    },
+    {
+      "src": "media/images/corrflow-c0130-i26110.webp",
+      "label": "Flamingo",
+      "classId": 130,
+      "sampleId": "imagenet-26110",
+      "group": "animals",
+      "originalClassLabel": "flamingo",
+      "npzIndexZeroBased": 26110,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "d27923e0c00b836be4ddf2304be0213a16d6b55fa3915be599b169af8cd9a717",
+      "webpSha256": "dc6a44c733d04eef86575af1389a9a35b8f07fe2ce1cb1cca5ab10a7298ef90d"
+    },
+    {
+      "src": "media/images/corrflow-c0957-i16883.webp",
+      "label": "Pomegranate",
+      "classId": 957,
+      "sampleId": "imagenet-16883",
+      "group": "nature",
+      "originalClassLabel": "pomegranate",
+      "npzIndexZeroBased": 16883,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "ec3b216efaf50b59aead0f4632ed7d945ba5450cf4b076676c129273e980556b",
+      "webpSha256": "d36a637d18926c925cdb504bfbc208892715ca9f8c75a5744840d29f32967340"
+    },
+    {
+      "src": "media/images/corrflow-c0619-i11304.webp",
+      "label": "Lampshade",
+      "classId": 619,
+      "sampleId": "imagenet-11304",
+      "group": "objects",
+      "originalClassLabel": "lampshade",
+      "npzIndexZeroBased": 11304,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "487f7aefde2f8d6382aeebd7af183cb25783ae99a858665c9375162f754ac422",
+      "webpSha256": "0474bce4d2f5d90b4b8bfcd7d51c8843ee2f87f17de302e3c38140b0b7f01115"
+    },
+    {
+      "src": "media/images/corrflow-c0145-i30757.webp",
+      "label": "King penguin",
+      "classId": 145,
+      "sampleId": "imagenet-30757",
+      "group": "animals",
+      "originalClassLabel": "king penguin",
+      "npzIndexZeroBased": 30757,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "f56d30ffb481cb32ca586df854cf5f406a1bf311b3ee20bc93a906b86d724d8a",
+      "webpSha256": "51b03e3ce13803fc4985cce47627ee01bca6f9227e1797bab74a14a11db3978b"
+    },
+    {
+      "src": "media/images/corrflow-c0157-i36237.webp",
+      "label": "Papillon",
+      "classId": 157,
+      "sampleId": "imagenet-36237",
+      "group": "animals",
+      "originalClassLabel": "Papillon",
+      "npzIndexZeroBased": 36237,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "cf771302b4f76826d1484404408ac5882e41a3bc58f429053584f2ec383ea855",
+      "webpSha256": "7d3fd75e7d12d028fe07bd33b1644ad56389149ddded767cfa928d0e8cc97a08"
+    },
+    {
+      "src": "media/images/corrflow-c0958-i46754.webp",
+      "label": "Hay",
+      "classId": 958,
+      "sampleId": "imagenet-46754",
+      "group": "nature",
+      "originalClassLabel": "hay",
+      "npzIndexZeroBased": 46754,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "05d8cbea702ec81a58bde0e56916dd71a8f271d5dc5cdace7d8d657b1d8847d6",
+      "webpSha256": "c0587e695c0339488c650b0eaf20dfa4fce60e67bb624ac7651db93646f92912"
+    },
+    {
+      "src": "media/images/corrflow-c0625-i44800.webp",
+      "label": "Lifeboat",
+      "classId": 625,
+      "sampleId": "imagenet-44800",
+      "group": "objects",
+      "originalClassLabel": "lifeboat",
+      "npzIndexZeroBased": 44800,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "ef0a45c4c0e430c6feeda6667c63550c7114b339f9c9db8ef56da46cd9ca3c42",
+      "webpSha256": "fb3c82b49dff09789b32aafb2623fc00ace09bdd2023d9f38c4112cbbe8dd9ae"
+    },
+    {
+      "src": "media/images/corrflow-c0162-i13791.webp",
+      "label": "Beagle",
+      "classId": 162,
+      "sampleId": "imagenet-13791",
+      "group": "animals",
+      "originalClassLabel": "Beagle",
+      "npzIndexZeroBased": 13791,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "b399e13cda8256c03e72355c6cbaf0bb8a751cdc200b5a2e87b827de29f2da9a",
+      "webpSha256": "bcd22a22d7e454874a2a4675afc4e0101fd9292b68db99fbe226f950dac0d215"
+    },
+    {
+      "src": "media/images/corrflow-c0207-i33778.webp",
+      "label": "Golden retriever",
+      "classId": 207,
+      "sampleId": "imagenet-33778",
+      "group": "animals",
+      "originalClassLabel": "Golden Retriever",
+      "npzIndexZeroBased": 33778,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "d11ae02464f4271efd0af047ee6e61dfddee8bce8680072a1f5275c645b4ed82",
+      "webpSha256": "d8411e9768707928db604baa8b25bf99c3f921105c0e0dd265bf5189c1dba1db"
+    },
+    {
+      "src": "media/images/corrflow-c0970-i34402.webp",
+      "label": "Alpine landscape",
+      "classId": 970,
+      "sampleId": "imagenet-34402",
+      "group": "nature",
+      "originalClassLabel": "alp",
+      "npzIndexZeroBased": 34402,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "e99b8f94e02ba0ee1f5a12407e138839e50560e10fb6adece9aecb7aeb239fc7",
+      "webpSha256": "739f12a04051f5db5be50d76f352dafd79d560f016d7a0605df8c2656c835182"
+    },
+    {
+      "src": "media/images/corrflow-c0701-i23160.webp",
+      "label": "Parachute",
+      "classId": 701,
+      "sampleId": "imagenet-23160",
+      "group": "objects",
+      "originalClassLabel": "parachute",
+      "npzIndexZeroBased": 23160,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "b66eb2ebf931200c6de60cc9599127d221af4490f5ee50ff7ea674fe35315a92",
+      "webpSha256": "7f9426bce594956debfbfe67c9a50ffe9abdad718ee51f5bde6c772f658e1db2"
+    },
+    {
+      "src": "media/images/corrflow-c0245-i48607.webp",
+      "label": "French bulldog",
+      "classId": 245,
+      "sampleId": "imagenet-48607",
+      "group": "animals",
+      "originalClassLabel": "French Bulldog",
+      "npzIndexZeroBased": 48607,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "ad2d8f08a25962d9ad1bc2f75ef6e085c09e3e2153da3ffbf9a6199655faa38f",
+      "webpSha256": "90384bb4394b65cca685fd3a377334c72dab3d80668010b2b7dfbc0596897df8"
+    },
+    {
+      "src": "media/images/corrflow-c0266-i29037.webp",
+      "label": "Miniature poodle",
+      "classId": 266,
+      "sampleId": "imagenet-29037",
+      "group": "animals",
+      "originalClassLabel": "Miniature Poodle",
+      "npzIndexZeroBased": 29037,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "133c226049b2f78c84e50ebf986d2b32f9fe74537665aff9f266bda71f7d828a",
+      "webpSha256": "92620cd59a6c15c106ca8b6fff9549eff1d93f00b4e01f69de79711a4cfc10af"
+    },
+    {
+      "src": "media/images/corrflow-c0973-i19278.webp",
+      "label": "Coral reef",
+      "classId": 973,
+      "sampleId": "imagenet-19278",
+      "group": "nature",
+      "originalClassLabel": "coral reef",
+      "npzIndexZeroBased": 19278,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "166b5ac6933f262f7bc8a3971704d6e4f8ffbf94706b1dcb98929fedb3631d86",
+      "webpSha256": "e793ec87864b565d95f13793b08bb98d026f50431bcfa5068cc960950a067712"
+    },
+    {
+      "src": "media/images/corrflow-c0705-i49007.webp",
+      "label": "Passenger car",
+      "classId": 705,
+      "sampleId": "imagenet-49007",
+      "group": "objects",
+      "originalClassLabel": "passenger car",
+      "npzIndexZeroBased": 49007,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "ffef53222cde0ce6d42d6cf6b26d47e69791c468a21fa016b86042d1b6a80d9d",
+      "webpSha256": "301c499ed0f61a23ae3abaa1a5d97accb4cf74b50d71de5a8dfb937f623f54ce"
+    },
+    {
+      "src": "media/images/corrflow-c0283-i01526.webp",
+      "label": "Persian cat",
+      "classId": 283,
+      "sampleId": "imagenet-01526",
+      "group": "animals",
+      "originalClassLabel": "Persian cat",
+      "npzIndexZeroBased": 1526,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "894a70f557427b7f13dc1bf8b3c1a7e54dc55759b5881bc03ff56e3bda2e1662",
+      "webpSha256": "cfd2393f3283febea010e150eba013c670091c1f9f1f3678f1829ed387a10ecc"
+    },
+    {
+      "src": "media/images/corrflow-c0284-i02044.webp",
+      "label": "Siamese cat",
+      "classId": 284,
+      "sampleId": "imagenet-02044",
+      "group": "animals",
+      "originalClassLabel": "Siamese cat",
+      "npzIndexZeroBased": 2044,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "10f5aa6a8c92f23e332b129b87ef323b0ad4cb06852e59163c2d9211690d8892",
+      "webpSha256": "02663d55a82a90bf59c0b27451ce91303a4e67ec1190a2a76a80123c7e7c2d0d"
+    },
+    {
+      "src": "media/images/corrflow-c0974-i09843.webp",
+      "label": "Geyser",
+      "classId": 974,
+      "sampleId": "imagenet-09843",
+      "group": "nature",
+      "originalClassLabel": "geyser",
+      "npzIndexZeroBased": 9843,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "8d78acb1e1aff4f5a49fccb0a7cbaa90efab2caf344ff24825629ce19c5b024b",
+      "webpSha256": "6bbf5ea4d39e7360d00e4a7cf8d6799615d8deb81e1ba5890493d828c9a63c22"
+    },
+    {
+      "src": "media/images/corrflow-c0724-i06336.webp",
+      "label": "Pirate ship",
+      "classId": 724,
+      "sampleId": "imagenet-06336",
+      "group": "objects",
+      "originalClassLabel": "pirate ship",
+      "npzIndexZeroBased": 6336,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "d1f230d03dbbe14a58e9ff478e73ff0ea5c7f23a66de3ba2e8f4a0d61ae819fb",
+      "webpSha256": "c70a73b2c81aea0e28138b13cd9cd774d819223dd3345ba821451575b76b2f38"
+    },
+    {
+      "src": "media/images/corrflow-c0288-i32771.webp",
+      "label": "Leopard",
+      "classId": 288,
+      "sampleId": "imagenet-32771",
+      "group": "animals",
+      "originalClassLabel": "leopard",
+      "npzIndexZeroBased": 32771,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "31671f616db05e194715455b93aa507709e46dce61cdde208a87774ef940cf7e",
+      "webpSha256": "72027b85cbab7a82bd0a8ca69ccc887370a1c9520815ef0afa1c28b9992285af"
+    },
+    {
+      "src": "media/images/corrflow-c0292-i38817.webp",
+      "label": "Tiger",
+      "classId": 292,
+      "sampleId": "imagenet-38817",
+      "group": "animals",
+      "originalClassLabel": "tiger",
+      "npzIndexZeroBased": 38817,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "b4f30ee1715c22fd573431c1d6523c147816306ce129a7c95de0a1bd9aec1e50",
+      "webpSha256": "94e793fa0f69a77def0c4ef316c615fe95563a4d7a82cc5fb01096374edc9029"
+    },
+    {
+      "src": "media/images/corrflow-c0975-i47413.webp",
+      "label": "Lakeshore",
+      "classId": 975,
+      "sampleId": "imagenet-47413",
+      "group": "nature",
+      "originalClassLabel": "lakeshore",
+      "npzIndexZeroBased": 47413,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "125bd5532ee8e4b247faaed413cc5a5a125154532c033ffc2341b9de08e6ccce",
+      "webpSha256": "2dc4420f5bb1e16a0c014529a2039668340dec25f040de34384a153db69fb5ea"
+    },
+    {
+      "src": "media/images/corrflow-c0736-i23989.webp",
+      "label": "Billiard table",
+      "classId": 736,
+      "sampleId": "imagenet-23989",
+      "group": "objects",
+      "originalClassLabel": "billiard table",
+      "npzIndexZeroBased": 23989,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "59482129607e33387fb28ce86989709343090966bc0c2d7c792aeba6119910ca",
+      "webpSha256": "635fb2af7417deda839fcff313aadbdaf8cab980cca20d4503bc3f04e61710e8"
+    },
+    {
+      "src": "media/images/corrflow-c0301-i08952.webp",
+      "label": "Ladybug",
+      "classId": 301,
+      "sampleId": "imagenet-08952",
+      "group": "animals",
+      "originalClassLabel": "ladybug",
+      "npzIndexZeroBased": 8952,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "a3defb0fa02727b450fbf2933dc1878e699b2fde1ac4d12a12d56706e9af7ab5",
+      "webpSha256": "cb564075c8d1c3ec56d71f2e78da06c19cc9a14a819d0c6fb61bf51db1cb997c"
+    },
+    {
+      "src": "media/images/corrflow-c0306-i29764.webp",
+      "label": "Rhinoceros beetle",
+      "classId": 306,
+      "sampleId": "imagenet-29764",
+      "group": "animals",
+      "originalClassLabel": "rhinoceros beetle",
+      "npzIndexZeroBased": 29764,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "ed2de77289480c2dd8d0070ed6c50013ebdf829b2179642906c3f8cc2d45d92b",
+      "webpSha256": "ed116964e224c164f9fd1b7b6682d1f50be1b3dc6665180038c6a2d6331cc45a"
+    },
+    {
+      "src": "media/images/corrflow-c0978-i09285.webp",
+      "label": "Seashore",
+      "classId": 978,
+      "sampleId": "imagenet-09285",
+      "group": "nature",
+      "originalClassLabel": "seashore",
+      "npzIndexZeroBased": 9285,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "33a724eb4cdeff91eb9e109f8381e643b28b4f91f82f851e093163b802da34af",
+      "webpSha256": "aa4baedfe9882656a8d1184c0b180472c9a752c45e2b3686101639bdef2d3fdf"
+    },
+    {
+      "src": "media/images/corrflow-c0750-i07604.webp",
+      "label": "Quilt",
+      "classId": 750,
+      "sampleId": "imagenet-07604",
+      "group": "objects",
+      "originalClassLabel": "quilt",
+      "npzIndexZeroBased": 7604,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "296d68b883e4dbbc56e82c6cfa122103173086463b0c1a4a1b13f7b7507015c3",
+      "webpSha256": "c74574baa5098c431fa6782fa16ba80ebfd36633ef63fabfc3bae53f61cd7b5e"
+    },
+    {
+      "src": "media/images/corrflow-c0323-i35211.webp",
+      "label": "Monarch butterfly",
+      "classId": 323,
+      "sampleId": "imagenet-35211",
+      "group": "animals",
+      "originalClassLabel": "monarch butterfly",
+      "npzIndexZeroBased": 35211,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "89a71519471806179602fcc78314235e86b8902704edd32e999e0e093ca580de",
+      "webpSha256": "c4021de640ddd94b10c3c235e8575ce1e996f14df4e1d7bf8cea6e52a6da09b5"
+    },
+    {
+      "src": "media/images/corrflow-c0331-i14050.webp",
+      "label": "Hare",
+      "classId": 331,
+      "sampleId": "imagenet-14050",
+      "group": "animals",
+      "originalClassLabel": "hare",
+      "npzIndexZeroBased": 14050,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "757c83f75af6b0c62c5f7852745e12e3dd3764c5e273ccab8247d88bac23a618",
+      "webpSha256": "bde490c820a085e7caf06047c571400446d6063faf69e0bcc4fdeabf0c21b9e0"
+    },
+    {
+      "src": "media/images/corrflow-c0980-i19927.webp",
+      "label": "Volcano",
+      "classId": 980,
+      "sampleId": "imagenet-19927",
+      "group": "nature",
+      "originalClassLabel": "volcano",
+      "npzIndexZeroBased": 19927,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "7af647fb567f670a076243eea70947d57a2c1c92d690f1bcf08c9a1a4852faae",
+      "webpSha256": "1049861ed9bb97d1c74a72f5dc4596e8e118cdee6fea63f35c399b8db6f66619"
+    },
+    {
+      "src": "media/images/corrflow-c0780-i45598.webp",
+      "label": "Schooner",
+      "classId": 780,
+      "sampleId": "imagenet-45598",
+      "group": "objects",
+      "originalClassLabel": "schooner",
+      "npzIndexZeroBased": 45598,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "8daa95e225bb90ccd2aa0bae4be5b91db854738deaea8e163053d0873b72e685",
+      "webpSha256": "f16a6730a7c49061ff6efbc1b4dd446bd4015c14dc70b3b39b24fce5c2a81b32"
+    },
+    {
+      "src": "media/images/corrflow-c0340-i29516.webp",
+      "label": "Zebra",
+      "classId": 340,
+      "sampleId": "imagenet-29516",
+      "group": "animals",
+      "originalClassLabel": "zebra",
+      "npzIndexZeroBased": 29516,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "1010812e83ac5edca26a61714f8dbe76599322ae46cdc145c7f7bc8db89ef27f",
+      "webpSha256": "0da1a5ce3bc4d3c6cf2324649afb3d94ddb80253f63ef26089ca2fc6f7a0919e"
+    },
+    {
+      "src": "media/images/corrflow-c0348-i02624.webp",
+      "label": "Ram",
+      "classId": 348,
+      "sampleId": "imagenet-02624",
+      "group": "animals",
+      "originalClassLabel": "ram",
+      "npzIndexZeroBased": 2624,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "a6c4600c9552723d95fe4f9d63c5d3d647da6bdb8b78046c0ea0bfbc2bb79f5b",
+      "webpSha256": "7a260a807949b822ca7c35b9ea8b154dec3ff883aa86872e7a6aa75b39bf4682"
+    },
+    {
+      "src": "media/images/corrflow-c0985-i02493.webp",
+      "label": "Daisy",
+      "classId": 985,
+      "sampleId": "imagenet-02493",
+      "group": "nature",
+      "originalClassLabel": "daisy",
+      "npzIndexZeroBased": 2493,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "5f898e80b6c6617a7362dd0b4cf1f96451d7290d6aa2f9d92c560da19b32769e",
+      "webpSha256": "8b4604568f5303948f2678e03574c5c054d9ba072f8ca61974fd93348eccbf67"
+    },
+    {
+      "src": "media/images/corrflow-c0789-i49989.webp",
+      "label": "Shoji screen",
+      "classId": 789,
+      "sampleId": "imagenet-49989",
+      "group": "objects",
+      "originalClassLabel": "shoji",
+      "npzIndexZeroBased": 49989,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "99e03428520ed6d738c32ca9fc3ae945ef42d71a9176854eced465a25f66cf8f",
+      "webpSha256": "a061a1e8cedea5458637ea10b5ae4151809cd31e87d68b68d01ab9ade802d4f6"
+    },
+    {
+      "src": "media/images/corrflow-c0383-i31893.webp",
+      "label": "Ring-tailed lemur",
+      "classId": 383,
+      "sampleId": "imagenet-31893",
+      "group": "animals",
+      "originalClassLabel": "ring-tailed lemur",
+      "npzIndexZeroBased": 31893,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "52062259aad1869904b692a6f090789df36a0cef03fafbe87806d18c5c695e22",
+      "webpSha256": "dbfa2ed8a62ceafad93e878ebb482b9bd573d343dfa3a0fa1e0c8c89b7006075"
+    },
+    {
+      "src": "media/images/corrflow-c0386-i22959.webp",
+      "label": "African elephant",
+      "classId": 386,
+      "sampleId": "imagenet-22959",
+      "group": "animals",
+      "originalClassLabel": "African bush elephant",
+      "npzIndexZeroBased": 22959,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "1ee8d35f50ebc9975116544bc7b29ec5ad2a75700fafc928133bbbf0c313c2ad",
+      "webpSha256": "5fec1693a171e1d5f3f72afdab5f647bc294dbb1cc2e9c9d54b5e7a84a3beae4"
+    },
+    {
+      "src": "media/images/corrflow-c0986-i14154.webp",
+      "label": "Yellow lady's slipper",
+      "classId": 986,
+      "sampleId": "imagenet-14154",
+      "group": "nature",
+      "originalClassLabel": "yellow lady's slipper",
+      "npzIndexZeroBased": 14154,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "8e42808f29b2ec677bbb7f08728f31e649d4415fa9b892f0df1411017728ff5c",
+      "webpSha256": "5dd692a4fbad831da7ef70905d3899658f92cd7f020b19a37bc17f82be707517"
+    },
+    {
+      "src": "media/images/corrflow-c0812-i07121.webp",
+      "label": "Space shuttle",
+      "classId": 812,
+      "sampleId": "imagenet-07121",
+      "group": "objects",
+      "originalClassLabel": "space shuttle",
+      "npzIndexZeroBased": 7121,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "d51b81c9e49da6f91a654d052123472a772d826ebe33f2c6b164c93d0afde0b4",
+      "webpSha256": "38cb01227cc3ad74ca3b6619d8f88e0cb26d650e7fa2dd535bbb9cfee290e796"
+    },
+    {
+      "src": "media/images/corrflow-c0388-i12707.webp",
+      "label": "Giant panda",
+      "classId": 388,
+      "sampleId": "imagenet-12707",
+      "group": "animals",
+      "originalClassLabel": "giant panda",
+      "npzIndexZeroBased": 12707,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "0da205b94efdb9fb3ec6554cd8b2a0d56ffa1871fd10acc5177bcb1124878a9e",
+      "webpSha256": "edaf5260e2070137b9e4d19d56d9140c82f99485e9388d6ee8e2b234bad58a09"
+    },
+    {
+      "src": "media/images/corrflow-c0817-i03206.webp",
+      "label": "Sports car",
+      "classId": 817,
+      "sampleId": "imagenet-03206",
+      "group": "objects",
+      "originalClassLabel": "sports car",
+      "npzIndexZeroBased": 3206,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "f6f5b16f5abbf762e0ae9fcddabf87fdfa89e88176f57fdc899b0377aae02eed",
+      "webpSha256": "cbcf6f5d849010dc5e0de90547ae87006725636c9fc1935a5cf6adfe3a88a055"
+    },
+    {
+      "src": "media/images/corrflow-c0850-i18535.webp",
+      "label": "Teddy bear",
+      "classId": 850,
+      "sampleId": "imagenet-18535",
+      "group": "objects",
+      "originalClassLabel": "teddy bear",
+      "npzIndexZeroBased": 18535,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "636af49883442e09bcdbfac96a5590583bbce837972f21c52dc544fc514c6228",
+      "webpSha256": "8f216a6904e3859759804e63e6b19f8530025ac905a72de78603b8c9c6f36436"
+    },
+    {
+      "src": "media/images/corrflow-c0873-i32040.webp",
+      "label": "Triumphal arch",
+      "classId": 873,
+      "sampleId": "imagenet-32040",
+      "group": "objects",
+      "originalClassLabel": "triumphal arch",
+      "npzIndexZeroBased": 32040,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "3eb8ae8fce262f57775fccfb4db46c08b7807fdfefd6a879c7860201a00017d5",
+      "webpSha256": "62214f6315f0570410a258e5466dea57190778dd20936503466f28c6e6c4e5dd"
+    },
+    {
+      "src": "media/images/corrflow-c0879-i49653.webp",
+      "label": "Umbrella",
+      "classId": 879,
+      "sampleId": "imagenet-49653",
+      "group": "objects",
+      "originalClassLabel": "umbrella",
+      "npzIndexZeroBased": 49653,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "f119636cf2f032ead9d7b3b6cf14765b54f6ec583af6acbfdcc244b355394fb1",
+      "webpSha256": "0614e562a00718f6dec326adfa852e9303eb0a1cedad5e32d0a8940ea5ac2891"
+    },
+    {
+      "src": "media/images/corrflow-c0888-i33811.webp",
+      "label": "Viaduct",
+      "classId": 888,
+      "sampleId": "imagenet-33811",
+      "group": "objects",
+      "originalClassLabel": "viaduct",
+      "npzIndexZeroBased": 33811,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "0fe4e6964824d29fcf9336408b31ca5995b1695651a6ce6237663f2364f4a221",
+      "webpSha256": "80f7e2ffbc9688689ca7d59f82c0d1c9f21ae23476e1c5d38faeb3f13f4079ba"
+    },
+    {
+      "src": "media/images/corrflow-c0889-i23330.webp",
+      "label": "Violin",
+      "classId": 889,
+      "sampleId": "imagenet-23330",
+      "group": "objects",
+      "originalClassLabel": "violin",
+      "npzIndexZeroBased": 23330,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "c5c3df939c670be53a1be91f5bed580e3c4173ff195282872c7f592f8dfa5e0f",
+      "webpSha256": "1487322e0d45760551c3aed3fe6228ccea69d2229cc3bde826a17b81749e6352"
+    },
+    {
+      "src": "media/images/corrflow-c0963-i46389.webp",
+      "label": "Pizza",
+      "classId": 963,
+      "sampleId": "imagenet-46389",
+      "group": "objects",
+      "originalClassLabel": "pizza",
+      "npzIndexZeroBased": 46389,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "cbe9a4a5f4e19e2254eb237825916bc4e345350e5b16e730901ed2cfe35cdfd1",
+      "webpSha256": "390279cac5fe120cd0877cd395e999a2ac9f7fe455028d4c8205418d44350ce0"
+    },
+    {
+      "src": "media/images/corrflow-c0968-i23706.webp",
+      "label": "Cup",
+      "classId": 968,
+      "sampleId": "imagenet-23706",
+      "group": "objects",
+      "originalClassLabel": "cup",
+      "npzIndexZeroBased": 23706,
+      "nativeSize": [
+        256,
+        256
+      ],
+      "pixelExact": true,
+      "rgbSha256": "cad0d0b22f8a149feebb453bc48b210a1c0620ab83e668a60f02cfd6f8666c4b",
+      "webpSha256": "e2ad86e8cc3eedc491ee6396e96cd7b7f205a747c24304d275622d8fbd7ea1cc"
+    }
+  ]
+}
