@@ -79,32 +79,40 @@ const citation = `@misc{zhang2026corrflow,
             href="#videos">Videos</a
           ><a href="#citation">Citation</a>
         </div>
-        <a
-          class="nav-paper"
-          href={asset("paper/corrflow.pdf")}
-          target="_blank"
-          rel="noopener">Read paper <span aria-hidden="true">↗</span></a
+        <button class="nav-paper resource-pending" type="button" disabled
+          >Read paper <span aria-hidden="true">↗</span></button
         >
       </nav>
     </header>
     <main id="top">
       <section class="hero container" aria-labelledby="paper-title">
-        <p class="eyebrow hero-eyebrow">
-          <span></span> IMAGE & VIDEO GENERATION
-        </p>
         <h1 id="paper-title">
           <span class="title-name">CorrFlow</span><span
             class="title-description">Self-Correcting Flow Matching</span
           >
         </h1>
-        <p class="hero-summary">
-          Generate. Reflect. Refine.<br class="mobile-break" /> A second look at every
-          sampling step.
-        </p>
         <p class="authors">
-          <span>Hangwei Zhang<sup>1</sup></span><span
-            >Nathan Rouillé<sup>1,2</sup></span
-          ><span>Chuanxia Zheng<sup>1</sup></span>
+          <span
+            ><a
+              href="https://fogradio.github.io/"
+              target="_blank"
+              rel="noopener">Hangwei Zhang</a
+            ><sup>1</sup></span
+          >
+          <span
+            ><a
+              href="https://www.linkedin.com/in/nathanrouille/"
+              target="_blank"
+              rel="noopener">Nathan Rouillé</a
+            ><sup>1,2</sup></span
+          >
+          <span
+            ><a
+              href="https://physicalvision.github.io/people/~chuanxia"
+              target="_blank"
+              rel="noopener">Chuanxia Zheng</a
+            ><sup>1</sup></span
+          >
         </p>
         <p class="affiliations">
           <span><sup>1</sup> PVG, Nanyang Technological University</span><span
@@ -112,17 +120,32 @@ const citation = `@misc{zhang2026corrflow,
           >
         </p>
         <div class="hero-actions">
-          <a
-            class="button button-primary"
-            href={asset("paper/corrflow.pdf")}
-            target="_blank"
-            rel="noopener"
+          <button class="button resource-pending" type="button" disabled
             ><svg viewBox="0 0 24 24" aria-hidden="true"
               ><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"></path></svg
-            >Paper <span aria-hidden="true">↗</span></a
-          ><a class="button" href="#images"
-            >Explore results <span aria-hidden="true">↓</span></a
+            >Paper</button
           >
+          <button class="button resource-pending" type="button" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"></path></svg
+            >
+            Code
+          </button>
+          <button class="button resource-pending" type="button" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path d="m12 3 9 5v8l-9 5-9-5V8zm0 10 9-5m-9 5L3 8m9 5v8"
+              ></path></svg
+            >
+            Model
+          </button>
+          <a class="button" href="#citation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"
+              ><path
+                d="M9 4H7a2 2 0 0 0-2 2v3a3 3 0 0 1-2 3 3 3 0 0 1 2 3v3a2 2 0 0 0 2 2h2m6-16h2a2 2 0 0 1 2 2v3a3 3 0 0 0 2 3 3 3 0 0 0-2 3v3a2 2 0 0 1-2 2h-2"
+              ></path></svg
+            >
+            BibTeX <span aria-hidden="true">↓</span>
+          </a>
         </div>
       </section>
       <section
@@ -310,7 +333,7 @@ const citation = `@misc{zhang2026corrflow,
           <div class="section-top">
             <div>
               <p class="eyebrow">02 / VIDEO GENERATION</p><h2 id="videos-title">
-                See the difference in motion.
+                See the difference in time.
               </h2>
             </div><p class="section-description">
               From written prompts to physical events.<br />Explore
@@ -532,11 +555,10 @@ const citation = `@misc{zhang2026corrflow,
           </h2><p>
             If you find CorrFlow useful in your research,<br />please consider
             citing our work.
-          </p><a
-            class="text-button"
-            href={asset("paper/corrflow.pdf")}
-            target="_blank"
-            rel="noopener">Read the paper <span aria-hidden="true">↗</span></a
+          </p><button
+            class="text-button resource-pending"
+            type="button"
+            disabled>Read the paper <span aria-hidden="true">↗</span></button
           >
         </div><div class="citation-box">
           <div class="citation-label">

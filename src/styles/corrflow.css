@@ -172,7 +172,7 @@ summary:focus-visible {
   font-weight: 500;
 }
 .nav-links a:hover,
-.nav-paper:hover {
+.nav-paper:not(:disabled):hover {
   color: var(--accent);
 }
 .nav-paper {
@@ -185,21 +185,6 @@ summary:focus-visible {
 .hero {
   text-align: center;
   padding: 69px 0 38px;
-}
-.hero-eyebrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  font-size: 10px;
-  letter-spacing: 0.19em;
-}
-.hero-eyebrow span {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
 }
 .title-name {
   display: block;
@@ -219,22 +204,25 @@ summary:focus-visible {
   margin-top: 14px;
   line-height: 1.25;
 }
-.hero-summary {
-  font-size: 17px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-top: 19px;
-}
-.mobile-break {
-  display: none;
-}
 .authors {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 26px;
-  font-size: 15px;
+  font-size: 20px;
+  line-height: 1.5;
   margin-top: 28px;
   font-weight: 500;
+}
+.authors > span {
+  white-space: nowrap;
+}
+.authors a {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+.authors a:hover {
+  text-decoration: underline;
 }
 .affiliations {
   display: flex;
@@ -248,6 +236,7 @@ summary:focus-visible {
 .hero-actions {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 27px;
 }
@@ -317,6 +306,15 @@ summary:focus-visible {
 .button-primary:hover {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
+}
+.button.resource-pending {
+  color: var(--muted);
+  background: var(--wash);
+  border-color: var(--line);
+}
+.resource-pending:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 .hero-strip {
   width: min(1400px, calc(100% - 32px));
@@ -1090,10 +1088,6 @@ dialog::backdrop {
     padding-top: 46px;
     padding-bottom: 28px;
   }
-  .hero-eyebrow {
-    font-size: 8px;
-    margin-bottom: 16px;
-  }
   .title-name {
     font-size: 68px;
   }
@@ -1102,16 +1096,9 @@ dialog::backdrop {
     max-width: 350px;
     margin: 15px auto 0;
   }
-  .hero-summary {
-    font-size: 14px;
-    margin-top: 16px;
-  }
-  .mobile-break {
-    display: block;
-  }
   .authors {
-    gap: 13px;
-    font-size: 12px;
+    gap: 10px 18px;
+    font-size: 15px;
     margin-top: 23px;
   }
   .affiliations {
@@ -1121,7 +1108,10 @@ dialog::backdrop {
     margin-top: 13px;
   }
   .hero-actions {
-    margin-top: 23px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 360px;
+    margin: 23px auto 0;
   }
   .hero-strip {
     width: calc(100% - 16px);
