@@ -1,13 +1,13 @@
 # CorrFlow method teaser
 
-52 seconds · 1920 × 1080 · 30 fps · no audio tracks.
+79 seconds · 1920 × 1080 · 30 fps · no audio tracks.
 
-The animation uses the original paths, mathematical glyphs, and embedded images from these two supplied figures in `paper/6a843d2839af97b2b532565f/figs/`:
+The animation uses the original paths and mathematical glyphs from these two supplied figures in `paper/corrflow_arxiv/figs/` (identical to the originally supplied copies in `paper/6a843d2839af97b2b532565f/figs/`):
 
 - `fig_mistakeflow_intuition.svg` → `sources/intuition.svg`
 - `mistakeflow_pure_vector_v2.svg` → `sources/method.svg`
 
-The copies are byte-identical to the originals. During rendering, “Real reference image” becomes “Training reference” to clarify its role. The SVG originals are never modified. Nodes appear progressively; vector arrows trace the data flow; moving pulses mark successive operations and sampling steps.
+The SVG copies are byte-identical to the originals. During rendering, “Real reference image” becomes “Training reference” to clarify its role. The SVG originals are never modified. Nodes appear progressively and vector arrows trace the data flow. The pipeline's static clean-prediction photographs are replaced with moving frames from the first captured step. A large, synchronized comparison then follows every recorded noise step.
 
 ## Sequence
 
@@ -16,9 +16,22 @@ The copies are byte-identical to the originals. During rendering, “Real refere
 | 0–17.3 s | Noise → sampling state → imperfect clean prediction → training discrepancy → learned correction. |
 | 17.3–25.7 s | One base pass supplies the clean prediction and hidden states; conditioning also enters the refiner. |
 | 25.7–37.7 s | Refiner detail: self-attention, hidden-state fusion and condition projection, cross-attention, residual head. |
-| 37.7–52 s | Base velocity and predicted residual meet before the sampler; successive steps reduce the noise level; the final video appears. |
+| 37.7–43 s | Base velocity and predicted residual meet before the sampler; transition to the recorded sampling pair. |
+| 43–73 s | All 50 recorded noise steps, 0.6 seconds each; without/with refiner in aligned rows, each with three moving temporal windows. |
+| 73–73.8 s | Transition from the last clean prediction to the final videos. |
+| 73.8–79 s | Both final videos play together at the source speed, followed by a brief last-frame hold. |
 
-The reference is explanatory training supervision, never an inference input. The corrected clean prediction does not land exactly on the reference. `×K` denotes repetition inside the refiner. Pulses and the noise rail are schematic, not recorded inference traces. The still images come directly from the supplied method diagrams, not a separate results montage.
+The reference is explanatory training supervision, never an inference input. The corrected clean prediction does not land exactly on the reference. `×K` denotes repetition inside the refiner. The diagram arrows and noisy-input icon remain schematic. From 43 seconds onward, the clean predictions, noise levels, and temporal motion all come from saved inference records.
+
+## Recorded comparison
+
+Source: `outputs/qualitative_clean_predictions/top10_nodynamic_v2_same_seed_56405_20260914/cases/rank02_12_prompt_012`, the watermelon-dessert prompt used in the method figure. The original SVG paired seeds 3 and 12; the animation instead uses the available same-seed capture for this case. Both arms use seed 12, the same initial-noise SHA-256, prompt, backbone checkpoint, CFG, and schedule. Only the refiner scale differs: 0 versus 0.2.
+
+These are two complete sampling trajectories that start from identical noise. Later sampling states differ; the comparison is not a same-state one-step residual ablation. The displayed clean prediction is `x_sigma - sigma * v_guided`, decoded after CFG and the optional refiner, before the ODE update. Step 50 uses the recorded noise level 0.092592582; only the final endpoint is labeled zero. The capture's endpoint verification and identical final/step-50 MP4 hashes are checked during packaging.
+
+Each of the 50 steps occupies exactly 18 output frames. The three panes play source frames 0–9, 36–45, and 71–80 at the source rate of 16 fps. Shared timestamps show the video time in each column; the upper rail shows sampling noise. Both arms always use the same step and source frame indices. There is no interpolation between sampling steps, no synthesized motion, and no cropping of the recorded frames. The last pair plays all 81 source frames.
+
+`sources/sampling-pair.zip` contains 100 unchanged source MP4s plus a manifest with per-file hashes, the verified pairing, and all 50 noise levels. It is a renderer input, not a runtime website asset. It contains no quantitative evaluation scores.
 
 ## Reproduce
 
@@ -27,7 +40,7 @@ Dependencies: Python 3, Pillow, NumPy, PyGObject with librsvg/GdkPixbuf, and FFm
 Run from the project root. Choose a new output directory; FFmpeg refuses to overwrite an existing MP4.
 
 ```bash
-# Inspect 15 keyframes and a contact sheet first.
+# Inspect 21 keyframes and a contact sheet first.
 python3 scripts/teaser/render_teaser.py --stills --output /tmp/corrflow-storyboard
 
 # Render H.264, the poster, and provenance.
@@ -42,5 +55,15 @@ python3 scripts/teaser/render_teaser.py --ffmpeg /path/to/ffmpeg --output /tmp/c
 /path/to/ffmpeg -v error -i /tmp/corrflow-render/corrflow-teaser.mp4 -f null -
 /path/to/ffmpeg -v error -i /tmp/corrflow-render/corrflow-teaser.webm -f null -
 ```
+
+To rebuild the source package from the research workspace, use a new output path:
+
+```bash
+python3 scripts/teaser/prepare_sampling.py \
+  --case /path/to/top10_nodynamic_v2_same_seed_56405_20260914/cases/rank02_12_prompt_012 \
+  --output /tmp/sampling-pair.zip
+```
+
+The renderer checks source hashes and decodes all 100 clips during a complete render. Source MP4s require seekable input, so it creates a small additive cache in `/tmp/corrflow-sampling-clips-*`. It does not delete or change the research outputs.
 
 The deployed assets live in `public/media/teaser/`. The webpage selects H.264 when supported and falls back to WebM. Animation stages and timing are defined in `render_teaser.py`; source SHA-256 hashes and scientific notes are recorded in `provenance.json`.

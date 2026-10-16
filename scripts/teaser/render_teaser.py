@@ -2,10 +2,12 @@
 """Deterministic, silent CorrFlow motion diagram, using the original SVG layers.
 
 Requires Python + Pillow + numpy + PyGObject/librsvg, and FFmpeg.
-No synthesis, no replacement result images, no audio, no GPU.
+Original SVG geometry plus recorded, same-noise clean-prediction videos.
+No synthesis, no audio, no GPU.
 Use --stills to inspect keyframes before encoding. All output files are additive.
 """
-import argparse, copy, hashlib, json, math, re, subprocess, time
+import argparse, copy, hashlib, json, math, re, subprocess, tempfile, time, zipfile
+from functools import lru_cache
 from pathlib import Path
 import xml.etree.ElementTree as ET
 import gi
@@ -19,7 +21,8 @@ ROOT = HERE.parents[1]
 NS = 'http://www.w3.org/2000/svg'
 ET.register_namespace('', NS)
 ET.register_namespace('xlink', 'http://www.w3.org/1999/xlink')
-W, H, FPS, DURATION = 1920, 1080, 30, 52
+W, H, FPS, DURATION = 1920, 1080, 30, 79
+REPLAY_START, STEP_SECONDS, FINAL_START = 43., .6, 73.8
 INK, MUTED = '#17313d', '#71828a'
 BLUE, GREEN, ORANGE, PURPLE = '#0072b2', '#008b6a', '#ce641d', '#8a63b6'
 FONT_ROOT = ROOT / 'public/fonts'
@@ -177,9 +180,55 @@ class Scene:
 
 def fonts(size,bold=False):
     return ImageFont.truetype(str(FONT_ROOT/('manrope-700.ttf' if bold else 'dm-sans-400.ttf')),size)
-FONTS={n:fonts(n) for n in [20,22,24,26,28,32]}
+FONTS={n:fonts(n) for n in [20,22,24,26,28,32,36]}
 FONTS['brand']=fonts(31,True)
 FONTS['phase']=fonts(24,True)
+FONTS['label']=fonts(28,True)
+
+
+class RecordedPair:
+    """Decode original captured clips on demand, with bounded CPU memory."""
+    def __init__(self, ffmpeg):
+        self.ffmpeg = ffmpeg
+        self.archive = zipfile.ZipFile(HERE/'sources/sampling-pair.zip')
+        self.manifest = json.loads(self.archive.read('manifest.json'))
+        assert len(self.manifest['steps']) == 50
+        assert self.manifest['display']['secondsPerStep'] == STEP_SECONDS
+        self.verified = set()
+        self.cache = Path(tempfile.mkdtemp(prefix='corrflow-sampling-clips-'))
+
+    @lru_cache(maxsize=4)
+    def clip(self, arm, step, width=492, height=284):
+        name = f'{arm}/step_{step:03}.mp4'
+        data = self.archive.read(name)
+        assert hashlib.sha256(data).hexdigest() == self.manifest['files'][name]['sha256']
+        # Original MP4s have their moov atom at EOF and need a seekable input.
+        source=self.cache/name.replace('/', '-')
+        if not source.exists():
+            with source.open('xb') as f:f.write(data)
+        proc = subprocess.run([self.ffmpeg, '-v', 'error', '-threads', '1', '-i', str(source),
+            '-an', '-vf', f'scale={width}:{height}:flags=lanczos', '-threads', '1',
+            '-f', 'rawvideo', '-pix_fmt', 'rgb24', 'pipe:1'], capture_output=True)
+        if proc.returncode:raise RuntimeError(proc.stderr.decode())
+        frames = np.frombuffer(proc.stdout, dtype=np.uint8).reshape((-1,height,width,3))
+        assert len(frames) == 81, (name, len(frames))
+        self.verified.add(name)
+        return frames
+
+    def image(self, arm, step, index, width=492, height=284):
+        return Image.fromarray(self.clip(arm, step, width, height)[index])
+
+    def diagram_frames(self, scene, frame, t, alpha=1):
+        # The introductory base prediction is the first saved step. Its three
+        # temporal windows move; no final-step SVG photographs are reused.
+        n=min(9, int((max(0,t) % STEP_SECONDS)*16))
+        for i,start in enumerate([0,36,71]):
+            im=self.image('without_refiner',1,start+n,120,69).convert('RGBA')
+            width=round(60*scene.scale);height=round(width*480/832)
+            im=im.resize((width,height),Image.LANCZOS)
+            if alpha<1:im.putalpha(round(255*clamp(alpha)))
+            x,y=scene.xy((249+i*66,224+(60-height/scene.scale)/2))
+            frame.paste(im,(round(x),round(y)),im)
 
 
 def make_scenes():
@@ -199,7 +248,7 @@ def make_scenes():
         a.prepare(name+'-image',['image27f98d9a72'],clip)
     b=Scene('pipeline',HERE/'sources/method.svg',(8,67,896,379),(90,220,1740,736))
     b.prepare('base',['base-dit','base-label'])
-    b.prepare('clean',['clean-box','clean-name-a1','clean-symbol-a']+[f'base-case-frame-{n}-1'+end for n in ['000','040','080'] for end in ['', '-outline']])
+    b.prepare('clean',['clean-box','clean-name-a1','clean-symbol-a'])
     b.prepare('input',['noisy-symbol','noisy-label-1','noisy-label-2']+[f'noisy-case-frame-{n}-1'+end for n in ['000','040','080'] for end in ['', '-outline']])
     b.prepare('refiner',['refiner','refiner-label'])
     b.prepare('sum',['velocity-sum','plus'])
@@ -235,7 +284,7 @@ def make_scenes():
     return a,b,c
 
 
-def heading(frame, phase, progress, reference=False):
+def heading(frame, phase, progress, reference=False, recorded=False):
     d=ImageDraw.Draw(frame)
     d.text((78,46),'CorrFlow',fill=INK,font=FONTS['brand'])
     stages=['Predict','Reflect','Refine']
@@ -247,9 +296,11 @@ def heading(frame, phase, progress, reference=False):
     # A quiet time rail is useful even with the native video controls hidden.
     d.rounded_rectangle((80,1046,W-80,1050),radius=2,fill='#e5ecee')
     if progress>0:d.rounded_rectangle((80,1046,80+(W-160)*progress,1050),radius=2,fill=GREEN)
-    if reference:d.text((80,1013),'Reference shown for training intuition',fill=MUTED,font=FONTS[20])
+    if recorded:d.text((80,1013),'Same prompt · same seed · same backbone',fill=MUTED,font=FONTS[20])
+    elif reference:d.text((80,1013),'Reference shown for training intuition',fill=MUTED,font=FONTS[20])
     else:d.text((80,1013),'One base forward pass + one lightweight refiner per sampling step',fill=MUTED,font=FONTS[20])
-    text='Schematic';d.text((W-80-d.textlength(text,font=FONTS[20]),1013),text,fill='#8b9a9f',font=FONTS[20])
+    text='Recorded sampling' if recorded else 'Schematic'
+    d.text((W-80-d.textlength(text,font=FONTS[20]),1013),text,fill='#8b9a9f',font=FONTS[20])
 
 
 def intuition(a,t):
@@ -284,13 +335,14 @@ def edge(scene,frame,name,t,start,color,duration=.8):
     scene.trail(frame,name,u,color,width=4)
 
 
-def pipeline(b,t,complete=False):
+def pipeline(b,t,complete=False,pair=None):
     frame=Image.new('RGB',(W,H),'white')
     # Faint nodes establish the spatial layout without revealing later operations.
     for name in ['base','clean','refiner','sum','sampler']:
         b.put(frame,name,.075)
     schedule=[('input',0),('base',.6),('condition',1.2),('base-velocity',2.1),('clean',2.5),('hidden-label',3.9),('refiner',4.7)]
     for name,start in schedule:b.appear(frame,name,t,start,.7)
+    if pair:pair.diagram_frames(b,frame,t,ramp(t,2.5,.7))
     edge(b,frame,'noisy-to-base',t,.45,BLUE,.65)
     edge(b,frame,'condition-to-base',t,1.6,GREEN,.6)
     edge(b,frame,'base-to-clean',t,1.9,BLUE,.8)
@@ -336,8 +388,8 @@ def refiner(c,t):
     return frame
 
 
-def sampling(b,t):
-    frame=pipeline(b,8,True)
+def sampling(b,t,pair):
+    frame=pipeline(b,8+t,True,pair)
     # The bypass and residual visibly meet BEFORE the sampler update.
     edge(b,frame,'base-bypass',t,.2,BLUE,1.5)
     b.appear(frame,'bypass-label',t,.5,.6)
@@ -348,50 +400,87 @@ def sampling(b,t):
     edge(b,frame,'corrected-to-sampler',t,1.8,GREEN,.9)
     b.appear(frame,'repeat',t,2.6,.8)
     edge(b,frame,'sampler-loop',t,2.7,GREEN,1.)
-    # Repeated pulses denote different sampling steps, not repeated base passes
-    # for a single step. The sigma rail advances only after the update.
-    for cycle in range(3):
-        z=t-(3.4+cycle*1.6)
-        for name,delay,length,color in [
-            ('noisy-to-base',0,.25,BLUE),('base-to-clean',.2,.28,BLUE),
-            ('clean-to-refiner',.44,.25,ORANGE),('hidden-to-refiner',.3,.4,BLUE),
-            ('base-bypass',.2,.8,BLUE),('condition-to-refiner',.38,.32,GREEN),
-            ('residual-to-sum',.7,.3,PURPLE),('corrected-to-sampler',.98,.25,GREEN),
-            ('sampler-loop',1.1,.5,GREEN)]:
-            b.pulse(frame,name,z/length-delay/length,color)
-    edge(b,frame,'sampler-to-video',t,8.2,GREEN,.6)
-    b.appear(frame,'output',t,8.6,.9)
-    # A minimal schematic noise-level rail; no numerical sampling claims.
-    d=ImageDraw.Draw(frame);x1,x2,y=1325,1755,175
-    amount=1-clamp((t-3.3)/5.0)
-    d.text((1215,y-17),'Noise',fill=MUTED,font=FONTS[24])
-    d.line((x1,y,x2,y),fill='#d9e3e6',width=4)
-    d.line((x1,y,x1+(x2-x1)*amount,y),fill=GREEN,width=4)
-    cx=x1+(x2-x1)*amount;d.ellipse((cx-7,y-7,cx+7,y+7),fill=GREEN)
-    d.text((x1-4,y+12),'0',fill=MUTED,font=FONTS[20]);d.text((x2-6,y+12),'1',fill=MUTED,font=FONTS[20])
     return frame
 
 
-def frame_at(scenes,t):
+def replay_state(t):
+    # Integer output-frame arithmetic makes every step exactly 18 frames long.
+    tick=max(0,round(t*FPS))
+    step=min(50,tick//18+1)
+    within=tick%18 if tick<900 else 17
+    return step,min(9,within*16//FPS)
+
+
+def comparison(pair,t):
+    frame=Image.new('RGB',(W,H),'white');d=ImageDraw.Draw(frame)
+    step,n=replay_state(t)
+    sigma=pair.manifest['steps'][step-1]['sigma']
+    d.text((80,151),'Clean predictions',fill=INK,font=FONTS[36])
+    d.text((1160,161),f'Step {step:02d} / 50',fill=INK,font=FONTS['label'])
+    d.text((1578,161),f'Noise {sigma:.3f}',fill=GREEN,font=FONTS[28])
+    # This rail uses the captured sigma, including the nonuniform schedule.
+    d.line((302,216,1838,216),fill='#e0e9eb',width=4)
+    x=302+(1-sigma)*1536
+    if x>302:d.line((302,216,x,216),fill=GREEN,width=4)
+    d.ellipse((x-6,210,x+6,222),fill=GREEN)
+    for row,(arm,label,color) in enumerate([
+        ('without_refiner','Without',BLUE),('with_refiner','With',GREEN)]):
+        y=280+350*row
+        d.rounded_rectangle((80,y+114,86,y+173),radius=3,fill=color)
+        d.text((102,y+108),label,fill=color,font=FONTS['label'])
+        d.text((102,y+148),'refiner',fill=INK,font=FONTS[28])
+        for col,start in enumerate([0,36,71]):
+            x=302+522*col
+            frame.paste(pair.image(arm,step,start+n),(x,y))
+            d.rectangle((x,y,x+491,y+283),outline='#d5e0e3',width=1)
+            # A shared video timestamp makes temporal alignment explicit.
+            if row==0:
+                text=f'{(start+n)/16:.2f} s'
+                d.text((x+(492-d.textlength(text,font=FONTS[22]))/2,244),text,fill=MUTED,font=FONTS[22])
+    return frame
+
+
+def final_pair(pair,t):
+    frame=Image.new('RGB',(W,H),'white');d=ImageDraw.Draw(frame)
+    n=min(80,max(0,int(t*16)))
+    d.text((80,151),'Final videos',fill=INK,font=FONTS[36])
+    d.text((1630,161),'Noise 0.000',fill=GREEN,font=FONTS[28])
+    for arm,x,label,color in [('without_refiner',80,'Without refiner',BLUE),('with_refiner',1008,'With refiner',GREEN)]:
+        d.text((x,285),label,fill=color,font=FONTS['label'])
+        frame.paste(pair.image(arm,50,n,832,480),(x,340))
+        d.rectangle((x,340,x+831,819),outline='#d5e0e3',width=1)
+    text=f'{n/16:.2f} s'
+    d.text(((W-d.textlength(text,font=FONTS[24]))/2,865),text,fill=MUTED,font=FONTS[24])
+    return frame
+
+
+def frame_at(scenes,t,pair):
     a,b,c=scenes
     # Scene cuts use short, calm dissolves. Geometry within scenes animates
     # progressively, with the exact paths and assets from the supplied figures.
     if t<16.3:
         im=intuition(a,t);phase=0 if t<9.8 else 1;reference=True
     elif t<17.3:
-        im=Image.blend(intuition(a,16.3),pipeline(b,0),ease(t-16.3));phase=1;reference=t<16.8
+        im=Image.blend(intuition(a,16.3),pipeline(b,0,pair=pair),ease(t-16.3));phase=1;reference=t<16.8
     elif t<24.7:
-        im=pipeline(b,t-17.3);phase=1;reference=False
+        im=pipeline(b,t-17.3,pair=pair);phase=1;reference=False
     elif t<25.7:
-        im=Image.blend(pipeline(b,7.4),refiner(c,0),ease(t-24.7));phase=1;reference=False
+        im=Image.blend(pipeline(b,7.4,pair=pair),refiner(c,0),ease(t-24.7));phase=1;reference=False
     elif t<36.7:
         im=refiner(c,t-25.7);phase=1;reference=False
     elif t<37.7:
-        im=Image.blend(refiner(c,11),sampling(b,0),ease(t-36.7));phase=2;reference=False
+        im=Image.blend(refiner(c,11),sampling(b,0,pair),ease(t-36.7));phase=2;reference=False
+    elif t<42:
+        im=sampling(b,t-37.7,pair);phase=2;reference=False
+    elif t<REPLAY_START:
+        im=Image.blend(sampling(b,4.3,pair),comparison(pair,0),ease(t-42));phase=2;reference=False
+    elif t<73:
+        im=comparison(pair,t-REPLAY_START);phase=2;reference=False
+    elif t<FINAL_START:
+        im=Image.blend(comparison(pair,30),final_pair(pair,0),ease((t-73)/.8));phase=2;reference=False
     else:
-        im=sampling(b,t-37.7);phase=2;reference=False
-    heading(im,phase,t/DURATION,reference)
-    # The final hold gives time to read the complete causal chain.
+        im=final_pair(pair,t-FINAL_START);phase=2;reference=False
+    heading(im,phase,t/DURATION,reference,recorded=t>=42.5)
     return im
 
 
@@ -402,17 +491,38 @@ def main():
     parser.add_argument('--ffmpeg',default=FFMPEG_DEFAULT)
     args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     scenes=make_scenes()
-    timestamps=[0,3,6.5,9.7,13.8,16,19.3,23.9,28.3,31.8,35.6,39.8,43,47,51]
-    frame_at(scenes,13.8).save(args.output/'poster.jpg',quality=94)
+    pair=RecordedPair(args.ffmpeg)
+    timestamps=[0,3,6.5,9.7,13.8,16,19.3,23.9,28.3,31.8,35.6,39.8,43,45.7,48.7,57.7,66.7,72.7,74,76,78.8]
+    frame_at(scenes,13.8,pair).save(args.output/'poster.jpg',quality=94)
     if args.stills:
-        for t in timestamps:frame_at(scenes,t).save(args.output/f'frame-{t:04.1f}.jpg',quality=92)
+        for t in timestamps:frame_at(scenes,t,pair).save(args.output/f'frame-{t:04.1f}.jpg',quality=92)
         thumbs=Image.new('RGB',(960,270*math.ceil(len(timestamps)/3)),'#edf2f3')
         for i,t in enumerate(timestamps):
-            thumb=frame_at(scenes,t).resize((320,180),Image.LANCZOS)
+            thumb=frame_at(scenes,t,pair).resize((320,180),Image.LANCZOS)
             x=(i%3)*320;y=(i//3)*270
             thumbs.paste(thumb,(x,y+20));ImageDraw.Draw(thumbs).text((x+14,y+212),f'{t:04.1f} s',fill=INK,font=FONTS[22])
         thumbs.save(args.output/'storyboard.jpg',quality=93)
-    manifest={'title':'CorrFlow — self-correction inside the sampling loop','durationSeconds':DURATION,'width':W,'height':H,'fps':FPS,'audioTracks':0,'sourceDirectory':'paper/6a843d2839af97b2b532565f/figs','sources':{n:hashlib.sha256((HERE/'sources'/n).read_bytes()).hexdigest() for n in ['intuition.svg','method.svg']},'chapters':[{'start':0,'title':'Prediction, discrepancy, correction'},{'start':17.3,'title':'Reuse the base forward pass'},{'start':25.7,'title':'Inside the refiner'},{'start':37.7,'title':'Correct the velocity, update, repeat'}],'notes':['The original embedded images and mathematical geometry are preserved.','Reference is shown only for training intuition, never as an inference input.','Animated pulses and the sigma rail are schematic, not recorded inference traces.','No synthesized images, score tables, audio, or qualitative-results montage.']}
+    manifest={
+        'title':'CorrFlow — self-correction inside the sampling loop',
+        'durationSeconds':DURATION,'width':W,'height':H,'fps':FPS,'audioTracks':0,
+        'sourceDirectory':'paper/corrflow_arxiv/figs',
+        'sources':{n:hashlib.sha256((HERE/'sources'/n).read_bytes()).hexdigest() for n in ['intuition.svg','method.svg','sampling-pair.zip']},
+        'chapters':[{'start':0,'title':'Prediction, discrepancy, correction'},
+            {'start':17.3,'title':'Reuse the base forward pass'},
+            {'start':25.7,'title':'Inside the refiner'},
+            {'start':37.7,'title':'Correct the velocity before the sampler'},
+            {'start':REPLAY_START,'title':'All 50 recorded sampling steps, paired'},
+            {'start':FINAL_START,'title':'Synchronized final videos'}],
+        'samplingPair':{key:value for key,value in pair.manifest.items() if key not in ('files','prompt')},
+        'notes':[
+            'The method SVG is byte-identical in corrflow_arxiv and the originally supplied paper directory.',
+            'The original SVG photographs mixed seeds 3 and 12. This replay uses the same case with seed 12 in both arms and verified identical initial noise.',
+            'Every recorded noise step is displayed for 18 output frames (0.6 s). Three panes play synchronized early, middle, and late video windows; no interpolation between steps.',
+            'The final paired videos play all 81 source frames at 16 fps. Step 50 has sigma 0.092592582; only the final endpoint is labeled zero.',
+            'Reference is shown only for training intuition, never as an inference input.',
+            'Diagram arrows and its noisy-input icon are schematic. The paired clean predictions, their noise levels, and temporal motion come from actual captured inference.',
+            'No synthesized images, score tables, or audio.'
+        ]}
     (args.output/'provenance.json').write_text(json.dumps(manifest,indent=2)+'\n')
     if args.stills:
         print('Storyboard ready:',args.output/'storyboard.jpg',flush=True);return
@@ -422,10 +532,11 @@ def main():
     start=time.monotonic()
     try:
         for i in range(DURATION*FPS):
-            proc.stdin.write(frame_at(scenes,i/FPS).tobytes())
+            proc.stdin.write(frame_at(scenes,i/FPS,pair).tobytes())
             if i%(FPS*5)==0:print(f'Encoded {i/FPS:4.0f}/{DURATION}s · elapsed {time.monotonic()-start:.1f}s',flush=True)
         proc.stdin.close();code=proc.wait()
         if code:raise RuntimeError(f'ffmpeg failed: {code}')
+        assert len(pair.verified)==100, f'Only {len(pair.verified)}/100 recorded clips were decoded'
     except BaseException:
         proc.terminate();raise
     print('Silent H.264 video ready:',path,flush=True)

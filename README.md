@@ -28,7 +28,7 @@ ASTRO_TELEMETRY_DISABLED=1 npm run preview
 - `src/data/images.json`: 64 curated generated images with ImageNet class labels.
 - `src/data/videos.json`: all 32 supplementary cases and their 158 comparison videos.
 - `public/paper/corrflow.pdf`: supplied paper's `corrflow_arxiv/main.pdf`.
-- `public/media/teaser/`: silent 52-second, 1920 × 1080, 30 fps method animation (H.264 MP4 and VP9 WebM), poster, and provenance.
+- `public/media/teaser/`: silent 79-second, 1920 × 1080, 30 fps method animation (H.264 MP4 and VP9 WebM), poster, and provenance.
 - `scripts/teaser/`: reproducible animation renderer and the two exact SVG source files requested for this teaser. See [rendering instructions](scripts/teaser/README.md).
 - `public/media/figures/`: earlier paper figure copies, retained as assets; the page now explains the method through the teaser.
 - `public/media/images/provenance.json`: exact image source, checkpoint, sampling settings, sample indices, and pixel hashes.
@@ -39,7 +39,7 @@ Images come only from `RAEv2/results/stage2/offline_eval/gen_npz/in256-k7-ft-cop
 
 Video benchmark tabs cover VBench, VideoPhy2, FinePhyEval, and Physics-IQ. Playback starts only on request. Changing cases, changing tabs, scrolling away, or hiding the browser tab pauses playback. Native controls and video links remain available. Without JavaScript, all images and cases are visible.
 
-The teaser sits before the abstract and replaces the static method section and hero sample strip. It animates prediction and correction, reuse of the base forward pass, the refiner's attention blocks, and repeated corrected sampling. Text is limited to diagram labels and brief annotations. It contains no audio track or results montage. It starts once when sufficiently in view, respects reduced-motion and data-saving preferences, and pauses when scrolled away. Native controls support pause, seeking, fullscreen, and replay; a download link provides the MP4.
+The teaser sits before the abstract and replaces the static method section and hero sample strip. It animates prediction and correction, reuse of the base forward pass, and the refiner's attention blocks. It then follows all 50 captured sampling steps of the diagram's watermelon case, with synchronized without/with-refiner rows and three moving temporal windows. Both arms use the same seed and backbone. Text is limited to diagram labels, timing, and brief annotations. It contains no audio track or results montage. It starts once when sufficiently in view, respects reduced-motion and data-saving preferences, and pauses when scrolled away. Native controls support pause, seeking, fullscreen, and replay; a download link provides the MP4.
 
 ## GitHub Pages
 
@@ -50,9 +50,9 @@ The site retains the original Astro research template and its reusable component
 ## Validation in this workspace
 
 - `npm run build`: passed (0 errors / 0 warnings; one pre-existing unused-field hint in a template component).
-- Generated HTML: 570 local resource references checked; no missing assets, broken anchors, or duplicate IDs.
-- Firefox: 28 checks passed, including actual teaser playback and five scene seeks, reduced-motion behavior, pause on scroll, image filters/viewer, keyboard controls, video tabs/case selection, citation action, responsive layouts at 360/390/768/1440 px, and browser/HTTP errors.
-- Teaser: Python renderer compiles; both MP4 and WebM fully decode (1,560 frames each, 52 seconds, no audio streams). SVG source copies match the requested originals byte for byte.
+- Generated HTML: 567 local resource references checked; no missing assets, broken anchors, or duplicate IDs.
+- Latest teaser: 12 Firefox checks passed, covering real playback, 11 scene seeks, temporal movement within a fixed noise step in both rows, changes across sampling steps, reduced-motion behavior, pause offscreen, desktop/mobile overflow, and browser/HTTP errors. Earlier page-wide checks also covered the image viewer, video gallery, citation action, and responsive layouts.
+- Teaser: both Python scripts compile; MP4 and WebM fully decode (2,370 frames each, 79 seconds, no audio streams). All 100 packaged source clips match their hashes and decode during rendering. Every one of the 50 steps occupies exactly 18 frames, with matched temporal indices between arms. SVG source copies match the requested originals byte for byte.
 - All 158 MP4 files passed a CPU first-frame decode check with FFmpeg.
 - Chromium: real H.264 playback passed for a five-video comparison, including synchronized playback, speed changes, pause, replay, and stopping playback when switching benchmark tabs. Firefox was used for visual checks because its cluster installation lacks H.264 support.
 - Teaser browser limitation: the subsequent Chromium check timed out both on whole-page navigation and isolated media readiness in this cluster. The new teaser's browser playback/seek checks passed in Firefox using WebM; its MP4 passed full FFmpeg decoding, but the new MP4's Chromium playback is not verified here.

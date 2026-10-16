@@ -195,7 +195,10 @@ const citation = `@misc{zhang2026corrflow,
           the same base forward pass. Self-attention and cross-attention produce
           a residual that is added to the base velocity before each sampler
           update. The process repeats from the corrected state as the noise
-          level decreases.
+          level decreases. A recorded comparison shows all 50 noise steps:
+          without and with the refiner use the same prompt, seed, and backbone.
+          Three synchronized temporal windows move at each step, followed by
+          the paired final videos.
         </p>
       </section>
 

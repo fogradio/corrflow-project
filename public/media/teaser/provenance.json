@@ -1,14 +1,15 @@
 {
   "title": "CorrFlow \u2014 self-correction inside the sampling loop",
-  "durationSeconds": 52,
+  "durationSeconds": 79,
   "width": 1920,
   "height": 1080,
   "fps": 30,
   "audioTracks": 0,
-  "sourceDirectory": "paper/6a843d2839af97b2b532565f/figs",
+  "sourceDirectory": "paper/corrflow_arxiv/figs",
   "sources": {
     "intuition.svg": "727f99eb1f98ab9231ad7f092a8b64bce8cb260e3753a98ac5e58559fc52f519",
-    "method.svg": "411766147c845c611f8eab8f3f56865184b320cf21b452dad1641c3db88993bf"
+    "method.svg": "411766147c845c611f8eab8f3f56865184b320cf21b452dad1641c3db88993bf",
+    "sampling-pair.zip": "15b6df0d48a7d71ad3bbb585f902f802e7cb7ae3e2f2062ce7320a74b5b925b4"
   },
   "chapters": [
     {
@@ -25,13 +26,255 @@
     },
     {
       "start": 37.7,
-      "title": "Correct the velocity, update, repeat"
+      "title": "Correct the velocity before the sampler"
+    },
+    {
+      "start": 43.0,
+      "title": "All 50 recorded sampling steps, paired"
+    },
+    {
+      "start": 73.8,
+      "title": "Synchronized final videos"
     }
   ],
+  "samplingPair": {
+    "case": "rank02_12_prompt_012",
+    "sourceRun": "top10_nodynamic_v2_same_seed_56405_20260914",
+    "seed": 12,
+    "initialNoiseSHA256": "7f83aff66cf5b7e54f77468a1a6e1f70cfd24c41d3c82372ee806ceb777f4876",
+    "backbone": "wan21_t2v_1_3b_wisa_joint_copilot_v2/step-2500.safetensors",
+    "refinerScale": {
+      "without_refiner": 0,
+      "with_refiner": 0.2
+    },
+    "sourceFPS": 16,
+    "sourceFrames": 81,
+    "sourceSize": [
+      832,
+      480
+    ],
+    "cleanPrediction": "VAE decode of x_sigma - sigma * v_guided, after CFG and optional refiner, before the ODE update.",
+    "comparison": "Two closed-loop trajectories starting from identical noise; later states differ. Not a same-state one-step before/after comparison.",
+    "display": {
+      "secondsPerStep": 0.6,
+      "temporalWindowStarts": [
+        0,
+        36,
+        71
+      ],
+      "framesPerWindow": 10,
+      "note": "All 50 steps, in order. Both arms show the same recorded frame indices. Each pane plays a short early/middle/late window at source speed; no interpolation."
+    },
+    "steps": [
+      {
+        "step": 1,
+        "sigma": 1.0
+      },
+      {
+        "step": 2,
+        "sigma": 0.9959349632263184
+      },
+      {
+        "step": 3,
+        "sigma": 0.9917354583740234
+      },
+      {
+        "step": 4,
+        "sigma": 0.9873948693275452
+      },
+      {
+        "step": 5,
+        "sigma": 0.982905924320221
+      },
+      {
+        "step": 6,
+        "sigma": 0.97826087474823
+      },
+      {
+        "step": 7,
+        "sigma": 0.9734513759613037
+      },
+      {
+        "step": 8,
+        "sigma": 0.9684684872627258
+      },
+      {
+        "step": 9,
+        "sigma": 0.9633027911186218
+      },
+      {
+        "step": 10,
+        "sigma": 0.9579439759254456
+      },
+      {
+        "step": 11,
+        "sigma": 0.9523810148239136
+      },
+      {
+        "step": 12,
+        "sigma": 0.9466019868850708
+      },
+      {
+        "step": 13,
+        "sigma": 0.9405940771102905
+      },
+      {
+        "step": 14,
+        "sigma": 0.9343434572219849
+      },
+      {
+        "step": 15,
+        "sigma": 0.9278350472450256
+      },
+      {
+        "step": 16,
+        "sigma": 0.9210526347160339
+      },
+      {
+        "step": 17,
+        "sigma": 0.9139785170555115
+      },
+      {
+        "step": 18,
+        "sigma": 0.9065934419631958
+      },
+      {
+        "step": 19,
+        "sigma": 0.8988763689994812
+      },
+      {
+        "step": 20,
+        "sigma": 0.8908045887947083
+      },
+      {
+        "step": 21,
+        "sigma": 0.882352888584137
+      },
+      {
+        "step": 22,
+        "sigma": 0.8734939694404602
+      },
+      {
+        "step": 23,
+        "sigma": 0.8641974925994873
+      },
+      {
+        "step": 24,
+        "sigma": 0.8544303774833679
+      },
+      {
+        "step": 25,
+        "sigma": 0.8441558480262756
+      },
+      {
+        "step": 26,
+        "sigma": 0.8333333134651184
+      },
+      {
+        "step": 27,
+        "sigma": 0.821917712688446
+      },
+      {
+        "step": 28,
+        "sigma": 0.8098591566085815
+      },
+      {
+        "step": 29,
+        "sigma": 0.7971014976501465
+      },
+      {
+        "step": 30,
+        "sigma": 0.7835820913314819
+      },
+      {
+        "step": 31,
+        "sigma": 0.7692307233810425
+      },
+      {
+        "step": 32,
+        "sigma": 0.7539682388305664
+      },
+      {
+        "step": 33,
+        "sigma": 0.737704873085022
+      },
+      {
+        "step": 34,
+        "sigma": 0.7203389406204224
+      },
+      {
+        "step": 35,
+        "sigma": 0.7017543315887451
+      },
+      {
+        "step": 36,
+        "sigma": 0.6818181872367859
+      },
+      {
+        "step": 37,
+        "sigma": 0.6603773832321167
+      },
+      {
+        "step": 38,
+        "sigma": 0.6372548937797546
+      },
+      {
+        "step": 39,
+        "sigma": 0.6122448444366455
+      },
+      {
+        "step": 40,
+        "sigma": 0.585106372833252
+      },
+      {
+        "step": 41,
+        "sigma": 0.555555522441864
+      },
+      {
+        "step": 42,
+        "sigma": 0.5232557654380798
+      },
+      {
+        "step": 43,
+        "sigma": 0.4878048598766327
+      },
+      {
+        "step": 44,
+        "sigma": 0.44871795177459717
+      },
+      {
+        "step": 45,
+        "sigma": 0.4054053723812103
+      },
+      {
+        "step": 46,
+        "sigma": 0.357142835855484
+      },
+      {
+        "step": 47,
+        "sigma": 0.3030303120613098
+      },
+      {
+        "step": 48,
+        "sigma": 0.24193546175956726
+      },
+      {
+        "step": 49,
+        "sigma": 0.17241378128528595
+      },
+      {
+        "step": 50,
+        "sigma": 0.09259258210659027
+      }
+    ]
+  },
   "notes": [
-    "The original embedded images and mathematical geometry are preserved.",
+    "The method SVG is byte-identical in corrflow_arxiv and the originally supplied paper directory.",
+    "The original SVG photographs mixed seeds 3 and 12. This replay uses the same case with seed 12 in both arms and verified identical initial noise.",
+    "Every recorded noise step is displayed for 18 output frames (0.6 s). Three panes play synchronized early, middle, and late video windows; no interpolation between steps.",
+    "The final paired videos play all 81 source frames at 16 fps. Step 50 has sigma 0.092592582; only the final endpoint is labeled zero.",
     "Reference is shown only for training intuition, never as an inference input.",
-    "Animated pulses and the sigma rail are schematic, not recorded inference traces.",
-    "No synthesized images, score tables, audio, or qualitative-results montage."
+    "Diagram arrows and its noisy-input icon are schematic. The paired clean predictions, their noise levels, and temporal motion come from actual captured inference.",
+    "No synthesized images, score tables, or audio."
   ]
 }
