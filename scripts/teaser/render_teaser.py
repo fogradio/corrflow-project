@@ -2,7 +2,7 @@
 """Deterministic, silent CorrFlow motion diagram, using the original SVG layers.
 
 Requires Python + Pillow + numpy + PyGObject/librsvg, and FFmpeg.
-Original SVG geometry plus recorded, same-noise clean-prediction videos.
+Original SVG geometry plus recorded clean-prediction videos.
 No synthesis, no audio, no GPU.
 Use --stills to inspect keyframes before encoding. All output files are additive.
 """
@@ -296,9 +296,9 @@ def heading(frame, phase, progress, reference=False, recorded=False):
     # A quiet time rail is useful even with the native video controls hidden.
     d.rounded_rectangle((80,1046,W-80,1050),radius=2,fill='#e5ecee')
     if progress>0:d.rounded_rectangle((80,1046,80+(W-160)*progress,1050),radius=2,fill=GREEN)
-    if recorded:d.text((80,1013),'Same prompt · same seed · same backbone',fill=MUTED,font=FONTS[20])
-    elif reference:d.text((80,1013),'Reference shown for training intuition',fill=MUTED,font=FONTS[20])
-    else:d.text((80,1013),'One base forward pass + one lightweight refiner per sampling step',fill=MUTED,font=FONTS[20])
+    if not recorded:
+        text='Reference shown for training intuition' if reference else 'One base forward pass + one lightweight refiner per sampling step'
+        d.text((80,1013),text,fill=MUTED,font=FONTS[20])
     text='Recorded sampling' if recorded else 'Schematic'
     d.text((W-80-d.textlength(text,font=FONTS[20]),1013),text,fill='#8b9a9f',font=FONTS[20])
 
@@ -516,7 +516,7 @@ def main():
         'samplingPair':{key:value for key,value in pair.manifest.items() if key not in ('files','prompt')},
         'notes':[
             'The method SVG is byte-identical in corrflow_arxiv and the originally supplied paper directory.',
-            'The original SVG photographs mixed seeds 3 and 12. This replay uses the same case with seed 12 in both arms and verified identical initial noise.',
+            'The replay uses the user-selected V2-O02 watermelon-dessert pair, matching the original method SVG case. Per-arm seeds and initial-noise hashes are retained in samplingPair.',
             'Every recorded noise step is displayed for 18 output frames (0.6 s). Three panes play synchronized early, middle, and late video windows; no interpolation between steps.',
             'The final paired videos play all 81 source frames at 16 fps. Step 50 has sigma 0.092592582; only the final endpoint is labeled zero.',
             'Reference is shown only for training intuition, never as an inference input.',

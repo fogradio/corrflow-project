@@ -25,9 +25,9 @@ The reference is explanatory training supervision, never an inference input. The
 
 ## Recorded comparison
 
-Source: `outputs/qualitative_clean_predictions/top10_nodynamic_v2_same_seed_56405_20260914/cases/rank02_12_prompt_012`, the watermelon-dessert prompt used in the method figure. The original SVG paired seeds 3 and 12; the animation instead uses the available same-seed capture for this case. Both arms use seed 12, the same initial-noise SHA-256, prompt, backbone checkpoint, CFG, and schedule. Only the refiner scale differs: 0 versus 0.2.
+Source: `outputs/qualitative_clean_predictions/top10_nodynamic_v2_56405_vs_56065_20260914/cases/rank02_12_prompt_012`, the user-selected **V2-O02** watermelon-dessert pair used in the method figure. The without-refiner arm uses seed 3 and scale 0; the with-refiner arm uses seed 12 and scale 0.2. Both use the same prompt, backbone checkpoint, CFG, and schedule. The manifest retains each arm’s seed and initial-noise SHA-256. These details are not overlaid on the video.
 
-These are two complete sampling trajectories that start from identical noise. Later sampling states differ; the comparison is not a same-state one-step residual ablation. The displayed clean prediction is `x_sigma - sigma * v_guided`, decoded after CFG and the optional refiner, before the ODE update. Step 50 uses the recorded noise level 0.092592582; only the final endpoint is labeled zero. The capture's endpoint verification and identical final/step-50 MP4 hashes are checked during packaging.
+These are two complete sampling trajectories from different initial noise, selected for qualitative illustration. The comparison is not a matched-noise causal ablation or a same-state one-step residual ablation. The displayed clean prediction is `x_sigma - sigma * v_guided`, decoded after CFG and the optional refiner, before the ODE update. Step 50 uses the recorded noise level 0.092592582; only the final endpoint is labeled zero. The capture's endpoint verification and identical final/step-50 MP4 hashes are checked during packaging.
 
 Each of the 50 steps occupies exactly 18 output frames. The three panes play source frames 0–9, 36–45, and 71–80 at the source rate of 16 fps. Shared timestamps show the video time in each column; the upper rail shows sampling noise. Both arms always use the same step and source frame indices. There is no interpolation between sampling steps, no synthesized motion, and no cropping of the recorded frames. The last pair plays all 81 source frames.
 
@@ -60,7 +60,8 @@ To rebuild the source package from the research workspace, use a new output path
 
 ```bash
 python3 scripts/teaser/prepare_sampling.py \
-  --case /path/to/top10_nodynamic_v2_same_seed_56405_20260914/cases/rank02_12_prompt_012 \
+  --case /path/to/top10_nodynamic_v2_56405_vs_56065_20260914/cases/rank02_12_prompt_012 \
+  --candidate-id V2-O02 \
   --output /tmp/sampling-pair.zip
 ```
 

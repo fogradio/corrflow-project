@@ -9,7 +9,7 @@
   "sources": {
     "intuition.svg": "727f99eb1f98ab9231ad7f092a8b64bce8cb260e3753a98ac5e58559fc52f519",
     "method.svg": "411766147c845c611f8eab8f3f56865184b320cf21b452dad1641c3db88993bf",
-    "sampling-pair.zip": "15b6df0d48a7d71ad3bbb585f902f802e7cb7ae3e2f2062ce7320a74b5b925b4"
+    "sampling-pair.zip": "904ce82e8c659f99ab35863df0fa9655724b5db379e3c3d28ebce2ee5443d718"
   },
   "chapters": [
     {
@@ -39,9 +39,16 @@
   ],
   "samplingPair": {
     "case": "rank02_12_prompt_012",
-    "sourceRun": "top10_nodynamic_v2_same_seed_56405_20260914",
-    "seed": 12,
-    "initialNoiseSHA256": "7f83aff66cf5b7e54f77468a1a6e1f70cfd24c41d3c82372ee806ceb777f4876",
+    "candidateID": "V2-O02",
+    "sourceRun": "top10_nodynamic_v2_56405_vs_56065_20260914",
+    "seeds": {
+      "without_refiner": 3,
+      "with_refiner": 12
+    },
+    "initialNoiseSHA256": {
+      "without_refiner": "7ea0337c310dae0acf281138095ce1329a145ad8340d07bfba5cbba25e67be30",
+      "with_refiner": "7f83aff66cf5b7e54f77468a1a6e1f70cfd24c41d3c82372ee806ceb777f4876"
+    },
     "backbone": "wan21_t2v_1_3b_wisa_joint_copilot_v2/step-2500.safetensors",
     "refinerScale": {
       "without_refiner": 0,
@@ -54,7 +61,7 @@
       480
     ],
     "cleanPrediction": "VAE decode of x_sigma - sigma * v_guided, after CFG and optional refiner, before the ODE update.",
-    "comparison": "Two closed-loop trajectories starting from identical noise; later states differ. Not a same-state one-step before/after comparison.",
+    "comparison": "Two independently sampled closed-loop trajectories for a qualitative illustration; not a same-state one-step before/after comparison or a matched-noise causal ablation.",
     "display": {
       "secondsPerStep": 0.6,
       "temporalWindowStarts": [
@@ -270,7 +277,7 @@
   },
   "notes": [
     "The method SVG is byte-identical in corrflow_arxiv and the originally supplied paper directory.",
-    "The original SVG photographs mixed seeds 3 and 12. This replay uses the same case with seed 12 in both arms and verified identical initial noise.",
+    "The replay uses the user-selected V2-O02 watermelon-dessert pair, matching the original method SVG case. Per-arm seeds and initial-noise hashes are retained in samplingPair.",
     "Every recorded noise step is displayed for 18 output frames (0.6 s). Three panes play synchronized early, middle, and late video windows; no interpolation between steps.",
     "The final paired videos play all 81 source frames at 16 fps. Step 50 has sigma 0.092592582; only the final endpoint is labeled zero.",
     "Reference is shown only for training intuition, never as an inference input.",
