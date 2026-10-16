@@ -302,7 +302,6 @@ function stopAll() {
   teaser.pause();
   comparisons.forEach((comparison) => comparison.pause());
 }
-const tabs = all<HTMLButtonElement>("[data-benchmark]");
 const panels = all<HTMLElement>("[data-panel]");
 function selectCase(panel: HTMLElement) {
   const select = one<HTMLSelectElement>("[data-case-select]", panel);
@@ -329,32 +328,6 @@ panels.forEach((panel) => {
     }),
   );
 });
-function activateTab(tab: HTMLButtonElement) {
-  stopAll();
-  tabs.forEach((other) => {
-    other.setAttribute("aria-selected", String(other === tab));
-    other.tabIndex = other === tab ? 0 : -1;
-  });
-  panels.forEach((panel) => {
-    panel.hidden = panel.dataset.panel !== tab.dataset.benchmark;
-  });
-}
-tabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateTab(tab));
-  tab.addEventListener("keydown", (event) => {
-    let target = index;
-    if (event.key === "ArrowRight") target = (index + 1) % tabs.length;
-    else if (event.key === "ArrowLeft")
-      target = (index + tabs.length - 1) % tabs.length;
-    else if (event.key === "Home") target = 0;
-    else if (event.key === "End") target = tabs.length - 1;
-    else return;
-    event.preventDefault();
-    activateTab(tabs[target]);
-    tabs[target].focus();
-  });
-});
-activateTab(tabs[0]);
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) stopAll();
 });

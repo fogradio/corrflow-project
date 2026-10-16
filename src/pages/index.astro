@@ -6,16 +6,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "") + "/";
 const asset = (path: string) => base + path;
 const benchmarks = [
   {
-    id: "vbench",
-    name: "VBench",
-    task: "Text to video",
-    description: "Appearance, composition, and motion.",
-  },
-  {
     id: "videophy2",
     name: "VideoPhy2",
     task: "Text to video",
     description: "Everyday actions and physical interactions.",
+  },
+  {
+    id: "physics-iq-veried",
+    name: "Physics-IQ",
+    task: "Image to video",
+    description: "Image-conditioned physical events.",
   },
   {
     id: "finephyeval",
@@ -24,10 +24,10 @@ const benchmarks = [
     description: "Object interactions and physical events.",
   },
   {
-    id: "physics-iq-veried",
-    name: "Physics-IQ",
-    task: "Image to video",
-    description: "Image-conditioned physical events.",
+    id: "vbench",
+    name: "VBench",
+    task: "Text to video",
+    description: "Appearance, composition, and motion.",
   },
 ];
 const title = "CorrFlow: Self-Correcting Flow Matching";
@@ -75,8 +75,8 @@ const citation = `@misc{zhang2026corrflow,
           >CorrFlow<span class="wordmark-dot">.</span></a
         >
         <div class="nav-links">
-          <a href="#method">Method</a><a href="#images">Images</a><a
-            href="#videos">Videos</a
+          <a href="#method">Method</a><a href="#videos">Videos</a><a
+            href="#images">Images</a
           ><a href="#citation">Citation</a>
         </div>
         <button class="nav-paper resource-pending" type="button" disabled
@@ -249,85 +249,6 @@ const citation = `@misc{zhang2026corrflow,
       </section>
 
       <section
-        id="images"
-        class="section image-section"
-        aria-labelledby="images-title"
-      >
-        <div class="container">
-          <div class="section-top">
-            <div>
-              <p class="eyebrow">01 / IMAGE GENERATION</p><h2 id="images-title">
-                A closer look.
-              </h2>
-            </div><p class="section-description">
-              Selected class-conditional samples.<br />Small details, varied
-              subjects, rich textures.
-            </p>
-          </div>
-          <div class="gallery-toolbar">
-            <div
-              class="filter-pills"
-              role="group"
-              aria-label="Filter image samples"
-            >
-              <button class="active" data-image-filter="all" aria-pressed="true"
-                >All samples</button
-              ><button data-image-filter="animals" aria-pressed="false"
-                >Animals</button
-              ><button data-image-filter="nature" aria-pressed="false"
-                >Nature & food</button
-              ><button data-image-filter="objects" aria-pressed="false"
-                >Objects & places</button
-              >
-            </div><span class="gallery-hint"
-              >Click to take a closer look <span aria-hidden="true">↗</span
-              ></span
-            >
-          </div>
-          <div class="image-grid">
-            {
-              images.map((im, i) => (
-                <button
-                  class="sample"
-                  data-image-index={i}
-                  data-image-group={im.group}
-                  aria-label={`Enlarge ${im.label}`}
-                >
-                  <>
-                    <img
-                      src={asset(im.src)}
-                      alt={`CorrFlow generated image of ${im.label.toLowerCase()}`}
-                      loading="lazy"
-                      decoding="async"
-                      width="256"
-                      height="256"
-                    />
-                    <span class="sample-label">
-                      {im.label}
-                      <span aria-hidden="true">↗</span>
-                    </span>
-                  </>
-                </button>
-              ))
-            }
-          </div>
-          <div class="gallery-footer">
-            <p>
-              ImageNet 256 × 256 · RAEv2 + CorrFlow · final 80-epoch fine-tuning
-              · guidance 1.78
-            </p><button
-              id="expand-gallery"
-              class="text-button"
-              aria-expanded="false"
-              >View all {images.length} samples <span aria-hidden="true">↓</span
-              ></button
-            >
-          </div>
-          <p class="sample-count sr-only" role="status" aria-live="polite"></p>
-        </div>
-      </section>
-
-      <section
         id="videos"
         class="section video-section"
         aria-labelledby="videos-title"
@@ -335,87 +256,73 @@ const citation = `@misc{zhang2026corrflow,
         <div class="container">
           <div class="section-top">
             <div>
-              <p class="eyebrow">02 / VIDEO GENERATION</p><h2 id="videos-title">
+              <p class="eyebrow">01 / VIDEO GENERATION</p><h2 id="videos-title">
                 See the difference in time.
               </h2>
             </div><p class="section-description">
-              From written prompts to physical events.<br />Explore
-              text-to-video and image-to-video results.
+              Explore physical interactions with VideoPhy2 and Physics-IQ,<br />
+              followed by FinePhyEval and VBench.
             </p>
           </div>
-          <div
-            class="benchmark-tabs"
-            role="tablist"
-            aria-label="Video benchmarks"
-          >
+          <nav class="benchmark-nav" aria-label="Video chapters">
             {
               benchmarks.map((b, i) => (
-                <button
-                  id={`tab-${b.id}`}
-                  role="tab"
-                  data-benchmark={b.id}
-                  aria-controls={`panel-${b.id}`}
-                  aria-selected={i === 0 ? "true" : "false"}
-                  tabindex={i === 0 ? 0 : -1}
-                >
-                  <span>{b.task}</span>
+                <a href={`#panel-${b.id}`}>
+                  <span>{String(i + 1).padStart(2, "0")}</span>
                   {b.name}
-                </button>
+                  <span aria-hidden="true">↓</span>
+                </a>
               ))
             }
-          </div>
+          </nav>
           {
-            benchmarks.map((b) => {
+            benchmarks.map((b, i) => {
               const cases = videos.filter((v) => v.benchmark === b.id);
               return (
-                <div
-                  class="benchmark-panel"
+                <section
+                  class="benchmark-chapter"
                   id={`panel-${b.id}`}
-                  role="tabpanel"
-                  aria-labelledby={`tab-${b.id}`}
+                  aria-labelledby={`chapter-${b.id}`}
                   data-panel={b.id}
                 >
+                  <div class="chapter-heading">
+                    <p class="eyebrow">
+                      Chapter {String(i + 1).padStart(2, "0")} / {b.task}
+                    </p>
+                    <h3 id={`chapter-${b.id}`}>{b.name}</h3>
+                    <p class="section-description">{b.description}</p>
+                  </div>
                   <div class="case-selector">
-                    <>
-                      <div>
-                        <>
-                          <span class="eyebrow">{b.task}</span>
-                          <p>{b.description}</p>
-                        </>
-                      </div>
-                      <div class="case-navigation">
-                        <>
-                          <button
-                            class="icon-button"
-                            data-case-direction="-1"
-                            aria-label={`Previous ${b.name} example`}
-                          >
-                            ←
-                          </button>
-                          <label class="sr-only" for={`select-${b.id}`}>
-                            Select {b.name} example
-                          </label>
-                          <select id={`select-${b.id}`} data-case-select={b.id}>
-                            {cases.map((c, i) => (
-                              <option value={c.id}>
-                                {String(i + 1).padStart(2, "0")} /{" "}
-                                {String(cases.length).padStart(2, "0")} —{" "}
-                                {c.title === "Overall consistency"
-                                  ? c.prompt
-                                  : c.title}
-                              </option>
-                            ))}
-                          </select>
-                          <button
-                            class="icon-button"
-                            data-case-direction="1"
-                            aria-label={`Next ${b.name} example`}
-                          >
-                            →
-                          </button>
-                        </>
-                      </div>
-                    </>
+                    <div class="case-navigation">
+                      <button
+                        class="icon-button"
+                        data-case-direction="-1"
+                        aria-label={`Previous ${b.name} example`}
+                      >
+                        ←
+                      </button>
+                      <label class="sr-only" for={`select-${b.id}`}>
+                        Select {b.name} example
+                      </label>
+                      <select id={`select-${b.id}`} data-case-select={b.id}>
+                        {cases.map((c, i) => (
+                          <option value={c.id}>
+                            {String(i + 1).padStart(2, "0")} /{" "}
+                            {String(cases.length).padStart(2, "0")} —{" "}
+                            {c.title === "Overall consistency"
+                              ? c.prompt
+                              : c.title}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        class="icon-button"
+                        data-case-direction="1"
+                        aria-label={`Next ${b.name} example`}
+                      >
+                        →
+                      </button>
+                    </div>
                   </div>
                   {cases.map((c) => (
                     <article class="video-case" data-case={c.id}>
@@ -423,11 +330,11 @@ const citation = `@misc{zhang2026corrflow,
                         class:list={["prompt-block", { "with-input": c.input }]}
                       >
                         <div>
-                          <h3>
+                          <h4>
                             {c.title === "Overall consistency"
                               ? "Scene consistency"
                               : c.title}
-                          </h3>
+                          </h4>
                           <p>
                             <span>Prompt</span>
                             {c.prompt}
@@ -528,7 +435,7 @@ const citation = `@misc{zhang2026corrflow,
                       </div>
                     </article>
                   ))}
-                </div>
+                </section>
               );
             })
           }
@@ -548,11 +455,90 @@ const citation = `@misc{zhang2026corrflow,
       </section>
 
       <section
+        id="images"
+        class="section image-section"
+        aria-labelledby="images-title"
+      >
+        <div class="container">
+          <div class="section-top">
+            <div>
+              <p class="eyebrow">02 / IMAGE GENERATION</p><h2 id="images-title">
+                A closer look.
+              </h2>
+            </div><p class="section-description">
+              Selected class-conditional samples.<br />Small details, varied
+              subjects, rich textures.
+            </p>
+          </div>
+          <div class="gallery-toolbar">
+            <div
+              class="filter-pills"
+              role="group"
+              aria-label="Filter image samples"
+            >
+              <button class="active" data-image-filter="all" aria-pressed="true"
+                >All samples</button
+              ><button data-image-filter="animals" aria-pressed="false"
+                >Animals</button
+              ><button data-image-filter="nature" aria-pressed="false"
+                >Nature & food</button
+              ><button data-image-filter="objects" aria-pressed="false"
+                >Objects & places</button
+              >
+            </div><span class="gallery-hint"
+              >Click to take a closer look <span aria-hidden="true">↗</span
+              ></span
+            >
+          </div>
+          <div class="image-grid">
+            {
+              images.map((im, i) => (
+                <button
+                  class="sample"
+                  data-image-index={i}
+                  data-image-group={im.group}
+                  aria-label={`Enlarge ${im.label}`}
+                >
+                  <>
+                    <img
+                      src={asset(im.src)}
+                      alt={`CorrFlow generated image of ${im.label.toLowerCase()}`}
+                      loading="lazy"
+                      decoding="async"
+                      width="256"
+                      height="256"
+                    />
+                    <span class="sample-label">
+                      {im.label}
+                      <span aria-hidden="true">↗</span>
+                    </span>
+                  </>
+                </button>
+              ))
+            }
+          </div>
+          <div class="gallery-footer">
+            <p>
+              ImageNet 256 × 256 · RAEv2 + CorrFlow · final 80-epoch fine-tuning
+              · guidance 1.78
+            </p><button
+              id="expand-gallery"
+              class="text-button"
+              aria-expanded="false"
+              >View all {images.length} samples <span aria-hidden="true">↓</span
+              ></button
+            >
+          </div>
+          <p class="sample-count sr-only" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section
         id="citation"
         class="section citation-section container"
         aria-labelledby="citation-title"
       >
-        <div>
+        <div class="section-heading">
           <p class="eyebrow">BUILD ON THIS WORK</p><h2 id="citation-title">
             Citation
           </h2><p>
