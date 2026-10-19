@@ -201,9 +201,9 @@ const citation = `@misc{zhang2026corrflow,
           a residual that is added to the base velocity before each sampler
           update. The process repeats from the corrected state as the noise
           level decreases. A recorded comparison shows all 50 noise steps:
-          watermelon-dessert videos without and with the refiner.
-          Three synchronized temporal windows move at each step, followed by
-          the paired final videos.
+          watermelon-dessert videos without and with the refiner. Three
+          synchronized temporal windows move at each step, followed by the
+          paired final videos.
         </p>
       </section>
 
@@ -283,6 +283,10 @@ const citation = `@misc{zhang2026corrflow,
           {
             benchmarks.map((b, i) => {
               const cases = videos.filter((v) => v.benchmark === b.id);
+              const methods = cases[0].methods.filter((m) => !m.ours);
+              const defaultMethod = methods.find(
+                (m) => m.label !== "Ground truth",
+              )!.label;
               return (
                 <section
                   class="benchmark-chapter"
@@ -297,40 +301,84 @@ const citation = `@misc{zhang2026corrflow,
                     <h3 id={`chapter-${b.id}`}>{b.name}</h3>
                     <p class="section-description">{b.description}</p>
                   </div>
-                  <div class="case-selector">
-                    <div class="case-navigation">
-                      <button
-                        class="icon-button"
-                        data-case-direction="-1"
-                        aria-label={`Previous ${b.name} example`}
-                      >
-                        ←
-                      </button>
-                      <label class="sr-only" for={`select-${b.id}`}>
-                        Select {b.name} example
-                      </label>
-                      <select id={`select-${b.id}`} data-case-select={b.id}>
-                        {cases.map((c, i) => (
-                          <option value={c.id}>
-                            {String(i + 1).padStart(2, "0")} /{" "}
-                            {String(cases.length).padStart(2, "0")} —{" "}
-                            {c.title === "Overall consistency"
-                              ? c.prompt
-                              : c.title}
-                          </option>
-                        ))}
-                      </select>
-                      <button
-                        class="icon-button"
-                        data-case-direction="1"
-                        aria-label={`Next ${b.name} example`}
-                      >
-                        →
-                      </button>
+                  <div class="case-selector" data-case-browser hidden>
+                    <div class="case-selector-heading">
+                      <div>
+                        <h4 id={`case-heading-${b.id}`}>Choose a video case</h4>
+                        <p>Select a thumbnail to explore a different scene.</p>
+                      </div>
+                      <div class="case-navigation">
+                        <span
+                          class="case-count"
+                          role="status"
+                          aria-live="polite"
+                        />
+                        <button
+                          type="button"
+                          data-case-direction="-1"
+                          aria-label={`Previous ${b.name} example`}
+                        >
+                          <span aria-hidden="true">←</span> Previous
+                        </button>
+                        <button
+                          type="button"
+                          data-case-direction="1"
+                          aria-label={`Next ${b.name} example`}
+                        >
+                          Next <span aria-hidden="true">→</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="case-thumbnails"
+                      role="group"
+                      aria-labelledby={`case-heading-${b.id}`}
+                    >
+                      {cases.map((c, index) => {
+                        const label =
+                          c.title === "Overall consistency"
+                            ? c.prompt
+                            : c.title;
+                        return (
+                          <button
+                            type="button"
+                            class="case-choice"
+                            data-case-choice={c.id}
+                            aria-pressed={index === 0 ? "true" : "false"}
+                            aria-controls={`case-${c.id}`}
+                            aria-label={`Case ${index + 1}: ${label}`}
+                            title={label}
+                          >
+                            <span class="case-thumbnail">
+                              <img
+                                src={asset(
+                                  c.input ||
+                                    c.methods.find((m) => m.ours)!.poster,
+                                )}
+                                alt=""
+                                loading="lazy"
+                                width="320"
+                                height="180"
+                              />
+                              <span class="case-number">
+                                {String(index + 1).padStart(2, "0")}
+                              </span>
+                              <span class="case-selected" aria-hidden="true">
+                                ✓
+                              </span>
+                            </span>
+                            <span class="case-title">{label}</span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                   {cases.map((c) => (
-                    <article class="video-case" data-case={c.id}>
+                    <article
+                      class="video-case"
+                      id={`case-${c.id}`}
+                      data-case={c.id}
+                    >
                       <div
                         class:list={["prompt-block", { "with-input": c.input }]}
                       >
@@ -365,13 +413,38 @@ const citation = `@misc{zhang2026corrflow,
                         )}
                       </div>
                       <div
-                        class:list={[
-                          "video-grid",
-                          { "four-up": c.methods.length === 4 },
-                        ]}
+                        class="comparison-selector"
+                        data-comparison-selector
+                        hidden
                       >
-                        {c.methods.map((m) => (
-                          <figure class:list={["video-card", { ours: m.ours }]}>
+                        <span>Compare CorrFlow with</span>
+                        <div
+                          class="method-choices"
+                          role="group"
+                          aria-label={`Comparison method for ${c.title}`}
+                        >
+                          {methods.map((m) => (
+                            <button
+                              type="button"
+                              data-method-choice={m.label}
+                              aria-pressed={
+                                m.label === defaultMethod ? "true" : "false"
+                              }
+                            >
+                              {m.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div class="video-grid">
+                        {[
+                          ...c.methods.filter((m) => !m.ours),
+                          ...c.methods.filter((m) => m.ours),
+                        ].map((m) => (
+                          <figure
+                            class:list={["video-card", { ours: m.ours }]}
+                            data-method={m.label}
+                          >
                             <figcaption>
                               <span>{m.ours ? "CorrFlow" : m.label}</span>
                               {m.ours && <span class="ours-tag">Ours</span>}
@@ -446,8 +519,8 @@ const citation = `@misc{zhang2026corrflow,
           }
           <p class="video-footnote">
             All videos are from the paper’s supplementary material. “Play
-            together” restarts the comparison; shorter clips hold their last
-            frame until the group finishes. Individual video controls work
+            together” restarts the selected pair; the shorter clip holds its
+            last frame until both finish. Individual video controls work
             independently.
           </p>
           <noscript

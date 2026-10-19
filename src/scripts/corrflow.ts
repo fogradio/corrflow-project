@@ -147,7 +147,7 @@ dialog.addEventListener("keydown", (event) => {
 
 class Comparison {
   article: HTMLElement;
-  videos: HTMLVideoElement[];
+  clips: HTMLVideoElement[];
   status: HTMLElement;
   speed: HTMLSelectElement;
   timer: number | undefined;
@@ -156,7 +156,7 @@ class Comparison {
   starting = false;
   constructor(article: HTMLElement) {
     this.article = article;
-    this.videos = all<HTMLVideoElement>("video", article);
+    this.clips = all<HTMLVideoElement>("video", article);
     this.status = one(".playback-status", article);
     this.speed = one("[data-speed]", article);
     all<HTMLButtonElement>("[data-video-action]", article).forEach((button) =>
@@ -170,7 +170,7 @@ class Comparison {
         video.playbackRate = Number(this.speed.value);
       }),
     );
-    this.videos.forEach((video) => {
+    this.clips.forEach((video) => {
       video.muted = true;
       video.addEventListener("pause", () => {
         if (this.grouped && !this.starting && !video.ended) this.pause();
@@ -182,13 +182,18 @@ class Comparison {
       });
     });
   }
+  get videos() {
+    return this.clips.filter(
+      (video) => !video.closest<HTMLElement>(".video-card")!.hidden,
+    );
+  }
   pause() {
     this.generation++;
     this.grouped = false;
     this.starting = false;
     window.clearInterval(this.timer);
     this.timer = undefined;
-    this.videos.forEach((video) => {
+    this.clips.forEach((video) => {
       video.pause();
       video.loop = true;
     });
@@ -236,6 +241,7 @@ class Comparison {
   async play() {
     stopAll();
     const token = this.generation;
+    const videos = this.videos;
     this.starting = true;
     this.status.textContent = "Preparing comparison…";
     all<HTMLButtonElement>(
@@ -245,15 +251,15 @@ class Comparison {
       button.disabled = true;
     });
     try {
-      await Promise.all(this.videos.map((video) => this.ready(video)));
+      await Promise.all(videos.map((video) => this.ready(video)));
       if (token !== this.generation) return;
-      this.videos.forEach((video) => {
+      videos.forEach((video) => {
         video.loop = false;
         video.playbackRate = Number(this.speed.value);
       });
       this.grouped = true;
       const outcomes = await Promise.allSettled(
-        this.videos.map((video) => video.play()),
+        videos.map((video) => video.play()),
       );
       if (token !== this.generation) return;
       if (outcomes.some((outcome) => outcome.status === "rejected"))
@@ -265,17 +271,17 @@ class Comparison {
         },
       );
       this.status.textContent =
-        "Playing together · shorter clips hold their final frame.";
+        "Playing together · the shorter clip holds its final frame.";
       this.timer = window.setInterval(() => {
         if (!this.grouped) return;
-        if (this.videos.every((video) => video.ended)) {
+        if (videos.every((video) => video.ended)) {
           void this.play();
           return;
         }
-        const leader = this.videos.reduce((a, b) =>
+        const leader = videos.reduce((a, b) =>
           a.duration >= b.duration ? a : b,
         );
-        this.videos.forEach((video) => {
+        videos.forEach((video) => {
           if (
             video !== leader &&
             !video.ended &&
@@ -303,28 +309,84 @@ function stopAll() {
   comparisons.forEach((comparison) => comparison.pause());
 }
 const panels = all<HTMLElement>("[data-panel]");
-function selectCase(panel: HTMLElement) {
-  const select = one<HTMLSelectElement>("[data-case-select]", panel);
-  all<HTMLElement>(".video-case", panel).forEach((article) => {
-    article.hidden = article.dataset.case !== select.value;
-  });
-}
 panels.forEach((panel) => {
-  selectCase(panel);
-  const select = one<HTMLSelectElement>("[data-case-select]", panel);
-  select.addEventListener("change", () => {
+  const choices = all<HTMLButtonElement>("[data-case-choice]", panel);
+  const articles = all<HTMLElement>(".video-case", panel);
+  const rail = one<HTMLElement>(".case-thumbnails", panel);
+  const methods = all<HTMLButtonElement>("[data-method-choice]", panel);
+  let currentCase = 0;
+  let currentMethod = methods.find(
+    (button) => button.getAttribute("aria-pressed") === "true",
+  )!.dataset.methodChoice!;
+
+  function selectMethod() {
+    all<HTMLElement>(".video-card", panel).forEach((card) => {
+      card.hidden =
+        !card.classList.contains("ours") &&
+        card.dataset.method !== currentMethod;
+    });
+    methods.forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.methodChoice === currentMethod),
+      );
+    });
+  }
+
+  function selectCase(index: number, reveal = false) {
     stopAll();
-    selectCase(panel);
+    currentCase = (index + choices.length) % choices.length;
+    const selected = choices[currentCase];
+    articles.forEach((article) => {
+      article.hidden = article.dataset.case !== selected.dataset.caseChoice;
+    });
+    choices.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button === selected));
+    });
+    one(".case-count", panel).textContent =
+      `Case ${String(currentCase + 1).padStart(2, "0")} / ${String(choices.length).padStart(2, "0")}`;
+    if (reveal) {
+      rail.scrollTo({
+        left:
+          rail.scrollLeft +
+          selected.getBoundingClientRect().left -
+          rail.getBoundingClientRect().left -
+          (rail.clientWidth - selected.clientWidth) / 2,
+        behavior: reducedMotion.matches ? "instant" : "smooth",
+      });
+    }
+  }
+
+  one<HTMLElement>("[data-case-browser]", panel).hidden = false;
+  all<HTMLElement>("[data-comparison-selector]", panel).forEach((selector) => {
+    selector.hidden = false;
+  });
+  selectMethod();
+  selectCase(0);
+  choices.forEach((button, index) => {
+    button.addEventListener("click", () => selectCase(index, true));
+    button.addEventListener("keydown", (event) => {
+      let target: number;
+      if (event.key === "ArrowLeft") target = index - 1;
+      else if (event.key === "ArrowRight") target = index + 1;
+      else if (event.key === "Home") target = 0;
+      else if (event.key === "End") target = choices.length - 1;
+      else return;
+      event.preventDefault();
+      selectCase(target, true);
+      choices[currentCase].focus({ preventScroll: true });
+    });
   });
   all<HTMLButtonElement>("[data-case-direction]", panel).forEach((button) =>
     button.addEventListener("click", () => {
+      selectCase(currentCase + Number(button.dataset.caseDirection), true);
+    }),
+  );
+  methods.forEach((button) =>
+    button.addEventListener("click", () => {
       stopAll();
-      select.selectedIndex =
-        (select.selectedIndex +
-          Number(button.dataset.caseDirection) +
-          select.options.length) %
-        select.options.length;
-      selectCase(panel);
+      currentMethod = button.dataset.methodChoice!;
+      selectMethod();
     }),
   );
 });
