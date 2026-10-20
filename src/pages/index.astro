@@ -34,10 +34,13 @@ const title = "CorrFlow: Self-Correcting Flow Matching";
 const description =
   "CorrFlow revisits its own predictions with a lightweight refiner, correcting the velocity inside the sampling loop for image and video generation.";
 const citation = `@misc{zhang2026corrflow,
-  title  = {CorrFlow: Self-Correcting Flow Matching},
-  author = {Zhang, Hangwei and Rouillé, Nathan and Zheng, Chuanxia},
-  year   = {2026},
-  url    = {https://fogradio.github.io/corrflow-project/}
+      title={CorrFlow: Self-Correcting Flow Matching},
+      author={Hangwei Zhang and Nathan Rouillé and Chuanxia Zheng},
+      year={2026},
+      eprint={2610.24750},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2610.24750},
 }`;
 ---
 
@@ -79,8 +82,11 @@ const citation = `@misc{zhang2026corrflow,
             href="#images">Images</a
           ><a href="#citation">Citation</a>
         </div>
-        <button class="nav-paper resource-pending" type="button" disabled
-          >Read paper <span aria-hidden="true">↗</span></button
+        <a
+          class="nav-paper"
+          href="https://arxiv.org/abs/2610.24750"
+          target="_blank"
+          rel="noopener">Read paper <span aria-hidden="true">↗</span></a
         >
       </nav>
     </header>
@@ -120,10 +126,14 @@ const citation = `@misc{zhang2026corrflow,
           >
         </p>
         <div class="hero-actions">
-          <button class="button resource-pending" type="button" disabled
+          <a
+            class="button"
+            href="https://arxiv.org/abs/2610.24750"
+            target="_blank"
+            rel="noopener"
             ><svg viewBox="0 0 24 24" aria-hidden="true"
               ><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"></path></svg
-            >Paper</button
+            >Paper</a
           >
           <a
             class="button"
@@ -622,10 +632,11 @@ const citation = `@misc{zhang2026corrflow,
           </h2><p>
             If you find CorrFlow useful in your research,<br />please consider
             citing our work.
-          </p><button
-            class="text-button resource-pending"
-            type="button"
-            disabled>Read the paper <span aria-hidden="true">↗</span></button
+          </p><a
+            class="text-button"
+            href="https://arxiv.org/abs/2610.24750"
+            target="_blank"
+            rel="noopener">Read the paper <span aria-hidden="true">↗</span></a
           >
         </div><div class="citation-box">
           <div class="citation-label">
