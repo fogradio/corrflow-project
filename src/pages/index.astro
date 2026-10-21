@@ -8,25 +8,21 @@ const benchmarks = [
   {
     id: "videophy2",
     name: "VideoPhy2",
-    task: "Text to video",
     description: "Everyday actions and physical interactions.",
   },
   {
     id: "physics-iq-veried",
     name: "Physics-IQ",
-    task: "Image to video",
     description: "Image-conditioned physical events.",
   },
   {
     id: "finephyeval",
     name: "FinePhyEval",
-    task: "Text to video",
     description: "Object interactions and physical events.",
   },
   {
     id: "vbench",
     name: "VBench",
-    task: "Text to video",
     description: "Appearance, composition, and motion.",
   },
 ];
@@ -168,7 +164,7 @@ const citation = `@misc{zhang2026corrflow,
         class="teaser-section container"
         aria-labelledby="teaser-title"
       >
-        <h2 id="teaser-title" class="sr-only">CorrFlow in motion</h2>
+        <h2 id="teaser-title" class="sr-only">CorrFlow Method</h2>
         <figure class="teaser-figure">
           <video
             id="method-teaser"
@@ -196,7 +192,7 @@ const citation = `@misc{zhang2026corrflow,
             >
           </video>
           <figcaption>
-            <span>Predict. Reflect. Refine.</span>
+            <span>CorrFlow method and sampling process.</span>
             <a href={asset("media/teaser/corrflow-teaser.mp4")} download
               >Download teaser <span aria-hidden="true">↓</span></a
             >
@@ -223,7 +219,7 @@ const citation = `@misc{zhang2026corrflow,
         aria-labelledby="abstract-title"
       >
         <div class="section-heading">
-          <p class="eyebrow">THE IDEA</p><h2 id="abstract-title">Abstract</h2>
+          <h2 id="abstract-title">Abstract</h2>
         </div>
         <div class="intro-copy">
           <p class="lead">
@@ -271,12 +267,9 @@ const citation = `@misc{zhang2026corrflow,
         <div class="container">
           <div class="section-top">
             <div>
-              <p class="eyebrow">01 / VIDEO GENERATION</p><h2 id="videos-title">
-                See the difference in time.
-              </h2>
+              <h2 id="videos-title">Video Generation</h2>
             </div><p class="section-description">
-              Explore physical interactions with VideoPhy2 and Physics-IQ,<br />
-              followed by FinePhyEval and VBench.
+              Text-to-video and image-to-video comparisons.
             </p>
           </div>
           <nav class="benchmark-nav" aria-label="Video chapters">
@@ -291,7 +284,7 @@ const citation = `@misc{zhang2026corrflow,
             }
           </nav>
           {
-            benchmarks.map((b, i) => {
+            benchmarks.map((b) => {
               const cases = videos.filter((v) => v.benchmark === b.id);
               const methods = cases[0].methods.filter((m) => !m.ours);
               const defaultMethod = methods.find(
@@ -305,9 +298,6 @@ const citation = `@misc{zhang2026corrflow,
                   data-panel={b.id}
                 >
                   <div class="chapter-heading">
-                    <p class="eyebrow">
-                      Chapter {String(i + 1).padStart(2, "0")} / {b.task}
-                    </p>
                     <h3 id={`chapter-${b.id}`}>{b.name}</h3>
                     <p class="section-description">{b.description}</p>
                   </div>
@@ -550,12 +540,9 @@ const citation = `@misc{zhang2026corrflow,
         <div class="container">
           <div class="section-top">
             <div>
-              <p class="eyebrow">02 / IMAGE GENERATION</p><h2 id="images-title">
-                ImageNet 256 × 256
-              </h2>
+              <h2 id="images-title">Image Generation</h2>
             </div><p class="section-description">
-              Class-conditional image generation.<br />Small details, varied
-              subjects, rich textures.
+              Class-conditional samples on ImageNet at 256 × 256.
             </p>
           </div>
           <div class="gallery-toolbar">
@@ -627,9 +614,7 @@ const citation = `@misc{zhang2026corrflow,
         aria-labelledby="citation-title"
       >
         <div class="section-heading">
-          <p class="eyebrow">BUILD ON THIS WORK</p><h2 id="citation-title">
-            Citation
-          </h2><p>
+          <h2 id="citation-title">Citation</h2><p>
             If you find CorrFlow useful in your research,<br />please consider
             citing our work.
           </p><a
@@ -664,9 +649,7 @@ const citation = `@misc{zhang2026corrflow,
     <dialog id="image-viewer" aria-labelledby="viewer-title">
       <div class="viewer-header">
         <div>
-          <span class="eyebrow">CORRFLOW / IMAGENET</span><h2 id="viewer-title">
-            Image sample
-          </h2>
+          <h2 id="viewer-title">Image sample</h2>
         </div><button
           id="close-viewer"
           class="icon-button"

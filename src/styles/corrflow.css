@@ -103,13 +103,6 @@ summary:focus-visible {
   padding-block: 98px;
   scroll-margin-top: 28px;
 }
-.eyebrow {
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  line-height: 1.6;
-}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -234,10 +227,11 @@ summary:focus-visible {
 .affiliations {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 8px 24px;
   flex-wrap: wrap;
-  font-size: 12px;
-  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
   margin-top: 11px;
 }
 .hero-actions {
@@ -362,11 +356,6 @@ h2 {
   font-weight: 650;
   line-height: 1.23;
   letter-spacing: -0.045em;
-}
-.section-heading .eyebrow,
-.section-top .eyebrow,
-.citation-section .eyebrow {
-  margin-bottom: 13px;
 }
 .intro-section {
   padding-top: 82px;
@@ -1029,7 +1018,7 @@ h2 {
 .citation-section h2 {
   margin-bottom: 16px;
 }
-.citation-section > div > p:not(.eyebrow) {
+.citation-section > div > p {
   font-size: 13px;
   line-height: 1.8;
   color: var(--muted);
@@ -1119,9 +1108,6 @@ dialog::backdrop {
 .viewer-header > div {
   grid-column: 2;
   text-align: center;
-}
-.viewer-header .eyebrow {
-  font-size: 9px;
 }
 .viewer-header h2 {
   font-size: 21px;
@@ -1264,7 +1250,7 @@ dialog::backdrop {
   .affiliations {
     flex-direction: column;
     gap: 7px;
-    font-size: 10px;
+    font-size: 15px;
     margin-top: 13px;
   }
   .hero-actions {
@@ -1489,7 +1475,7 @@ dialog::backdrop {
   .citation-box {
     margin-top: 27px;
   }
-  .citation-section > div > p:not(.eyebrow) {
+  .citation-section > div > p {
     font-size: 12px;
   }
   .citation-label {
